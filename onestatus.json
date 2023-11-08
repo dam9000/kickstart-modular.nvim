@@ -1,0 +1,16 @@
+{
+  "status-right": [
+    { "bg": "#ffffff", "fg": "#3bd19a", "labelFunc": "s:getCWD" },
+    { "bg": "#ffffff", "fg": "#4290f5", "labelFunc": "s:getHead" }
+  ],
+  "status-left": [
+    { "fg": "#6c757d", "bg": "#ffffff", "labelFunc": "s:getFileName" }
+  ],
+  "status-style": "s:getDefaultColor",
+  "window-status-style": [
+    { "fg": "#6c757d", "bg": "#ffffff", "isStyleOnly": true }
+  ],
+  "window-status-current-style": [
+    { "fg": "#ffffff", "bg": "#3bd19a", "isStyleOnly": true }
+  ]
+}

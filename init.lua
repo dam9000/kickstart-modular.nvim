@@ -72,5 +72,14 @@ require('lsp-setup')
 -- (completion)
 require('cmp-setup')
 
+-- Setup globals
+require('globals')
+
+-- Setup auto commands
+require('autocmd')
+
+-- Go to last tab
+require('last-tab')
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

@@ -11,6 +11,36 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
+  -- Prettier for autofix on save
+  'prettier/vim-prettier',
+
+  -- OneStatus
+  'narajaon/onestatus',
+
+  -- File manipulation
+  'justinmk/vim-dirvish',
+
+  -- File explorer
+  'tpope/vim-vinegar',
+
+  -- Unit testing
+  'vim-test/vim-test',
+
+  -- Auto change root dir
+  'airblade/vim-rooter',
+
+  -- Manipulate brackets
+  'tpope/vim-surround',
+
+  -- Highlight caracters for inline jumps
+  'unblevable/quick-scope',
+
+  -- autopairing
+  'jiangmiao/auto-pairs',
+
+  -- Camel to Snek
+  'nicwest/vim-camelsnek',
+
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
@@ -49,8 +79,6 @@ require('lazy').setup({
     },
   },
 
-  -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -91,35 +119,16 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
+    'projekt0n/github-nvim-theme',
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      require('github-theme').setup({
+        -- ...
+      })
+
+      vim.cmd('colorscheme github_light')
     end,
-  },
-
-  {
-    -- Set lualine as statusline
-    'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = false,
-        theme = 'onedark',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
-  },
-
-  {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help ibl`
-    main = 'ibl',
-    opts = {},
   },
 
   -- "gc" to comment visual regions/lines
