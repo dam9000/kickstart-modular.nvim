@@ -2,6 +2,7 @@
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
   defaults = {
+    file_ignore_patterns = { ".yarn/*", ".changeset/*", "%.gz" },
     mappings = {
       i = {
         ['<C-u>'] = false,
