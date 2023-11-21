@@ -66,4 +66,8 @@ vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
 vim.keymap.set('n', '<leader>fs', '<cmd>Telescope live_grep<cr>')
 vim.keymap.set({ 'n', 'v' }, 'g/', "<cmd>lua require('telescope.builtin').grep_string()<cr>")
 
+-- Testing
+vim.keymap.set('n', '<leader>tf', '<cmd>TestFile<cr>')
+vim.keymap.set('n', '<leader>tn', '<cmd>TestNearest<cr>')
+
 -- vim: ts=2 sts=2 sw=2 et

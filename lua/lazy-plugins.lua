@@ -11,6 +11,9 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
+  -- Testing utils
+  'vim-test/vim-test',
+
   -- Prettier for autofix on save
   'prettier/vim-prettier',
 
