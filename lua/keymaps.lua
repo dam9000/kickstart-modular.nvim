@@ -62,6 +62,8 @@ vim.keymap.set('n', '<leader>dm', ':!mv ')
 vim.keymap.set({ 'n', 'v' }, '<leader>fw', ':%s/<C-R><C-W>/gc<left><left><left>')
 
 -- Telescope
-vim.keymap.set('n', '<C-p>', '<cmd>Telescope git_files<cr>')
+vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
+vim.keymap.set('n', '<leader>fs', '<cmd>Telescope live_grep<cr>')
+vim.keymap.set({ 'n', 'v' }, 'g/', "<cmd>lua require('telescope.builtin').grep_string()<cr>")
 
 -- vim: ts=2 sts=2 sw=2 et
