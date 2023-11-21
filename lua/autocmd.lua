@@ -20,7 +20,12 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = "dirvish",
-  command = "nnoremap <buffer><silent> <C-p> <cmd>Telescope git_files<cr>",
+  callback = function ()
+    -- Telescope
+    vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
+    vim.keymap.set('n', '<leader>fs', '<cmd>Telescope live_grep<cr>')
+    vim.keymap.set({ 'n', 'v' }, 'g/', "<cmd>lua require('telescope.builtin').grep_string()<cr>")
+  end,
   group = autocmdId,
 })
 
