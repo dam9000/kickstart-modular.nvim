@@ -34,6 +34,12 @@ vim.keymap.set('c', '<C-P>', '<Up>')
 vim.keymap.set('c', '<M-b>', '<S-Left>')
 vim.keymap.set('c', '<M-f>', '<S-Right>')
 
+-- Keep from adding to jump list
+vim.keymap.set('n', 'n', "<cmd>keepjumps norm! " .. vim.v.count1 .. "n<cr>")
+vim.keymap.set('n', 'N', "<cmd>keepjumps norm! " .. vim.v.count1 .. "N<cr>")
+vim.keymap.set('n', '}', "<cmd>keepjumps norm! " .. vim.v.count1 .. "}<cr>")
+vim.keymap.set('n', '{', "<cmd>keepjumps norm! " .. vim.v.count1 .. "{<cr>")
+
 -- Open parent directory
 vim.keymap.set('n', '-', '<CMD>Ex<CR>', { desc = 'Open parent directory' })
 
