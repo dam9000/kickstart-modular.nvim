@@ -67,4 +67,8 @@ vim.keymap.set({ 'n', 'v' }, 'g/', "<cmd>lua require('telescope.builtin').grep_s
 vim.keymap.set('n', '<leader>tf', '<cmd>TestFile<cr>')
 vim.keymap.set('n', '<leader>tn', '<cmd>TestNearest<cr>')
 
+-- Save session
+vim.api.nvim_create_user_command('Ss', 'mksession! $HOME/Session.vim', {})
+vim.api.nvim_create_user_command('Sr', 'source $HOME/Session.vim', {})
+
 -- vim: ts=2 sts=2 sw=2 et
