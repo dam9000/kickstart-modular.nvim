@@ -34,3 +34,18 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   command = "PrettierAsync",
   group = autocmdId,
 })
+
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  pattern = "*",
+  callback = function ()
+    local packageDirectory = 'packages'
+
+    local getPackageName = function ()
+      local currentPath = vim.fn.expand('%')
+      return string.match(currentPath, packageDirectory .. "/[^/]+")
+    end
+
+    vim.g['test#project_root'] = getPackageName()
+  end,
+  group = autocmdId,
+})
