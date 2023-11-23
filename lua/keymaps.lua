@@ -67,6 +67,12 @@ vim.keymap.set({ 'n', 'v' }, 'g/', "<cmd>lua require('telescope.builtin').grep_s
 vim.keymap.set('n', '<leader>tf', '<cmd>TestFile<cr>')
 vim.keymap.set('n', '<leader>tn', '<cmd>TestNearest<cr>')
 
+-- dervish
+vim.keymap.set('n', '<leader>df', ':e %/')
+vim.keymap.set('n', '<leader>dd', ':mkdir %/')
+vim.keymap.set('n', '<leader>dD', ':!rm -rf ')
+vim.keymap.set('n', '<leader>dm', ':!mv  ')
+
 -- Save session
 vim.api.nvim_create_user_command('Ss', 'mksession! $HOME/Session.vim', {})
 vim.api.nvim_create_user_command('Sr', 'source $HOME/Session.vim', {})
