@@ -40,9 +40,6 @@ vim.keymap.set('n', 'N', "<cmd>keepjumps norm! " .. vim.v.count1 .. "N<cr>")
 vim.keymap.set('n', '}', "<cmd>keepjumps norm! " .. vim.v.count1 .. "}<cr>")
 vim.keymap.set('n', '{', "<cmd>keepjumps norm! " .. vim.v.count1 .. "{<cr>")
 
--- Open parent directory
-vim.keymap.set('n', '-', '<CMD>Ex<CR>', { desc = 'Open parent directory' })
-
 -- Make vinegar open vertically
 vim.keymap.set('c', 'G<cr>', "vertical rightbelow G | norm ]]<cr>", { silent = true })
 
