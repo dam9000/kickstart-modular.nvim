@@ -17,9 +17,6 @@ vim.o.mouse = 'a'
 --  See `:help 'clipboard'`
 vim.o.clipboard = 'unnamedplus'
 
--- Enable break indent
-vim.o.breakindent = true
-
 -- Save undo history
 vim.o.undofile = true
 
@@ -35,5 +32,8 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+-- disable swapfile
+vim.o.swapfile = false
 
 -- vim: ts=2 sts=2 sw=2 et
