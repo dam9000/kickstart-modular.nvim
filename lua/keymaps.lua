@@ -77,4 +77,24 @@ vim.keymap.set('n', '<leader>dm', ':!mv  ')
 vim.api.nvim_create_user_command('Ss', 'mksession! $HOME/Session.vim', {})
 vim.api.nvim_create_user_command('Sr', 'source $HOME/Session.vim', {})
 
+-- Testing
+local packageDirectory = 'packages'
+
+function GetPackageName ()
+  local currentPath = vim.fn.expand('%')
+  local name = string.match(currentPath, packageDirectory .. "/[^/]+")
+  return name or ''
+end
+
+function RunTests()
+  require("neotest").run.run({
+    jestConfigFile = function ()
+      return GetPackageName() .. '/jest.config.js'
+    end,
+    cwd = GetPackageName(),
+  })
+end
+
+vim.keymap.set('n', '<leader>tf', '<cmd>lua RunTests()<cr>', {})
+
 -- vim: ts=2 sts=2 sw=2 et

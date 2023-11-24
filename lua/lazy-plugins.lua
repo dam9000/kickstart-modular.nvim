@@ -4,6 +4,7 @@
 --
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
+
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
@@ -11,8 +12,8 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
-  -- Testing utils
-  'vim-test/vim-test',
+  -- [] bindings
+  'tpope/vim-unimpaired',
 
   -- Prettier for autofix on save
   'prettier/vim-prettier',
@@ -25,9 +26,6 @@ require('lazy').setup({
 
   -- File explorer
   'tpope/vim-vinegar',
-
-  -- Unit testing
-  'vim-test/vim-test',
 
   -- Auto change root dir
   'airblade/vim-rooter',
@@ -86,6 +84,31 @@ require('lazy').setup({
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
     },
+  },
+
+  { 
+    "nvim-neotest/neotest",
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'antoinemadec/FixCursorHold.nvim',
+      'haydenmeade/neotest-jest'
+    },
+    config = function()
+      require('neotest').setup({
+        icons = {
+          passed = "🟢",
+          running = "🔘",
+          failed = "🔴",
+          skipped = "⚪"
+        },
+        adapters = {
+          require('neotest-jest')({
+            jestCommand = 'yarn test --coverage false',
+            -- env = { CI = true },
+          }),
+        }
+      })
+    end
   },
 
   {
