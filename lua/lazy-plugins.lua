@@ -24,12 +24,6 @@ require('lazy').setup({
   -- File manipulation
   'justinmk/vim-dirvish',
 
-  -- File explorer
-  'tpope/vim-vinegar',
-
-  -- Auto change root dir
-  'airblade/vim-rooter',
-
   -- Manipulate brackets
   'tpope/vim-surround',
 
@@ -86,7 +80,7 @@ require('lazy').setup({
     },
   },
 
-  { 
+  {
     "nvim-neotest/neotest",
     dependencies = {
       'nvim-lua/plenary.nvim',
