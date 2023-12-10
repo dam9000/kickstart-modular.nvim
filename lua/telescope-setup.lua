@@ -117,5 +117,6 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 vim.keymap.set({ 'n', 'v' }, '<S-f>', function() require('telescope.builtin').grep_string(get_visual_selection()) end,
   { desc = '[S]earch [R]esume' })
 vim.keymap.set('n', '<leader>ag', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
+vim.keymap.set('n', '<Tab>', require('telescope.builtin').buffers, { desc = '[S]earch current [W]ord' })
 
 -- vim: ts=2 sts=2 sw=2 et
