@@ -44,9 +44,11 @@ cmp.setup {
     end, { 'i', 's' }),
   },
   sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-    { name = 'path' },
+    { name = 'nvim_lsp', max_item_count = 10 },
+    { name = 'luasnip',  max_item_count = 10 },
+    { name = 'bazel',    max_item_count = 10 },
+    { name = 'buffer',   max_item_count = 10 },
+    { name = 'path',     max_item_count = 10 },
   },
 }
 

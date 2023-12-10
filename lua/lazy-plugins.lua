@@ -15,9 +15,7 @@ require('lazy').setup({
   -- Editor plugins
   'machakann/vim-sandwich',
   'dyng/ctrlsf.vim',
-
-  -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
+  'preservim/nerdcommenter',
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -147,9 +145,6 @@ require('lazy').setup({
     main = 'ibl',
     opts = {},
   },
-
-  -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
