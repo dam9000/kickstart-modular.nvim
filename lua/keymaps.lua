@@ -4,12 +4,15 @@
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
--- windows navigation
+-- Simple shortcuts
 vim.keymap.set({ 'n', 'v' }, '<C-j>', '<C-w>j', { silent = true })
 vim.keymap.set({ 'n', 'v' }, '<C-k>', '<C-w>k', { silent = true })
 vim.keymap.set({ 'n', 'v' }, '<C-l>', '<C-w>l', { silent = true })
 vim.keymap.set({ 'n', 'v' }, '<C-h>', '<C-w>h', { silent = true })
 vim.keymap.set({ 'n', 'v' }, '<C-c>', '<C-w>c', { silent = true })
+vim.keymap.set('n', '<C-s>', '<Cmd>update!<CR><Esc>', { silent = true })
+vim.keymap.set('i', '<C-s>', '<C-O><Cmd>update!<CR><Esc>', { silent = true })
+vim.keymap.set('v', '<C-s>', '<C-C><Cmd>update!<CR><Esc>', { silent = true })
 
 local function store_buffer_name_to_x_clipboard()
   vim.cmd("echo expand('%:p')")
