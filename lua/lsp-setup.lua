@@ -15,7 +15,7 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
-  nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+  nmap('<leader>re', vim.lsp.buf.rename, '[R]e[n]ame')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
   nmap('<leader>gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
@@ -47,6 +47,7 @@ require('mason-lspconfig').setup()
 local servers = {
   clangd = {},
   omnisharp = {},
+  typos_ls = {},
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
