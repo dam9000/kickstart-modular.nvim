@@ -4,20 +4,20 @@ local actions = require("telescope.actions")
 local action_utils = require("telescope.actions.utils")
 
 local function selection_by_index()
-	local prompt_bufnr = vim.api.nvim_get_current_buf()
-	local results = {}
-	action_utils.map_selections(prompt_bufnr, function(entry)
-		table.insert(results, entry.bufnr)
-	end)
-	return results
+  local prompt_bufnr = vim.api.nvim_get_current_buf()
+  local results = {}
+  action_utils.map_selections(prompt_bufnr, function(entry)
+    table.insert(results, entry.bufnr)
+  end)
+  return results
 end
 
 local function delete_buffers()
-	local buffers = selection_by_index()
-	for _, v in ipairs(buffers) do
-		local command = "bd! " .. v
-		vim.api.nvim_command(command)
-	end
+  local buffers = selection_by_index()
+  for _, v in ipairs(buffers) do
+    local command = "bd! " .. v
+    vim.api.nvim_command(command)
+  end
 end
 
 require('telescope').setup {
@@ -26,11 +26,11 @@ require('telescope').setup {
       i = {
         ['<C-u>'] = false,
         ['<C-d>'] = false,
-      	["<esc>"] = actions.close,
-				["<C-j>"] = actions.move_selection_next,
-				["<C-k>"] = actions.move_selection_previous,
-				["<C-Space>"] = actions.toggle_selection,
-				["<del>"] = delete_buffers,
+        ["<esc>"] = actions.close,
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-Space>"] = actions.toggle_selection,
+        ["<del>"] = delete_buffers,
       },
     },
   },
@@ -101,7 +101,7 @@ local function get_visual_selection()
   local line_end = vend[2]
 
   -- or use api.nvim_buf_get_lines
-  return vim.fn.getline(line_start,line_end)
+  return vim.fn.getline(line_start, line_end)
 end
 
 --require('telescope.builtin').live_grep(lines)
@@ -114,7 +114,8 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
-vim.keymap.set({ 'n', 'v', 'i' }, '<S-f>', function() require('telescope.builtin').grep_string(get_visual_selection()) end, { desc = '[S]earch [R]esume' })
+vim.keymap.set({ 'n', 'v' }, '<S-f>', function() require('telescope.builtin').grep_string(get_visual_selection()) end,
+  { desc = '[S]earch [R]esume' })
 vim.keymap.set('n', '<leader>ag', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 
 -- vim: ts=2 sts=2 sw=2 et
