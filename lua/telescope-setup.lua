@@ -68,7 +68,7 @@ local function telescope_live_grep_open_files()
   }
 end
 
-local function find_visual_selection()
+local function get_visual_selection()
   local vstart = vim.fn.getpos("'<")
   local vend = vim.fn.getpos("'>")
 
@@ -76,10 +76,10 @@ local function find_visual_selection()
   local line_end = vend[2]
 
   -- or use api.nvim_buf_get_lines
-  local lines = vim.fn.getline(line_start,line_end)
-  require('telescope.builtin').live_grep(lines)
+  return vim.fn.getline(line_start,line_end)
 end
 
+--require('telescope.builtin').live_grep(lines)
 vim.keymap.set('n', '<leader>s/', telescope_live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
 vim.keymap.set('n', '<leader>ss', require('telescope.builtin').builtin, { desc = '[S]earch [S]elect Telescope' })
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
@@ -89,7 +89,7 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
-vim.keymap.set({ 'n', 'v', 'i' }, '<S-f>', find_visual_selection, { desc = '[S]earch [R]esume' })
+vim.keymap.set({ 'n', 'v', 'i' }, '<S-f>', function() require('telescope.builtin').grep_string(get_visual_selection()) end, { desc = '[S]earch [R]esume' })
 vim.keymap.set('n', '<leader>ag', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 
 -- vim: ts=2 sts=2 sw=2 et
