@@ -215,10 +215,9 @@ ins_right({
 })
 
 return {
-  "nvim-lualine/lualine.nvim",
-  version = "*",
-  config = function ()
-    require("lualine").setup(config)
-  end,
+	"nvim-lualine/lualine.nvim",
+	version = "*",
+	config = function()
+		require("lualine").setup(config)
+	end,
 }
-

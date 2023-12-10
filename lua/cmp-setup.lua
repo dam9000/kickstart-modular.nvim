@@ -15,10 +15,8 @@ cmp.setup {
     completeopt = 'menu,menuone,noinsert',
   },
   mapping = cmp.mapping.preset.insert {
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-j>'] = cmp.mapping.select_next_item(),
+    ['<C-k>'] = cmp.mapping.select_prev_item(),
     ['<C-Space>'] = cmp.mapping.complete {},
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
