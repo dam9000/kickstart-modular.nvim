@@ -11,6 +11,15 @@ vim.keymap.set({ 'n', 'v' }, '<C-l>', '<C-w>l', { silent = true })
 vim.keymap.set({ 'n', 'v' }, '<C-h>', '<C-w>h', { silent = true })
 vim.keymap.set({ 'n', 'v' }, '<C-c>', '<C-w>c', { silent = true })
 
+local function store_buffer_name_to_x_clipboard()
+  vim.cmd("echo expand('%:p')")
+  vim.cmd("let @+ = join([expand('%:p'), line('.')], ':')")
+end
+
+-- Clipboard
+vim.keymap.set({ 'n' }, '<C-y>', store_buffer_name_to_x_clipboard, { silent = true })
+vim.keymap.set({ 'v' }, '<C-y>', '"+y', { silent = true })
+
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
