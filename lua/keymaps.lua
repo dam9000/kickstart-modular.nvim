@@ -17,6 +17,9 @@ vim.keymap.set({ 'n', 'v', 'i' }, '<C-Up>', '<Cmd>resize -5<CR>', { silent = tru
 vim.keymap.set({ 'n', 'v', 'i' }, '<C-Down>', '<Cmd>resize +5<CR>', { silent = true })
 vim.keymap.set({ 'n', 'v', 'i' }, '<C-Left>', '<Cmd>vertical resize -5<CR>', { silent = true })
 vim.keymap.set({ 'n', 'v', 'i' }, '<C-Right>', '<Cmd>vertical resize +5<CR>', { silent = true })
+vim.keymap.set({ 'n', 'v', 'i' }, '<C-q>', '<Cmd>bd!<CR>', { silent = true })
+vim.keymap.set({ 'n', 'v', }, '<C-\\>', function() vim.fn.system("touch " .. vim.fn.expand("%")) end, { silent = true })
+vim.keymap.set('n', '<Esc><Esc>', '<Cmd>nohlsearch<CR>', { silent = true })
 
 local function store_buffer_name_to_x_clipboard()
   vim.cmd("echo expand('%:p')")
@@ -38,7 +41,8 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Neotree
-vim.keymap.set('n', '<C-space>', '<Cmd>Neotree toggle<CR>')
+--vim.keymap.set('n', '<C-space>', '<Cmd>Neotree toggle<CR>')
+vim.keymap.set({ 'n', 'v', 'i' }, '<C-space>', '<Cmd>Neotree reveal<CR>', { silent = true })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`

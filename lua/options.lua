@@ -35,5 +35,9 @@ vim.o.tabstop = 4
 vim.o.encoding = 'UTF-8'
 vim.o.shiftwidth = 4
 vim.o.autochdir = false
+vim.o.wrap = false
+vim.o.fillchars = 'vert:|'
+vim.g.mapleader = " "
+vim.cmd("hi VertSplit ctermfg=bg guifg=bg")
 
 -- vim: ts=2 sts=2 sw=2 et

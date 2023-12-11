@@ -16,7 +16,7 @@ local on_attach = function(_, bufnr)
   end
 
   nmap('<leader>re', vim.lsp.buf.rename, '[R]e[n]ame')
-  nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+  nmap('<leader>fx', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
   nmap('<leader>gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
   nmap('<leader>gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -47,11 +47,12 @@ require('mason-lspconfig').setup()
 local servers = {
   clangd = {},
   omnisharp = {},
+  bashls = {},
   -- gopls = {},
-  -- pyright = {},
+  pyright = {},
   -- rust_analyzer = {},
-  -- tsserver = {},
-  -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+  tsserver = {},
+  html = { filetypes = { 'html', 'twig', 'hbs' } },
 
   lua_ls = {
     Lua = {
