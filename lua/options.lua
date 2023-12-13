@@ -39,4 +39,10 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
+-- space instead of tab
+--vim.opt.expandtab = true -- Use spaces instead of tabs
+vim.opt_global.tabstop = 2      -- A TAB character looks like 4 spaces
+vim.opt_global.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
+vim.opt_global.softtabstop = 2  -- Number of spaces inserted instead of a TAB character
+vim.opt_global.shiftwidth = 2   -- Number of spaces inserted when indenting
 -- vim: ts=2 sts=2 sw=2 et
