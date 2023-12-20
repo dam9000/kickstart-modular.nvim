@@ -57,6 +57,7 @@ vim.keymap.set({ 'n', 'v' }, '<leader>fw', ':%s/<C-R><C-W>/gc<left><left><left>'
 -- Telescope
 vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
 vim.keymap.set('n', '<leader>fs', '<cmd>Telescope live_grep<cr>')
+vim.keymap.set('n', '<leader>fx', ":lua require('telescope.builtin').live_grep({ search_dirs = { 'packages/core' }, type_filter = null })<S-Left><S-Left><S-Left><S-Left><S-Left><Left><Left>")
 vim.keymap.set({ 'n', 'v' }, 'g/', "<cmd>lua require('telescope.builtin').grep_string()<cr>")
 
 -- Testing
