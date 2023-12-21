@@ -25,4 +25,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+-- NeoTree
+vim.keymap.set('n', '<leader>ft', ':Neotree toggle<CR>', { desc = 'Toggle Neo Tree' })
+
 -- vim: ts=2 sts=2 sw=2 et

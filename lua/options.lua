@@ -39,4 +39,12 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
+-- Set Incremental Search and Ignore Case
+vim.o.ic = true
+vim.o.incsearch = true
+
+-- Set both relative and normal numbers
+vim.o.relativenumber = true
+vim.o.number = true
+
 -- vim: ts=2 sts=2 sw=2 et
