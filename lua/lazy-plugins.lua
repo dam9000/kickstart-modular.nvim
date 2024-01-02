@@ -32,7 +32,9 @@ require('lazy').setup({
       'folke/neodev.nvim',
     },
   },
-
+  {
+    'Hoffs/omnisharp-extended-lsp.nvim', -- fixes go to def in libraries in dotnet
+  },
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -204,7 +206,7 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {})
 
 -- vim: ts=2 sts=2 sw=2 et
