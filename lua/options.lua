@@ -7,6 +7,10 @@ vim.o.hlsearch = false
 
 -- Make line numbers default
 vim.wo.number = true
+vim.o.rnu = true
+
+-- ScrollOff
+vim.o.scrolloff = 8;
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
