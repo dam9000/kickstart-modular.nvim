@@ -24,6 +24,21 @@ Distribution Alternatives:
 > **NOTE** 
 > [Backup](#FAQ) your previous configuration (if any exists)
 
+> Remove any previou nvim configurations and local files (if any exist)
+```sh
+# Linux / Macos (unix)
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
+
+# Windows CMD
+rd -r ~\AppData\Local\nvim
+rd -r ~\AppData\Local\nvim-data
+
+# Window PowerShell
+rm -Force ~\AppData\Local\nvim
+rm -Force ~\AppData\Local\nvim-data
+```
+
 Requirements:
 * Make sure to review the readmes of the plugins if you are experiencing errors. In particular:
   * [ripgrep](https://github.com/BurntSushi/ripgrep#installation) is required for multiple [telescope](https://github.com/nvim-telescope/telescope.nvim#suggested-dependencies) pickers.
@@ -42,17 +57,17 @@ Clone kickstart.nvim:
 
 - on Linux and Mac
 ```sh
-git clone https://github.com/dam9000/kickstart-modular.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+git clone git@github.com:alexander-bergeron/kickstart-modular.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 ```
 
 - on Windows (cmd)
 ```
-git clone https://github.com/dam9000/kickstart-modular.nvim.git %userprofile%\AppData\Local\nvim\
+git clone git@github.com:alexander-bergeron/kickstart-modular.nvim.git %userprofile%\AppData\Local\nvim\
 ```
 
 - on Windows (powershell)
 ```
-git clone https://github.com/dam9000/kickstart-modular.nvim.git $env:USERPROFILE\AppData\Local\nvim\
+git clone git@github.com:alexander-bergeron/kickstart-modular.nvim.git $env:USERPROFILE\AppData\Local\nvim\
 ```
 
 
