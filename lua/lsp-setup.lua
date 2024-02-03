@@ -76,7 +76,13 @@ require('mason-lspconfig').setup()
 --  define the property 'filetypes' to the map in question.
 local servers = {
   -- clangd = {},
-  -- gopls = {},
+  gopls = {
+    completeUnimported = true,
+    usePlaceholders = true,
+    analyses = {
+        unusedparams = true,
+    },
+  },
   -- pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
@@ -104,6 +110,13 @@ local mason_lspconfig = require 'mason-lspconfig'
 
 mason_lspconfig.setup {
   ensure_installed = vim.tbl_keys(servers),
+}
+
+local mason = require 'mason'
+
+mason.setup {
+  ensure_installed = { "gofumpt" },
+  auromatically_install = true,
 }
 
 mason_lspconfig.setup_handlers {
