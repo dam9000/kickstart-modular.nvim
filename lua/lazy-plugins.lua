@@ -48,6 +48,8 @@ require('lazy').setup {
 
   require 'kickstart/plugins/treesitter',
 
+  require 'kickstart.plugins.indent_line',
+
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- put them in the right spots if you want.
@@ -66,6 +68,12 @@ require('lazy').setup {
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   -- { import = 'custom.plugins' },
+
+  require 'custom.plugins.lualine',
+
+  require 'custom.plugins.hop',
+
+  -- require 'custom.plugins.solarized-dark',
 }
 
 -- vim: ts=2 sts=2 sw=2 et

@@ -48,4 +48,17 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Set jk as scape key
+vim.keymap.set('i', 'jk', '<Esc>')
+
+-- Stay in indentation mode
+vim.keymap.set('v', '<', '<gv', { silent = true })
+vim.keymap.set('v', '>', '>gv', { silent = true })
+
+-- Move lines up and down with vim motions
+vim.keymap.set('n', 'K', ':m .-2<CR>==', { silent = true })
+vim.keymap.set('n', 'J', ':m .+1<CR>==', { silent = true })
+vim.keymap.set('x', 'K', ":move '<-2<CR>gv=gv", { silent = true })
+vim.keymap.set('x', 'J', ":move '>+1<CR>gv=gv", { silent = true })
+
 -- vim: ts=2 sts=2 sw=2 et
