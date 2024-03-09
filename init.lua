@@ -70,7 +70,7 @@ Kickstart Guide:
     These are hints about where to find more information about the relevant settings,
     plugins or neovim features used in kickstart.
 
-   NOTE: Look for lines like this
+    NOTE: Look for lines like this
 
     Throughout the file. These are for you, the reader, to help understand what is happening.
     Feel free to delete them once you know what you're doing, but they should serve as a guide

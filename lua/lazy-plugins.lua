@@ -73,6 +73,8 @@ require('lazy').setup {
 
   require 'custom.plugins.hop',
 
+  require 'custom.plugins.autopairs',
+
   -- require 'custom.plugins.solarized-dark',
 }
 

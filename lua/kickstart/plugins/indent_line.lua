@@ -29,11 +29,11 @@ return {
       require('ibl').setup {
         indent = {
           highlight = highlight,
-          -- char = "▏",
-          -- char = '▎', -- default
-          char = '╎',
-          -- char = '┆',
-          -- char = '┊',
+          char = '│',
+        },
+        scope = {
+          enabled = false,
+          char = '┃',
         },
       }
     end,
