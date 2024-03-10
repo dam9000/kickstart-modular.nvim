@@ -35,23 +35,23 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Set jk as scape key
-vim.keymap.set('i', 'jk', '<Esc>')
+vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Escape from insert mode' })
 
 -- Stay in indentation mode
 vim.keymap.set('v', '<', '<gv', { silent = true })
 vim.keymap.set('v', '>', '>gv', { silent = true })
 
 -- Move lines up and down with vim motions
-vim.keymap.set('n', 'K', ':m .-2<CR>==', { silent = true })
-vim.keymap.set('n', 'J', ':m .+1<CR>==', { silent = true })
-vim.keymap.set('x', 'K', ":move '<-2<CR>gv=gv", { silent = true })
-vim.keymap.set('x', 'J', ":move '>+1<CR>gv=gv", { silent = true })
+vim.keymap.set('n', 'K', ':m .-2<CR>==', { silent = true, desc = 'Move line up in normal mode' })
+vim.keymap.set('n', 'J', ':m .+1<CR>==', { silent = true, desc = 'Move line down in normal mode' })
+vim.keymap.set('x', 'K', ":move '<-2<CR>gv=gv", { silent = true, desc = 'Move line up in visual mode' })
+vim.keymap.set('x', 'J', ":move '>+1<CR>gv=gv", { silent = true, desc = 'Move line down in visual mode' })
 
 -- Resize windows with vim motions
-vim.keymap.set('n', '<C-S-k>', ':resize +2<CR>', { silent = true })
-vim.keymap.set('n', '<C-S-j>', ':resize -2<CR>', { silent = true })
-vim.keymap.set('n', '<C-S-h>', ':vertical resize -2<CR>', { silent = true })
-vim.keymap.set('n', '<C-S-l>', ':vertical resize +2<CR>', { silent = true })
+vim.keymap.set('n', '<C-A-k>', ':resize +2<CR>', { silent = true })
+vim.keymap.set('n', '<C-A-j>', ':resize -2<CR>', { silent = true })
+vim.keymap.set('n', '<C-A-h>', ':vertical resize -2<CR>', { silent = true })
+vim.keymap.set('n', '<C-A-l>', ':vertical resize +2<CR>', { silent = true })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
