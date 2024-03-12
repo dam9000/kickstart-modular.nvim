@@ -14,6 +14,10 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 --
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
+-- you might be able to get it to work by adding the following lines to ~/.tmux.conf
+-- set -sg escape-time 0
+-- set -g status-interval 0
+--
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- TIP: Disable arrow keys in normal mode
@@ -46,16 +50,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Old keymaps
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv'")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv'")
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv'")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv'")
 
-vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set('n', 'J', 'mzJ`z')
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
 
-vim.keymap.set("t", "<leader><Esc>", "<C-Bslash><C-n>")
+vim.keymap.set('t', '<leader><Esc>', '<C-Bslash><C-n>')
 
-vim.keymap.set("n", "<leader>tn", ":tabnew | term<CR>")
+vim.keymap.set('n', '<leader>tn', ':tabnew | term<CR>')
 
 -- vim: ts=2 sts=2 sw=2 et
