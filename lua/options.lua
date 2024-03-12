@@ -2,7 +2,27 @@
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
+local set = vim.opt -- set options
+set.tabstop = 4
+set.softtabstop = 4
+set.shiftwidth = 4
+set.expandtab = true
 
+set.nu = true
+set.relativenumber = true
+
+set.smartindent = true
+
+set.wrap = false
+
+set.swapfile = false
+set.backup = false
+
+set.hlsearch = false
+set.incsearch = true
+
+
+set.termguicolors = true
 -- Make line numbers default
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
@@ -28,7 +48,7 @@ vim.opt.breakindent = true
 
 -- Save undo history
 vim.opt.undofile = true
-
+vim.opt.undodir = os.getenv("HOME") .. "/.nvim/undodir"
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
