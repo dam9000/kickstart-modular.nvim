@@ -19,6 +19,13 @@ return {
           'yaml',
           'sql',
           'toml',
+          'terraform',
+          'hcl',
+          'proto',
+          'json',
+          'make',
+          'go',
+          'rust',
         },
         -- Autoinstall languages that are not installed
         auto_install = true,

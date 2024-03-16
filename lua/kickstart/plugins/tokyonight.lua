@@ -7,9 +7,17 @@ return {
     'folke/tokyonight.nvim',
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
-    config = function()
+    opts = {
+      -- Replace this with your scheme-specific settings or remove to use the defaults
+      -- transparent = true,
+      style = 'moon', -- available variations: "storm, night, moon, day"
+    },
+    config = function(_, opts)
+      -- Load theme options here
+      require('tokyonight').setup(opts)
+
       -- Load the colorscheme here
-      vim.cmd.colorscheme 'tokyonight-moon'
+      vim.cmd.colorscheme 'tokyonight'
 
       -- You can configure highlights by doing something like
       -- vim.cmd.hi 'Comment gui=none'
