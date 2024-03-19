@@ -1,6 +1,4 @@
 -- [[ Setting options ]]
--- See `:help vim.o`
--- NOTE: You can change these options as you wish!
 
 -- Set highlight on search
 vim.o.hlsearch = false
@@ -12,8 +10,6 @@ vim.wo.number = true
 vim.o.mouse = 'a'
 
 -- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
 vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
@@ -47,4 +43,12 @@ vim.o.incsearch = true
 vim.o.relativenumber = true
 vim.o.number = true
 
+-- Neovide Configs
+if vim.g.neovide then
+  vim.o.guifont = "FiraCode Nerd Font Mono:h12"
+end
+
+-- Treesitter Based Folding
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 -- vim: ts=2 sts=2 sw=2 et
