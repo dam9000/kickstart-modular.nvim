@@ -63,4 +63,7 @@ vim.opt.cursorline = true
 -- Set termguicolors on, it's needed for solarized dark colorscheme
 vim.opt.termguicolors = true
 
+-- Set number of spaces for tab to 4 instead of 8
+vim.opt.tabstop = 4
+
 -- vim: ts=2 sts=2 sw=2 et
