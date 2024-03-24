@@ -1,5 +1,7 @@
+-- [[ Collection of various small independent plugins/modules ]]
+
 return {
-  { -- Collection of various small independent plugins/modules
+  {
     'echasnovski/mini.nvim',
     config = function()
       -- Better Around/Inside textobjects
@@ -36,4 +38,5 @@ return {
     end,
   },
 }
+
 -- vim: ts=2 sts=2 sw=2 et

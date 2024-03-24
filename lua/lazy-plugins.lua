@@ -75,6 +75,10 @@ require('lazy').setup {
 
   require 'custom.plugins.autopairs',
 
+  require 'custom.plugins.barbecue',
+
+  require 'custom.plugins.nvim-tree',
+
   -- require 'custom.plugins.solarized-dark',
 }
 
