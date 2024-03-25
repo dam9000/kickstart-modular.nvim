@@ -10,3 +10,8 @@ My NeoVim configuration started as a fork from [kickstart-modular.nvim](https://
 - Added nvim-tree plugin for configuring file explorer.
 - Replaced mini status line for lualine plugin.
 
+## Prerequisites
+- [ripgrep](https://github.com/BurntSushi/ripgrep) (Needed for Telescope Fuzzy Finder).
+- [xclip](https://linuxconfig.org/how-to-use-xclip-on-linux) (Needed for system clipboard support).
+- [npm/node](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (Needed to install certain plugins and tools).
+
