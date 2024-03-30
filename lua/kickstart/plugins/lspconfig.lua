@@ -22,10 +22,9 @@ return {
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-cmdline",
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-cmdline',
 
-      
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
       { 'j-hui/fidget.nvim', opts = {} },
@@ -183,7 +182,6 @@ return {
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
-
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
