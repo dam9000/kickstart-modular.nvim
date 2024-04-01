@@ -1,5 +1,8 @@
 -- [[ Configure File Explorer / Tree ]]
 
+vim.keymap.set('n', '<leader>to', ':NvimTreeOpen<CR>', { silent = true, desc = 'Open File Tree' })
+vim.keymap.set('n', '<leader>tc', ':NvimTreeClose<CR>', { silent = true, desc = 'Close File Tree' })
+
 return {
   'nvim-tree/nvim-tree.lua',
 

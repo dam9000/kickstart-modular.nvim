@@ -31,6 +31,7 @@ return {
         ['<leader>w'] = { name = '[W]indow', _ = 'which_key_ignore' },
         ['<leader>b'] = { name = '[B]uffer', _ = 'which_key_ignore' },
         ['<leader>o'] = { name = 'D[o]cument', _ = 'which_key_ignore' },
+        ['<leader>t'] = { name = 'Nvim[T]ree', _ = 'which_key_ignore' },
       }
     end,
   },

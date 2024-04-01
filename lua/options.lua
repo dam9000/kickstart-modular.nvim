@@ -1,13 +1,9 @@
 -- [[ Setting options ]]
--- See `:help vim.opt`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
 
 -- Make line numbers default
 vim.opt.number = true
 
--- You can also add relative line numbers, for help with jumping.
---  Experiment for yourself to see if you like it!
+--  Add relative line numbers
 vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
@@ -60,10 +56,12 @@ vim.opt.cursorline = true
 -- Highlight current line
 vim.opt.cursorline = true
 
--- Set termguicolors on, it's needed for solarized dark colorscheme
+-- Enable 24-bit color
 vim.opt.termguicolors = true
 
--- Set number of spaces for tab to 4 instead of 8
+-- Set configuration for tabs
 vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 
 -- vim: ts=2 sts=2 sw=2 et
