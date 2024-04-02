@@ -27,6 +27,8 @@ return {
       },
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
+      { 'ANGkeith/telescope-terraform-doc.nvim' },
+
       -- Useful for getting pretty icons, but requires a Nerd Font.
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     },
@@ -66,12 +68,21 @@ return {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
           },
+          ['terraform_doc'] = {
+            url_open_command = vim.fn.has 'macunix' and 'open' or 'xdg-open',
+            latest_provider_symbol = '  ',
+            wincmd = 'botright vnew',
+            wrap = 'nowrap',
+          },
         },
       }
 
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
+
+      -- Enable Telescope extension terraform_doc
+      pcall(require('telescope').load_extension, 'terraform_doc')
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
@@ -85,6 +96,9 @@ return {
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+
+      vim.api.nvim_set_keymap('n', '<space>ott', ':Telescope terraform_doc<CR>', { noremap = true, desc = '[O]pen [Telescope] [T]erraform Doc' })
+      vim.api.nvim_set_keymap('n', '<space>ota', ':Telescope terraform_doc full_name=hashicorp/aws<CR>', { noremap = true, desc = '[O]pen [Telescope] [A]ws' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
