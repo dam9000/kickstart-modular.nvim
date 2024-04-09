@@ -1,5 +1,4 @@
 return {
-  -- Plugin: David-Kunz/gen.nvim
   {
     'David-Kunz/gen.nvim',
     config = function()
@@ -14,6 +13,5 @@ return {
     end,
   },
 
-  -- Keymap: <leader>]
   vim.keymap.set({ 'n', 'v' }, '\\]', ':Gen<cr>', { desc = 'AI Interface via Ollama' }),
 }
