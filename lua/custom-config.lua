@@ -11,3 +11,5 @@ vim.api.nvim_create_autocmd('BufReadPost', {
   end,
   group = group,
 })
+
+vim.o.autochdir = true
