@@ -1,0 +1,31 @@
+--------------------------
+	wishlist:
+--------------------------
+
+- get rid of plugins that I don't use 
+- proper register usage - is there a plugin for this?
+
+- try out leap.nvim - dunno if it's worth it 
+
+- read :help ins-completion like the cmp documentation says so 
+
+
+--------------------------
+	in progress:
+--------------------------
+
+- figure out better buffer management
+	- the temporary solution to this is buffer_manager
+	- eventually pivot to harpoon
+
+--------------------------
+	done:
+--------------------------
+
+- setup shortcuts for oil and telescope
+	- done 
+	- oil opens with '-'
+	- telescope you can check with the plugin file - mappings throuhg leader key
+
+
+
