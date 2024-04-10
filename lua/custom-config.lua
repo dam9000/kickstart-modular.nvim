@@ -12,4 +12,10 @@ vim.api.nvim_create_autocmd('BufReadPost', {
   group = group,
 })
 
-vim.o.autochdir = true
+vim.keymap.set('n', ',e', ':e <C-R>=expand("%:p:h") .. "/"<CR>', { noremap = true })
+vim.keymap.set('n', ',t', ':tabe <C-R>=expand("%:p:h") .. "/"<CR>', { noremap = true })
+vim.keymap.set('n', ',s', ':split <C-R>=expand("%:p:h") .. "/"<CR>', { noremap = true })
+
+vim.keymap.set('n', '<leader>ee', 'oif err != nil {<CR>}<Esc>Oreturn err<Esc>')
+vim.keymap.set('n', '<C-k>', '<cmd>cnext<CR>zz')
+vim.keymap.set('n', '<C-j>', '<cmd>cprev<CR>zz')
