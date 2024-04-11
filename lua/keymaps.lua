@@ -48,4 +48,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- set tabs size for c, c++ files
+vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
+  pattern = { '*.c', '*.cpp', '*.h' },
+  command = 'setlocal autoindent expandtab tabstop=2 shiftwidth=2',
+})
 -- vim: ts=2 sts=2 sw=2 et
