@@ -29,7 +29,7 @@ return {
     end,
   },
 
-  vim.keymap.set('n', '\\f', ':Neotree left filesystem<cr>', { desc = '[F]ile explorer' }),
-  vim.keymap.set('n', '\\b', ':Neotree right buffers<cr>', { desc = 'List open [B]uffers' }),
+  vim.keymap.set('n', '\\f', ':Neotree current filesystem<cr>', { desc = '[F]ile explorer' }),
+  vim.keymap.set('n', '\\b', ':Neotree left buffers<cr>', { desc = 'List open [B]uffers' }),
   vim.keymap.set('n', '\\g', ':Neotree float git_status<cr>', { desc = 'Show [G]it status' }),
 }
