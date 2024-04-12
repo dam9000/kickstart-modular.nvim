@@ -22,7 +22,7 @@ require('lazy').setup({
   --  This is equivalent to:
   --    require('Comment').setup({})
 
-  -- "gc" to comment visual regions/lines
+  --  note to myself - gc is linewise comment, gb is blockwise comment
   { 'numToStr/Comment.nvim', opts = {} },
 
   -- modular approach: using `require 'path/name'` will
@@ -33,18 +33,29 @@ require('lazy').setup({
   -- Upon closer inspection it's not the author necssarily - but
   --  the author's setup and LazyVim
   --
-
   require 'kickstart/plugins/gitsigns',
   require 'kickstart/plugins/which-key',
   require 'kickstart/plugins/telescope',
   require 'kickstart/plugins/lspconfig',
+
+  -- code formatting
   require 'kickstart/plugins/conform',
+
+  -- autocomplete
   require 'kickstart/plugins/cmp',
+
+  -- cool colorscheme
   require 'kickstart/plugins/tokyonight',
   require 'kickstart/plugins/todo-comments',
+
+  -- " collection of small plugins"
   require 'kickstart/plugins/mini',
   require 'kickstart/plugins/treesitter',
 
+  -- smooth scrolling
+  -- take this out of custom plugins block because this was trampling over something else
+  -- i lied i don't think that was it ...
+  require 'custom/plugins/neoscroll',
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- place them in the correct locations.

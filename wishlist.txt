@@ -9,14 +9,16 @@
 
 - read :help ins-completion like the cmp documentation says so 
 
+- I don't know if this is worth it but there isn't a way to keep oil navigation saved between toggle
 
 --------------------------
 	in progress:
 --------------------------
 
 - figure out better buffer management
-	- the temporary solution to this is buffer_manager
 	- eventually pivot to harpoon
+	- still don't understand how this works ;-;
+
 
 --------------------------
 	done:
@@ -27,5 +29,9 @@
 	- oil opens with '-'
 	- telescope you can check with the plugin file - mappings throuhg leader key
 
-
+--------------------------
+	notes to myself
+--------------------------
+- something trampled over ctrl-y, i wonder what? but it seems to have resolved itself
+- toggle harpoon, don't ctrl-c
 
