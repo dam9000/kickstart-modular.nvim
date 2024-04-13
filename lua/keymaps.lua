@@ -6,10 +6,10 @@ vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
+vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, { desc = 'Go to [P]revious [D]iagnostic message' })
+vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, { desc = 'Go to [N]ext [D]iagnostic message' })
 vim.keymap.set('n', '<leader>dm', vim.diagnostic.open_float, { desc = 'Show [D]iagnostic error [M]essages' })
-vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Open [D]iagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, { desc = 'Open [D]iagnostic quickfix [L]ist' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -42,35 +42,33 @@ vim.keymap.set('v', '<', '<gv', { silent = true })
 vim.keymap.set('v', '>', '>gv', { silent = true })
 
 -- Move lines up and down with vim motions
-vim.keymap.set('n', 'K', ':m .-2<CR>==', { silent = true, desc = 'Move line up in normal mode' })
-vim.keymap.set('n', 'J', ':m .+1<CR>==', { silent = true, desc = 'Move line down in normal mode' })
-vim.keymap.set('x', 'K', ":move '<-2<CR>gv=gv", { silent = true, desc = 'Move line up in visual mode' })
-vim.keymap.set('x', 'J', ":move '>+1<CR>gv=gv", { silent = true, desc = 'Move line down in visual mode' })
+vim.keymap.set('n', 'K', ':m .-2<CR>==', { desc = 'Move line up in normal mode' })
+vim.keymap.set('n', 'J', ':m .+1<CR>==', { desc = 'Move line down in normal mode' })
+vim.keymap.set('x', 'K', ":move '<-2<CR>gv=gv", { desc = 'Move line up in visual mode' })
+vim.keymap.set('x', 'J', ":move '>+1<CR>gv=gv", { desc = 'Move line down in visual mode' })
 
 -- Resize windows with vim motions (Linux)
-vim.keymap.set('n', '<C-A-k>', ':resize +2<CR>', { silent = true, desc = 'Increase window size vertically' })
-vim.keymap.set('n', '<C-A-j>', ':resize -2<CR>', { silent = true, desc = 'Decrease window size vertically' })
-vim.keymap.set('n', '<C-A-h>', ':vertical resize -2<CR>', { silent = true, desc = 'Decrease window size horizontally' })
-vim.keymap.set('n', '<C-A-l>', ':vertical resize +2<CR>', { silent = true, desc = 'Increase window size horizontally' })
+vim.keymap.set('n', '<C-A-k>', ':resize +2<CR>', { desc = 'Increase window size vertically' })
+vim.keymap.set('n', '<C-A-j>', ':resize -2<CR>', { desc = 'Decrease window size vertically' })
+vim.keymap.set('n', '<C-A-h>', ':vertical resize -2<CR>', { desc = 'Decrease window size horizontally' })
+vim.keymap.set('n', '<C-A-l>', ':vertical resize +2<CR>', { desc = 'Increase window size horizontally' })
 
 -- Resize windows with vim motions (MacOs)
--- vim.keymap.set('n', '<C-S-k>', ':resize +2<CR>', { silent = true, desc = 'Increase window size vertically' })
--- vim.keymap.set('n', '<C-S-j>', ':resize -2<CR>', { silent = true, desc = 'Decrease window size vertically' })
--- vim.keymap.set('n', '<C-S-h>', ':vertical resize -2<CR>', { silent = true, desc = 'Decrease window size horizontally' })
--- vim.keymap.set('n', '<C-S-l>', ':vertical resize +2<CR>', { silent = true, desc = 'Increase window size horizontally' })
-
--- Mappings for NetRW
-vim.keymap.set('n', '<leader>ex', ':Ex<CR>', { desc = 'Exit buffer back to NetRW' })
+-- vim.keymap.set('n', '<C-S-k>', ':resize +2<CR>', { desc = 'Increase window size vertically' })
+-- vim.keymap.set('n', '<C-S-j>', ':resize -2<CR>', { desc = 'Decrease window size vertically' })
+-- vim.keymap.set('n', '<C-S-h>', ':vertical resize -2<CR>', { desc = 'Decrease window size horizontally' })
+-- vim.keymap.set('n', '<C-S-l>', ':vertical resize +2<CR>', { desc = 'Increase window size horizontally' })
 
 -- Mappings to manage buffers
-vim.keymap.set('n', '<leader>bn', ':bnext<CR>', { desc = 'Go to next buffer' })
-vim.keymap.set('n', '<leader>bp', ':bprevious<CR>', { desc = 'Go to previous buffer' })
-vim.keymap.set('n', '<leader>bd', ':bdelete<CR>', { desc = 'Close current buffer' })
+vim.keymap.set('n', '<leader>bn', ':bnext<CR>', { desc = 'Go to [N]ext [B]uffer' })
+vim.keymap.set('n', '<leader>bp', ':bprevious<CR>', { desc = 'Go to [P]revious [B]uffer' })
+vim.keymap.set('n', '<leader>bd', ':bdelete<CR>', { desc = '[D]elete current [B]uffer' })
 
 -- Mappings to manage windows
-vim.keymap.set('n', '<leader>ws', '<C-W>s', { desc = 'Split current window horizontally' })
-vim.keymap.set('n', '<leader>wv', '<C-W>v', { desc = 'Split current window vertically' })
-vim.keymap.set('n', '<leader>wq', '<C-W>q', { desc = 'Close current window' })
+vim.keymap.set('n', '<leader>wh', '<C-W>s', { desc = 'Split [W]indow [H]orizontally' })
+vim.keymap.set('n', '<leader>wv', '<C-W>v', { desc = 'Split [W]indow [V]ertically' })
+vim.keymap.set('n', '<leader>we', '<C-W>=', { desc = 'Make split [W]indows [E]qual width' })
+vim.keymap.set('n', '<leader>wq', '<C-W>q', { desc = '[Q]uit current [W]indow' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`

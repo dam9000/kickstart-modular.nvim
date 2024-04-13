@@ -64,4 +64,7 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 
+-- Set vertical line for code line limit
+vim.opt.colorcolumn = '120'
+
 -- vim: ts=2 sts=2 sw=2 et

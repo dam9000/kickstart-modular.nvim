@@ -1,7 +1,9 @@
 -- [[ Configure File Explorer / Tree ]]
 
-vim.keymap.set('n', '<leader>to', ':NvimTreeOpen<CR>', { silent = true, desc = 'Open File Tree' })
-vim.keymap.set('n', '<leader>tc', ':NvimTreeClose<CR>', { silent = true, desc = 'Close File Tree' })
+vim.keymap.set('n', '<leader>eo', ':NvimTreeOpen<CR>', { desc = '[O]pen File [E]xplorer' })
+vim.keymap.set('n', '<leader>ec', ':NvimTreeClose<CR>', { desc = '[C]lose File [E]xplorer' })
+vim.keymap.set('n', '<leader>ee', ':NvimTreeToggle<CR>', { desc = '[F]ocues File [E]xplorer' })
+vim.keymap.set('n', '<leader>ef', ':NvimTreeFocus<CR>', { desc = 'Toggl[e] File [E]xplorer' })
 
 return {
   'nvim-tree/nvim-tree.lua',
