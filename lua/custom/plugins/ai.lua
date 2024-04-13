@@ -5,30 +5,26 @@ return {
       'nvim-lua/plenary.nvim',
     },
 
-    -- All the user commands added by the plugin
     cmd = { 'Ollama', 'OllamaModel', 'OllamaServe', 'OllamaServeStop' },
 
     keys = {
-      -- Sample keybind for prompt menu. Note that the <c-u> is important for selections to work properly.
       {
         '\\"',
         ":<c-u>lua require('ollama').prompt()<cr>",
-        desc = 'ollama prompt',
+        desc = 'Ollama Prompt',
         mode = { 'n', 'v' },
       },
 
-      -- Sample keybind for direct prompting. Note that the <c-u> is important for selections to work properly.
       {
         "\\'",
         ":<c-u>lua require('ollama').prompt('Generate_Code')<cr>",
-        desc = 'ollama Generate Code',
+        desc = 'Ollama Generate Code',
         mode = { 'n', 'v' },
       },
     },
 
     ---@type Ollama.Config
     opts = {
-      -- your configuration overrides
       model = 'gemma:7b',
       url = 'http://192.168.4.28:11434',
     },
@@ -40,8 +36,8 @@ return {
     config = function()
       require('copilot').setup {
         panel = {
-          enabled = false,
-          auto_refresh = false,
+          enabled = true,
+          auto_refresh = true,
           keymap = {
             jump_prev = '[[',
             jump_next = ']]',
@@ -56,7 +52,7 @@ return {
         },
         suggestion = {
           enabled = false,
-          auto_trigger = true,
+          auto_trigger = false,
           debounce = 75,
           keymap = {
             accept = false,
@@ -68,13 +64,9 @@ return {
           },
         },
         filetypes = {
-          help = false,
-          gitcommit = false,
-          gitrebase = false,
-          hgcommit = false,
-          svn = false,
-          cvs = false,
-          ['.'] = false,
+          go = true,
+          typescript = true,
+          ['*'] = false,
         },
         copilot_node_command = 'node', -- Node.js version must be > 16.x
         server_opts_overrides = {},
