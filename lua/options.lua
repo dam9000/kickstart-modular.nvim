@@ -74,18 +74,7 @@ vim.g.neovide_padding_left = 10
 vim.g.neovide_padding_right = 10
 vim.g.neovide_hide_mouse_when_typing = true
 vim.g.neovide_theme = 'dark'
-vim.o.guifont = 'Hack Nerd Font'
-
--- Vim-Go Options
-vim.g.go_metalinter_enabled = { 'vet', 'golint', 'errcheck' }
-vim.g.go_metalinter_autosave_enabled = { 'vet', 'golint', 'errcheck' }
-vim.g.go_metalinter_autosave = 1
-vim.g.go_auto_type_info = 1
--- vim.g.go_term_enabled = 1
--- vim.g.go_term_mode = 'split'
--- vim.g.go_term_reuse = 1
--- vim.g.go_term_close_on_exit = 0
--- vim.g.go_term_height = 10
+vim.o.guifont = 'JetBrainsMono_Nerd_Font:h12'
 
 -- Like 'gf', but if the file doesn't exist, open Telescope with the filename
 -- as the default text

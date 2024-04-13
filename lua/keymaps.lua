@@ -28,7 +28,7 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('n', '\\p', ':Telescope neovim-project discover<cr>', { desc = '[P]project explorer' })
+vim.keymap.set('n', '\\p', '<cmd>Telescope neovim-project discover<cr>', { desc = '[P]project explorer' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -46,6 +46,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- [[ Custom Keymaps, non-plugin specific ]]
 vim.keymap.set('n', '<leader>j', '*``cgn', { desc = 'Multi-cursor replace' })
-vim.keymap.set('n', '\\B', ':BufOnly<cr>', { desc = 'Close all other [B]uffers' })
+vim.keymap.set('n', '\\B', '<cmd>BufOnly<cr>', { desc = 'Close all other [B]uffers' })
 
 -- vim: ts=2 sts=2 sw=2 et

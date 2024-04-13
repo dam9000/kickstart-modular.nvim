@@ -14,5 +14,5 @@ return {
     },
   },
 
-  vim.keymap.set('n', '<A-i>', ':ToggleTerm direction=horizontal<cr>', { desc = 'Toggle a floating terminal' }),
+  vim.keymap.set('n', '<A-i>', '<cmd>ToggleTerm direction=horizontal<cr>', { desc = 'Toggle a floating terminal' }),
 }
