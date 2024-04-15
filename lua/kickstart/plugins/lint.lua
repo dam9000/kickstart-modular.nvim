@@ -9,7 +9,7 @@ return {
         markdown = { 'markdownlint' },
         terraform = { 'tflint' },
         dockerfile = { 'hadolint' },
-        json = { 'jsonlint ' },
+        json = { 'jsonlint' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
