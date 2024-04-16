@@ -45,6 +45,11 @@ return {
       },
     }
 
+    if vim.fn.filereadable '.vscode/launch.json' then
+      require('dap.ext.vscode').load_launchjs()
+    end
+    -- vim.lsp.buffer_mappings.normal_mode['<leader>dc'] = { continue, 'Start/Continue debug' }
+
     -- Basic debugging keymaps, feel free to change to your liking!
     vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Debug: Start/Continue' })
     vim.keymap.set('n', '<F1>', dap.step_into, { desc = 'Debug: Step Into' })
