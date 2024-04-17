@@ -6,6 +6,9 @@ return {
       {
         '<leader>f',
         function()
+          require('conform').formatters.sql_formatter = {
+            prepend_args = { '-c', vim.fn.expand '~/.config/sql_formatter.json' },
+          }
           require('conform').format { async = true, lsp_fallback = true }
         end,
         mode = '',
@@ -26,6 +29,8 @@ return {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        json = { 'jq' },
+        sql = { 'sql_formatter' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
