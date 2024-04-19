@@ -3,6 +3,6 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-    "github/copilot.vim",
-    "gpanders/editorconfig.nvim",
+  'github/copilot.vim',
+  'gpanders/editorconfig.nvim',
 }
