@@ -1,3 +1,3 @@
 return {
-  'gpanders/editorconfig.nvim',
+   'gpanders/editorconfig.nvim',
 }

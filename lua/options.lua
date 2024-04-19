@@ -80,16 +80,16 @@ vim.o.guifont = 'JetBrainsMono_Nerd_Font:h12'
 -- as the default text
 -- Credit: justabubble123 on Discord
 local function gf_telescope(cmd)
-  local file = vim.fn.expand '<cfile>'
-  if not file or file == '' then
-    return
-  end
-  ---@diagnostic disable-next-line: param-type-mismatch
-  if not vim.loop.fs_stat(file) then
-    require('telescope.builtin').find_files { default_text = file }
-    return
-  end
-  vim.cmd((cmd or 'edit') .. ' ' .. file)
+   local file = vim.fn.expand('<cfile>')
+   if not file or file == '' then
+      return
+   end
+   ---@diagnostic disable-next-line: param-type-mismatch
+   if not vim.loop.fs_stat(file) then
+      require('telescope.builtin').find_files({ default_text = file })
+      return
+   end
+   vim.cmd((cmd or 'edit') .. ' ' .. file)
 end
 
 vim.keymap.set('n', 'gf', gf_telescope, { desc = 'Go to file under cursor' })
