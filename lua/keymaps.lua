@@ -3,7 +3,7 @@
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<cr>')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
@@ -48,5 +48,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- [[ Custom Keymaps, non-plugin specific ]]
 vim.keymap.set('n', '<leader>j', '*``cgn', { desc = 'Multi-cursor replace' })
 vim.keymap.set('n', '\\B', '<cmd>BufOnly<cr>', { desc = 'Close all other [B]uffers' })
-
+vim.keymap.set('n', '\\b', '<cmd>Telescope buffers<cr>', { desc = 'List open [B]uffers' })
+vim.keymap.set('n', '\\f', '<cmd>Telescope fd<cr>', { desc = '[F]ile explorer' })
 -- vim: ts=2 sts=2 sw=2 et
