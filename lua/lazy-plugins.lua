@@ -11,6 +11,7 @@ require('lazy').setup {
 
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'github/copilot.vim', -- Github copilot plugin
 
   -- NOTE: Plugins can also be added by using a table, with the first argument being
   -- the link and the following the plugin configuration.
@@ -42,9 +43,6 @@ require('lazy').setup {
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   { import = 'custom.plugins' },
-
-  -- Github copilot plugin, only use in work machine as I don't pay copilot for myself.
-  { 'github/copilot.vim', opts = {} },
 }
 
 -- vim: ts=2 sts=2 sw=2 et
