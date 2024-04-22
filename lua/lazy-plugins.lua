@@ -1,12 +1,10 @@
 -- [[ Configure and install plugins ]]
 
---  To check the current status of your plugins, run
---    :Lazy
+--  To check the current status of your plugins, run `:Lazy`
 
---  You can press `?` in this menu for help. Use `:q` to close the window
+--  You can press `?` in this menu for help.
 
---  To update plugins, you can run
---    :Lazy update
+--  To update plugins, you can run `:Lazy update`
 
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup {
@@ -44,6 +42,9 @@ require('lazy').setup {
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   { import = 'custom.plugins' },
+
+  -- Github copilot plugin, only use in work machine as I don't pay copilot for myself.
+  { 'github/copilot.vim', opts = {} },
 }
 
 -- vim: ts=2 sts=2 sw=2 et
