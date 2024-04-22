@@ -17,8 +17,12 @@ vim.opt.showmode = false
 --  See `:help 'clipboard'`
 vim.opt.clipboard = 'unnamedplus'
 
--- Enable break indent
+-- Keeps indentation when wrapping lines for not fitting on the window
+-- See `:help wrap`
 vim.opt.breakindent = true
+
+-- Enable wrapping lines by whole words
+vim.opt.linebreak = true
 
 -- Save undo history
 vim.opt.undofile = true
@@ -53,16 +57,15 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 -- vim.opt.scrolloff = 10
 
--- Highlight current line
-vim.opt.cursorline = true
-
 -- Enable 24-bit color
 vim.opt.termguicolors = true
 
 -- Set configuration for tabs
+-- See `:help tabstop`
 vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.softtabstop = 4
 
 -- Set vertical line for code line limit
 vim.opt.colorcolumn = '120'

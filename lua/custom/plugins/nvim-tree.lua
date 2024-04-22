@@ -2,8 +2,8 @@
 
 vim.keymap.set('n', '<leader>eo', ':NvimTreeOpen<CR>', { desc = '[O]pen File [E]xplorer' })
 vim.keymap.set('n', '<leader>ec', ':NvimTreeClose<CR>', { desc = '[C]lose File [E]xplorer' })
-vim.keymap.set('n', '<leader>ee', ':NvimTreeToggle<CR>', { desc = '[F]ocues File [E]xplorer' })
-vim.keymap.set('n', '<leader>ef', ':NvimTreeFocus<CR>', { desc = 'Toggl[e] File [E]xplorer' })
+vim.keymap.set('n', '<leader>ee', ':NvimTreeToggle<CR>', { desc = 'Toggl[e] File [E]xplorer' })
+vim.keymap.set('n', '<leader>ef', ':NvimTreeFocus<CR>', { desc = '[F]ocus File [E]xplorer' })
 
 return {
   'nvim-tree/nvim-tree.lua',
@@ -15,10 +15,12 @@ return {
   opts = {
     actions = {
       open_file = {
-        window_picker = {
-          enable = false,
-        },
+        window_picker = { enable = false },
       },
+    },
+    view = {
+      preserve_window_proportions = true,
+      width = 40,
     },
   },
 
