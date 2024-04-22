@@ -210,6 +210,10 @@ return {
         'debugpy',
         'black',
         'isort',
+        'sqlfmt',
+        'golines',
+        'buf',
+        'yamlfmt',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

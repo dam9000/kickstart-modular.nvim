@@ -17,6 +17,14 @@ return {
 
         -- You can use a sub-list to tell conform to run *until* a formatter is found.
         -- javascript = { { "prettierd", "prettier" } },
+        --
+        rust = { 'rustfmt' },
+        go = { 'goimports', 'golines', 'gofmt' },
+        sql = { 'sqlfmt' },
+        protobuf = { 'buf' },
+        terraform = { 'terraform_fmt' },
+        yaml = { 'yamlfmt' },
+        json = { 'jq' },
       },
     },
   },
