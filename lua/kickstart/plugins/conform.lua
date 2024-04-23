@@ -23,7 +23,6 @@ return {
         sql = { 'sqlfmt' },
         protobuf = { 'buf' },
         terraform = { 'terraform_fmt' },
-        yaml = { 'yamlfmt' },
         json = { 'jq' },
       },
     },
