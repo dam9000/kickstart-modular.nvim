@@ -12,6 +12,6 @@ return {
          vim.wo.wrap = false
          vim.wo.number = true
          vim.wo.rnu = true
-      end)
+      end, { desc = 'Toggle [Z]en mode', noremap = true, silent = true })
    end,
 }

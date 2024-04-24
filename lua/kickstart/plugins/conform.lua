@@ -31,6 +31,7 @@ return {
             lua = { 'stylua' },
             json = { 'jq' },
             sql = { 'sql_formatter' },
+            sh = { 'beautysh' },
             -- Conform can also run multiple formatters sequentially
             -- python = { "isort", "black" },
             --

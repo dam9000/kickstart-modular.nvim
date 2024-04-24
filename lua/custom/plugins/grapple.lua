@@ -5,7 +5,7 @@ return {
          scope = 'git_branch',
       },
       keys = {
-         { '<C-;>', '<cmd>Grapple toggle<cr>', desc = 'Tag a file' },
+         { '<C-a>', '<cmd>Grapple toggle<cr>', desc = 'T[a]g a file' },
          { ';', '<cmd>Grapple toggle_tags<cr>', desc = 'Show tags menu' },
          -- { '<C-h>', '<cmd>Grapple cycle_tags next<cr>', desc = 'Cycle next tag' },
          -- { '<C-j>', '<cmd>Grapple cycle_tags prev<cr>', desc = 'Cycle previous tag' },
