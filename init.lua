@@ -54,17 +54,17 @@ vim.g.maplocalleader = ' '
 vim.g.python3_host_prog = '/Users/enrique.delgado/.pyenv/versions/py3.10-nvim/bin/python'
 
 -- Enable Copilot for specific filetypes_list
-vim.g.copilot_filetypes = {
-  markdown = true,
-  python = true,
-  go = true,
-  yaml = true,
-  json = true,
-  toml = true,
-  lua = true,
-  rust = true,
-  sql = true,
-}
+-- vim.g.copilot_filetypes = {
+--   markdown = true,
+--   python = true,
+--   go = true,
+--   yaml = true,
+--   json = true,
+--   toml = true,
+--   lua = true,
+--   rust = true,
+--   sql = true,
+-- }
 
 -- [[ Setting options ]]
 require 'options'
