@@ -19,7 +19,7 @@ return {
     'williamboman/mason.nvim',
     'jay-babu/mason-nvim-dap.nvim',
 
-    -- Add your own debuggers here
+    -- Adds your own debuggers
     'leoluz/nvim-dap-go',
   },
 

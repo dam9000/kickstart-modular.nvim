@@ -17,8 +17,12 @@ vim.opt.showmode = false
 --  See `:help 'clipboard'`
 vim.opt.clipboard = 'unnamedplus'
 
--- Enable break indent
+-- Keeps indentation when wrapping lines for not fitting on the window
+-- See `:help wrap`
 vim.opt.breakindent = true
+
+-- Enable wrapping lines by whole words
+vim.opt.linebreak = true
 
 -- Save undo history
 vim.opt.undofile = true

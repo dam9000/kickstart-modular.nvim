@@ -55,33 +55,36 @@ return {
           -- In this case, we create a function that lets us more easily define mappings specific
           -- for LSP related items. It sets the mode, buffer and description for us each time.
           local map = function(keys, func, desc)
-            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = desc })
           end
 
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-T>.
-          map('<leader>gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          map('<leader>se', require('telescope.builtin').lsp_definitions, '[S]earch D[e]finitions')
 
           -- Find references for the word under your cursor.
-          map('<leader>gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+          map('<leader>sr', require('telescope.builtin').lsp_references, '[S]earch [R]eferences')
 
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
-          map('<leader>gi', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+          map('<leader>si', require('telescope.builtin').lsp_implementations, '[S]earch [I]mplementations')
 
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header
           map('<leader>gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
+          -- Jump to the definition of the symbol under your cursor.
+          map('<leader>gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+
           -- Jump to the type of the word under your cursor.
           --  Useful when you're not sure what type a variable is and you want to see
           --  the definition of its type, not where it was defined.
-          map('<leader>gt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype definition')
+          map('<leader>st', require('telescope.builtin').lsp_type_definitions, '[S]earch [T]ype definition')
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map('<leader>sy', require('telescope.builtin').lsp_document_symbols, '[S]earch S[y]mbols')
+          map('<leader>sy', require('telescope.builtin').lsp_document_symbols, '[S]earch Document S[y]mbols')
 
           -- Fuzzy find all the symbols in your current workspace
           --  Similar to document symbols, except searches over your whole project.
@@ -89,17 +92,17 @@ return {
 
           -- Rename the variable under your cursor
           --  Most Language Servers support renaming across files, etc.
-          map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+          map('<leader>lr', vim.lsp.buf.rename, '[R]ename all references')
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
-          map('<leader>ga', vim.lsp.buf.code_action, 'Execute a code [A]ction')
+          map('<leader>la', vim.lsp.buf.code_action, 'Execute a code [A]ction')
 
-          -- Opens a popup that displays documentation about the word under your cursor
-          --  See `:help K` for why this keymap
-          map('<leader>gh', vim.lsp.buf.hover, 'Display [H]over documentation')
+          -- Displays hover information about the symbol under the cursor.
+          map('<leader>lh', vim.lsp.buf.hover, 'Display [H]over information')
 
-          map('<leader>gh', vim.lsp.buf.signature_help, '[G]oto [H]elp')
+          -- Displays signature information about the symbol under the cursor.
+          map('<leader>ls', vim.lsp.buf.signature_help, 'Display [S]ignature information')
 
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
@@ -158,6 +161,7 @@ return {
         tflint = {},
         bufls = {},
         sqlls = {},
+        dockerls = {},
 
         lua_ls = {
           -- cmd = {...},
@@ -206,6 +210,10 @@ return {
         'debugpy',
         'black',
         'isort',
+        'sqlfmt',
+        'golines',
+        'buf',
+        'yamlfmt',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

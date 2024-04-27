@@ -60,9 +60,10 @@ vim.keymap.set('n', '<C-A-l>', ':vertical resize +2<CR>', { desc = 'Increase win
 -- vim.keymap.set('n', '<C-S-l>', ':vertical resize +2<CR>', { desc = 'Increase window size horizontally' })
 
 -- Mappings to manage buffers
-vim.keymap.set('n', '<leader>bn', ':bnext<CR>', { desc = 'Go to [N]ext [B]uffer' })
-vim.keymap.set('n', '<leader>bp', ':bprevious<CR>', { desc = 'Go to [P]revious [B]uffer' })
-vim.keymap.set('n', '<leader>bd', ':bdelete<CR>', { desc = '[D]elete current [B]uffer' })
+vim.keymap.set('n', '<leader>bn', ':bnext<CR>', { desc = 'Goto [N]ext [B]uffer' })
+vim.keymap.set('n', '<leader>bp', ':bprevious<CR>', { desc = 'Goto [P]revious [B]uffer' })
+vim.keymap.set('n', '<leader>bd', ':bd|edit#<CR>', { desc = '[D]elete current [B]uffer' })
+vim.keymap.set('n', '<leader>ba', ':%bd|edit#|bd#<CR>', { desc = 'Delete [A]ll [B]uffers except current' })
 
 -- Mappings to manage windows
 vim.keymap.set('n', '<leader>wh', '<C-W>s', { desc = 'Split [W]indow [H]orizontally' })
@@ -70,17 +71,32 @@ vim.keymap.set('n', '<leader>wv', '<C-W>v', { desc = 'Split [W]indow [V]erticall
 vim.keymap.set('n', '<leader>we', '<C-W>=', { desc = 'Make split [W]indows [E]qual width' })
 vim.keymap.set('n', '<leader>wq', '<C-W>q', { desc = '[Q]uit current [W]indow' })
 
+-- Copilot keymaps
+-- vim.keymap.set('i', '<S-l>', '<Plug>(copilot-accept-word)', { desc = 'Accept Copilot next word suggestion' })
+-- vim.keymap.set('i', '<C-S-l>', '<Plug>(copilot-accept-line)', { desc = 'Accept Copilot next line suggestion' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
 -- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
   callback = function()
     vim.highlight.on_yank()
+  end,
+})
+
+-- Open help window in a vertical split to the right
+vim.api.nvim_create_autocmd('BufWinEnter', {
+  desc = 'Open help window in a vertical split to the right',
+  group = vim.api.nvim_create_augroup('help-window-right', { clear = true }),
+  pattern = { '*.txt' },
+  callback = function()
+    if vim.bo.filetype == 'help' then
+      vim.cmd.wincmd 'L'
+    end
   end,
 })
 
