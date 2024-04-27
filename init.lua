@@ -51,7 +51,7 @@ vim.g.maplocalleader = ' '
 
 -- Assign a virtualenv for Neovim so that the `pynvim` package is not required for each virtualenv
 -- See `:help provider-python`
-vim.g.python3_host_prog = '/Users/enrique.delgado/.pyenv/versions/py3.10-nvim/bin/python'
+vim.g.python3_host_prog = '/home/eaperezd/.pyenv/versions/py3.11-nvim/bin/python'
 
 -- Enable Copilot for specific filetypes_list
 -- vim.g.copilot_filetypes = {
@@ -65,6 +65,9 @@ vim.g.python3_host_prog = '/Users/enrique.delgado/.pyenv/versions/py3.10-nvim/bi
 --   rust = true,
 --   sql = true,
 -- }
+
+-- Set to true if you have a Nerd Font installed and selected in the terminal
+vim.g.have_nerd_font = false
 
 -- [[ Setting options ]]
 require 'options'
