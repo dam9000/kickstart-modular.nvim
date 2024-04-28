@@ -106,7 +106,8 @@ return {
           -- or a suggestion from your LSP for this to activate.
           map('<leader>la', vim.lsp.buf.code_action, 'Execute a code [A]ction')
 
-          -- Displays hover information about the symbol under the cursor.
+          -- Displays an information window about the symbol under the cursor.
+          -- Using keymap twice jumps the cursor into the information window.
           map('<leader>lh', vim.lsp.buf.hover, 'Display [H]over information')
 
           -- Displays signature information about the symbol under the cursor.
