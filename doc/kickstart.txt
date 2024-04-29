@@ -1,14 +1,14 @@
-================================================================================
-INTRODUCTION                                                  *kickstart.nvim*
+=============================================================================
+INTRODUCTION                                             *kickstart.nvim*
 
 Kickstart.nvim is a project to help you get started on your neovim journey.
 
-                                                            *kickstart-is-not*
+                                                         *kickstart-is-not*
 It is not:
 - Complete framework for every plugin under the sun
 - Place to add every plugin that could ever be useful
 
-                                                                *kickstart-is*
+                                                         *kickstart-is*
 It is:
 - Somewhere that has a good start for the most common "IDE" type features:
     - autocompletion
@@ -20,5 +20,32 @@ It is:
     - You should fork this project and use/modify it so that it matches your
       style and preferences. If you don't want to do that, there are probably
       other projects that would fit much better for you (and that's great!)!
+
+=============================================================================
+PLUGINS                                                  *kickstart.plugins*
+
+Plugins can also be configured to run lua code when they are loaded.
+
+This is often very useful to both group configuration, as well as handle
+lazy loading plugins that don't need to be loaded immediately at startup.
+
+For example, we can use: `event = 'VimEnter'` to load a plugin before all the
+UI elements are loaded.
+Events can be normal autocommands events, see `:help autocmd-events`.
+
+                                                         *kickstart-lazy*
+See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
+
+To check the current status of your plugins, run `:Lazy`
+You can press `?` in this menu for help.
+To update plugins, you can run `:Lazy update`
+
+For additional information on how to structure your plugins, see
+`:help lazy.nvim-lazy.nvim-structuring-your-plugins`
+
+=============================================================================
+CHECKHEALTH                                              *kickstart.checkhealth*
+
+To check the health of your neovim installation, run `:checkhealth`
 
  vim:tw=78:ts=8:ft=help:norl:
