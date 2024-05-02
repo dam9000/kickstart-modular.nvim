@@ -1,4 +1,4 @@
--- [[ Configure and install plugins ]]
+-- [[ Install plugins ]]
 
 require('lazy').setup {
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
@@ -8,12 +8,11 @@ require('lazy').setup {
   -- NOTE: Plugins can also be added by using a table, with the first argument being
   -- the link and the following the plugin configuration.
   -- Use `opts = {}` to force a plugin to be loaded.
-  --  This is equivalent to:
-  --    require('Comment').setup({})
+  -- This is equivalent to: `require('Comment').setup({})`.
   { 'numToStr/Comment.nvim', opts = {} }, -- "gc" to comment visual regions/lines
 
-  -- NOTE: modular approach: using `require 'path/name'` will include a plugin
-  -- definition from file lua/path/name.lua
+  -- NOTE: Modular approach is using `require 'path/name'` to include a plugin
+  -- definition from file `lua/path/name.lua`.
   require 'kickstart/plugins/gitsigns',
   require 'kickstart/plugins/which-key',
   require 'kickstart/plugins/telescope',

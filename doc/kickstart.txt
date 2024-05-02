@@ -22,8 +22,20 @@ It is:
       other projects that would fit much better for you (and that's great!)!
 
 =============================================================================
-PLUGINS                                                  *kickstart.plugins*
+PLUGINS                                                  *kickstart-plugins*
 
+This config uses `lazy.nvim` to manage plugins.
+
+See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info.
+
+To check the current status of your plugins, run `:Lazy`.
+You can press `?` in this menu for help.
+To update plugins, you can run `:Lazy update`.
+
+For additional information on how to structure your plugins, see
+`:help lazy.nvim-lazy.nvim-structuring-your-plugins`.
+
+                                                         *kickstart-plugins-loading*
 Plugins can also be configured to run lua code when they are loaded.
 
 This is often very useful to both group configuration, as well as handle
@@ -33,15 +45,18 @@ For example, we can use: `event = 'VimEnter'` to load a plugin before all the
 UI elements are loaded.
 Events can be normal autocommands events, see `:help autocmd-events`.
 
-                                                         *kickstart-lazy*
-See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
+                                                         *kickstart-plugins-dependencies*
+Plugins can specify dependencies.
 
-To check the current status of your plugins, run `:Lazy`
-You can press `?` in this menu for help.
-To update plugins, you can run `:Lazy update`
+The dependencies are proper plugin specifications as well, so anything
+you do for a plugin at the top level, you can do for a dependency.
+Use the 'dependencies' key to specify the dependencies of a particular plugin.
 
-For additional information on how to structure your plugins, see
-`:help lazy.nvim-lazy.nvim-structuring-your-plugins`
+=============================================================================
+LSP                                                      *kickstart-lsp*
+
+To check the current status of installed tools and/or manually install other
+tools, you can run `:Mason` and then press `g?` for help within this menu.
 
 =============================================================================
 CHECKHEALTH                                              *kickstart.checkhealth*
