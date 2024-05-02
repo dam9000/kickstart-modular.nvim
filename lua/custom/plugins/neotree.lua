@@ -16,7 +16,7 @@ return {
                   ['s'] = 'open_split',
                   ['S'] = 'open_vsplit',
                },
-               width = 30,
+               width = 40,
             },
             filesystem = {
                filtered_items = {
@@ -31,5 +31,5 @@ return {
    },
 
    vim.keymap.set('n', '\\f', '<cmd>Neotree left filesystem<cr>', { desc = '[F]ile explorer' }),
-   vim.keymap.set('n', '\\b', '<cmd>Neotree right buffers<cr>', { desc = 'List open [B]uffers' }),
+   vim.keymap.set('n', '\\b', '<cmd>Neotree float buffers<cr>', { desc = 'List open [B]uffers' }),
 }

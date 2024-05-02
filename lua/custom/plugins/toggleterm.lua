@@ -7,8 +7,8 @@ return {
          size = 20,
          float_opts = {
             border = 'curved',
-            width = 100,
-            height = 30,
+            width = 120,
+            height = 40,
             title_pos = 'left',
          },
       },
