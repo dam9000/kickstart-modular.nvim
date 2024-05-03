@@ -72,7 +72,7 @@ vim.keymap.set('n', '<leader>we', '<C-W>=', { desc = 'Make split [W]indows [E]qu
 vim.keymap.set('n', '<leader>wq', '<C-W>q', { desc = '[Q]uit current [W]indow' })
 
 -- Copilot keymaps
-vim.keymap.set('i', '<C-¬>', '<Plug>(copilot-accept-word)', { desc = 'Accept Copilot next word suggestion' })
+vim.keymap.set('i', '<C-S-h>', '<Plug>(copilot-accept-word)', { desc = 'Accept Copilot next word suggestion' })
 vim.keymap.set('i', '<C-S-l>', '<Plug>(copilot-accept-line)', { desc = 'Accept Copilot next line suggestion' })
 
 -- [[ Basic Autocommands ]]

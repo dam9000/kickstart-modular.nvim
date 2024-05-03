@@ -175,7 +175,6 @@ return {
         'debugpy',
         'black',
         'isort',
-        'sqlfmt',
         'golines',
         'buf',
         'yamlfmt',
