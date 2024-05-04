@@ -34,8 +34,14 @@ require('lazy').setup({
   --  the author's setup and LazyVim
   --
   require 'kickstart/plugins/gitsigns',
+
+  -- prints possible mappings upon typing
   require 'kickstart/plugins/which-key',
+
+  -- fuzzy finding over lists and a visual for it
   require 'kickstart/plugins/telescope',
+
+  -- lsp configuration
   require 'kickstart/plugins/lspconfig',
 
   -- code formatting
