@@ -48,21 +48,21 @@ vim.keymap.set('x', 'K', ":move '<-2<CR>gv=gv", { desc = 'Move line up in visual
 vim.keymap.set('x', 'J', ":move '>+1<CR>gv=gv", { desc = 'Move line down in visual mode' })
 
 -- Resize windows with vim motions (Linux)
-vim.keymap.set('n', '<C-A-k>', ':resize +2<CR>', { desc = 'Increase window size vertically' })
-vim.keymap.set('n', '<C-A-j>', ':resize -2<CR>', { desc = 'Decrease window size vertically' })
-vim.keymap.set('n', '<C-A-h>', ':vertical resize -2<CR>', { desc = 'Decrease window size horizontally' })
-vim.keymap.set('n', '<C-A-l>', ':vertical resize +2<CR>', { desc = 'Increase window size horizontally' })
+-- vim.keymap.set('n', '<C-A-k>', ':resize +2<CR>', { desc = 'Increase window size vertically' })
+-- vim.keymap.set('n', '<C-A-j>', ':resize -2<CR>', { desc = 'Decrease window size vertically' })
+-- vim.keymap.set('n', '<C-A-h>', ':vertical resize -2<CR>', { desc = 'Decrease window size horizontally' })
+-- vim.keymap.set('n', '<C-A-l>', ':vertical resize +2<CR>', { desc = 'Increase window size horizontally' })
 
 -- Resize windows with vim motions (MacOs)
--- vim.keymap.set('n', '<C-S-k>', ':resize +2<CR>', { desc = 'Increase window size vertically' })
--- vim.keymap.set('n', '<C-S-j>', ':resize -2<CR>', { desc = 'Decrease window size vertically' })
--- vim.keymap.set('n', '<C-S-h>', ':vertical resize -2<CR>', { desc = 'Decrease window size horizontally' })
--- vim.keymap.set('n', '<C-S-l>', ':vertical resize +2<CR>', { desc = 'Increase window size horizontally' })
+vim.keymap.set('n', '<C-S-k>', ':resize +2<CR>', { desc = 'Increase window size vertically' })
+vim.keymap.set('n', '<C-S-j>', ':resize -2<CR>', { desc = 'Decrease window size vertically' })
+vim.keymap.set('n', '<C-S-h>', ':vertical resize -2<CR>', { desc = 'Decrease window size horizontally' })
+vim.keymap.set('n', '<C-S-l>', ':vertical resize +2<CR>', { desc = 'Increase window size horizontally' })
 
 -- Mappings to manage buffers
 vim.keymap.set('n', '<leader>bn', ':bnext<CR>', { desc = 'Goto [N]ext [B]uffer' })
 vim.keymap.set('n', '<leader>bp', ':bprevious<CR>', { desc = 'Goto [P]revious [B]uffer' })
-vim.keymap.set('n', '<leader>bd', ':bd|bp<CR>', { desc = '[D]elete current [B]uffer' })
+vim.keymap.set('n', '<leader>bd', ':bdelete<CR>', { desc = '[D]elete current [B]uffer' })
 vim.keymap.set('n', '<leader>ba', ':%bd|edit#|bd#<CR>', { desc = 'Delete [A]ll [B]uffers except current' })
 
 -- Mappings to manage windows
@@ -72,8 +72,8 @@ vim.keymap.set('n', '<leader>we', '<C-W>=', { desc = 'Make split [W]indows [E]qu
 vim.keymap.set('n', '<leader>wq', '<C-W>q', { desc = '[Q]uit current [W]indow' })
 
 -- Copilot keymaps
--- vim.keymap.set('i', '<S-l>', '<Plug>(copilot-accept-word)', { desc = 'Accept Copilot next word suggestion' })
--- vim.keymap.set('i', '<C-S-l>', '<Plug>(copilot-accept-line)', { desc = 'Accept Copilot next line suggestion' })
+vim.keymap.set('i', '<C-S-h>', '<Plug>(copilot-accept-word)', { desc = 'Accept Copilot next word suggestion' })
+vim.keymap.set('i', '<C-S-l>', '<Plug>(copilot-accept-line)', { desc = 'Accept Copilot next line suggestion' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`

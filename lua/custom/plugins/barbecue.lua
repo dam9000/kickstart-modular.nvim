@@ -6,11 +6,9 @@ return {
   version = '*',
   dependencies = {
     'SmiteshP/nvim-navic',
-    'nvim-tree/nvim-web-devicons', -- optional dependency
+    'nvim-tree/nvim-web-devicons',
   },
-  opts = {
-    -- configurations go here
-  },
+  opts = {},
 }
 
 -- vim: ts=2 sts=2 sw=2 et

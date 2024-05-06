@@ -13,5 +13,6 @@ My NeoVim configuration started as a fork from [kickstart-modular.nvim](https://
 ## Prerequisites
 - [ripgrep](https://github.com/BurntSushi/ripgrep) (Needed for Telescope Fuzzy Finder).
 - [xclip](https://linuxconfig.org/how-to-use-xclip-on-linux) (Needed for system clipboard support).
-- [npm/node](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (Needed to install certain plugins and tools).
+- [npm/node](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) (Needed to install certain plugins and tools) as it's necessary to install some LSP servers.
+- Golang (Also needed to install some LSP servers).
 
