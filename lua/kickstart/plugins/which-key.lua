@@ -15,7 +15,9 @@ return {
         ['<leader>b'] = { name = '[B]uffer', _ = 'which_key_ignore' },
         ['<leader>e'] = { name = 'File [E]xplorer', _ = 'which_key_ignore' },
         ['<leader>g'] = { name = '[G]oto', _ = 'which_key_ignore' },
-        ['<leader>l'] = { name = 'LSP', _ = 'which_key_ignore' },
+        ['<leader>l'] = { name = '[L]anguage Server Protocol', _ = 'which_key_ignore' },
+        ['<leader>j'] = { name = '[J]ump anywhere', _ = 'which_key_ignore' },
+        ['<leader>h'] = { name = 'Git [H]unks', _ = 'which_key_ignore' },
       }
     end,
   },

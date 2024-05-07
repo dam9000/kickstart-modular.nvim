@@ -5,7 +5,9 @@ return {
   version = '2.5.1',
   opts = {},
   config = function(_, opts)
-    vim.keymap.set('n', '<leader>h', ':HopPattern<CR>', { silent = true })
+    -- Keymaps
+    vim.keymap.set('n', '<leader>jp', ':HopPattern<CR>', { desc = '[J]ump to [P]attern' })
+
     require('hop').setup(opts)
   end,
 }
