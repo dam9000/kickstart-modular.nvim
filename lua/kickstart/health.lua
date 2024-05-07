@@ -1,9 +1,4 @@
---[[
---
--- This file is not required for your own configuration,
--- but helps people determine if their system is setup correctly.
---
---]]
+--[[ Checks if the configuration is setup correctly by running `:checkhealth` ]]
 
 local check_version = function()
   local verstr = string.format('%s.%s.%s', vim.version().major, vim.version().minor, vim.version().patch)

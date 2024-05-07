@@ -1,20 +1,21 @@
--- [[ Configure fuzzy finder (Telescope) ]]
+--[[
+
+Configure fuzzy finder (Telescope)
+
+Telescope is a fuzzy finder that comes with a lot of different things that
+it can fuzzy find! It's more than just a "file finder", it can search
+many different aspects of Neovim, your workspace, LSP, and more!
+
+--]]
 
 return {
   {
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
     branch = '0.1.x',
-
-    -- NOTE: Plugins can specify dependencies.
-    --
-    -- The dependencies are proper plugin specifications as well - anything
-    -- you do for a plugin at the top level, you can do for a dependency.
-    -- Use the `dependencies` key to specify the dependencies of a particular plugin
     dependencies = {
       'nvim-lua/plenary.nvim',
       {
-        -- NOTE: If encountering errors, see telescope-fzf-native README for install instructions
         'nvim-telescope/telescope-fzf-native.nvim',
 
         -- `build` is used to run some command when the plugin is installed/updated.
@@ -33,29 +34,8 @@ return {
       { 'nvim-tree/nvim-web-devicons' },
     },
     config = function()
-      -- TODO: Review these comments.
-      --
-      -- Telescope is a fuzzy finder that comes with a lot of different things that
-      -- it can fuzzy find! It's more than just a "file finder", it can search
-      -- many different aspects of Neovim, your workspace, LSP, and more!
-      --
-      -- The easiest way to use telescope, is to start by doing something like:
-      --  :Telescope help_tags
-      --
-      -- After running this command, a window will open up and you're able to
-      -- type in the prompt window. You'll see a list of help_tags options and
-      -- a corresponding preview of the help.
-      --
-      -- Two important keymaps to use while in telescope are:
-      --  - Insert mode: <c-/>
-      --  - Normal mode: ?
-      --
-      -- This opens a window that shows you all of the keymaps for the current
-      -- telescope picker. This is really useful to discover what Telescope can
-      -- do as well as how to actually do it!
-
-      -- You can put your default mappings / updates / etc. in here
-      --  All the info you're looking for is in `:help telescope.setup()`
+      -- You can put your default mappings / updates / etc. in here.
+      --  All the info you're looking for is in `:help telescope.setup()`.
       require('telescope').setup {
         -- defaults = {
         --   mappings = {
@@ -87,8 +67,8 @@ return {
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-      vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-      vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files' })
+      vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = 'Search Open Files' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
@@ -96,8 +76,9 @@ return {
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
           winblend = 10,
           previewer = false,
+          prompt_title = 'Live grep in current buffer',
         })
-      end, { desc = '[/] Fuzzily search in current buffer' })
+      end, { desc = 'Search by Grep in current buffer' })
 
       -- Also possible to pass additional configuration options.
       --  See `:help telescope.builtin.live_grep()` for information about particular keys
@@ -106,7 +87,7 @@ return {
           grep_open_files = true,
           prompt_title = 'Live Grep in Open Files',
         }
-      end, { desc = '[S]earch [/] in Open Files' })
+      end, { desc = '[S]earch by Grep in Open Files' })
 
       -- Shortcut for searching your neovim configuration files
       vim.keymap.set('n', '<leader>sn', function()
@@ -115,4 +96,5 @@ return {
     end,
   },
 }
+
 -- vim: ts=2 sts=2 sw=2 et

@@ -1,5 +1,5 @@
 -- [[ Configure your editor color theme ]]
--- Uncomment section for whichever theme you prefer or add a new one.
+-- NOTE: Uncomment section for whichever theme you prefer or add a new one.
 -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`
 
 -- TokyoNight Theme
@@ -8,16 +8,12 @@ return {
   lazy = false, -- make sure we load this during startup if it is your main colorscheme
   priority = 1000, -- make sure to load this before all the other start plugins
   opts = {
-    -- Replace this with your scheme-specific settings or remove to use the defaults
     -- transparent = true,
     style = 'moon', -- available variations: "storm, night, moon, day"
   },
   config = function(_, opts)
-    require('tokyonight').setup(opts) -- Load theme options here
-    vim.cmd.colorscheme 'tokyonight' -- Load the colorscheme here
-
-    -- You can configure highlights by doing something like
-    -- vim.cmd.hi 'Comment gui=none'
+    require('tokyonight').setup(opts)
+    vim.cmd.colorscheme 'tokyonight'
   end,
 }
 
