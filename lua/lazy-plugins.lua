@@ -22,11 +22,11 @@ require('lazy').setup {
   require 'kickstart/plugins/todo-comments',
   require 'kickstart/plugins/mini',
   require 'kickstart/plugins/treesitter',
-  require 'kickstart/plugins/indent-line',
+  require 'kickstart/plugins/indent-blankline',
 
   -- TODO: Enable the debug plugin.
   --
-  -- require 'kickstart.plugins.debug',
+  -- require 'kickstart.plugins.debug-adapter',
 
   -- Add several plugins from a folder `lua/custom/plugins/*.lua`
   { import = 'custom.plugins' },

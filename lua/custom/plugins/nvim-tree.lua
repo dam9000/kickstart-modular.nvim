@@ -22,10 +22,10 @@ return {
     vim.g.loaded_netrwPlugin = 1
 
     -- Keymaps
-    vim.keymap.set('n', '<leader>eo', ':NvimTreeOpen<CR>', { desc = '[O]pen File [E]xplorer' })
-    vim.keymap.set('n', '<leader>ec', ':NvimTreeClose<CR>', { desc = '[C]lose File [E]xplorer' })
-    vim.keymap.set('n', '<leader>ee', ':NvimTreeToggle<CR>', { desc = 'Toggl[e] File [E]xplorer' })
-    vim.keymap.set('n', '<leader>ef', ':NvimTreeFocus<CR>', { desc = '[F]ocus File [E]xplorer' })
+    vim.keymap.set('n', '<leader>eo', ':NvimTreeOpen<CR>', { desc = '[O]pen Files [E]xplorer' })
+    vim.keymap.set('n', '<leader>ec', ':NvimTreeClose<CR>', { desc = '[C]lose Files [E]xplorer' })
+    vim.keymap.set('n', '<leader>ee', ':NvimTreeToggle<CR>', { desc = 'Toggl[e] Files [E]xplorer' })
+    vim.keymap.set('n', '<leader>ef', ':NvimTreeFocus<CR>', { desc = '[F]ocus Files [E]xplorer' })
     require('nvim-tree').setup(opts)
   end,
 }

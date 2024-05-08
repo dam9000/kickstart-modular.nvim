@@ -154,11 +154,16 @@ return {
           -- capabilities = {},
           settings = {
             Lua = {
-              completion = {
-                callSnippet = 'Replace',
+              completion = { callSnippet = 'Replace' },
+              runtime = { version = 'LuaJIT' },
+              telemetry = { enable = false },
+              diagnostics = {
+                disable = { 'missing-fields' },
+                globals = { 'vim' },
               },
-              -- Uncomment below to ignore Lua_LS's noisy `missing-fields` warnings.
-              -- diagnostics = { disable = { 'missing-fields' } },
+              workspace = {
+                library = vim.api.nvim_get_runtime_file('', true),
+              },
             },
           },
         },
@@ -178,6 +183,9 @@ return {
         'golines',
         'buf',
         'yamlfmt',
+        'markdownlint',
+        'luacheck',
+        'golangci-lint',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
       require('mason-lspconfig').setup {

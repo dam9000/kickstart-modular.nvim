@@ -15,9 +15,9 @@ return {
       }
       local hooks = require 'ibl.hooks'
 
-      -- Create the highlight groups in the highlight setup hook, so they are reset
-      -- every time the colorscheme changes.
+      -- NOTE: Update the hex colors to match the selected colorscheme.
       hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+        -- Colors based on the `tokyonight-moon` colorscheme.
         vim.api.nvim_set_hl(0, 'RainbowPurple', { fg = '#c099ff' })
         vim.api.nvim_set_hl(0, 'RainbowYellow', { fg = '#ffc777' })
         vim.api.nvim_set_hl(0, 'RainbowBlue', { fg = '#82aaff' })

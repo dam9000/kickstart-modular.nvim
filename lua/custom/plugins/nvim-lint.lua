@@ -8,9 +8,12 @@ return {
       local lint = require 'lint'
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
-        go = { 'golangcilint' },
-        lua = { 'luacheck' },
         python = { 'pylint', 'flake8', 'mypy' },
+        go = { 'golangcilint' },
+
+        -- TODO: Add .luacheckrc file to project root
+        --
+        -- lua = { 'luacheck' },
       }
 
       -- NOTE: To allow other plugins to add linters to `require('lint').linters_by_ft`,
