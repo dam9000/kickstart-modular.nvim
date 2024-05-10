@@ -60,4 +60,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Copy buffer full path to clipboard
+function CopyBufferNameToClipboard()
+  local buffer_name = vim.api.nvim_buf_get_name(0)
+  vim.fn.setreg('+', buffer_name)
+  vim.cmd('echo "Buffer Name copied to clipboard: ' .. buffer_name .. '"')
+end
+
+-- "yank path"
+vim.api.nvim_set_keymap('n', '<Leader>yp', ':lua CopyBufferNameToClipboard()<CR>', { noremap = true, silent = true })
+
 -- vim: ts=2 sts=2 sw=2 et
