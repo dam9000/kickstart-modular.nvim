@@ -61,13 +61,30 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Copy buffer full path to clipboard
+-- "yank path"
 function CopyBufferNameToClipboard()
   local buffer_name = vim.api.nvim_buf_get_name(0)
   vim.fn.setreg('+', buffer_name)
   vim.cmd('echo "Buffer Name copied to clipboard: ' .. buffer_name .. '"')
 end
-
--- "yank path"
 vim.api.nvim_set_keymap('n', '<Leader>yp', ':lua CopyBufferNameToClipboard()<CR>', { noremap = true, silent = true })
+
+-- Function to output all mappings to a file
+-- see: https://stackoverflow.com/questions/7642746/is-there-any-way-to-view-the-currently-mapped-keys-in-vim
+function OutputMappingsToFile()
+  local file_path = 'vim_keys.txt'
+
+  vim.cmd('redir! > ' .. file_path)
+  vim.cmd 'silent verbose map'
+  vim.cmd 'silent verbose imap'
+  vim.cmd 'silent verbose vmap'
+  vim.cmd 'silent verbose cmap'
+  vim.cmd 'redir END'
+
+  vim.cmd('echo "All mappings have been output to ' .. file_path .. '"')
+end
+
+-- Create a command in Neovim to call this function easily
+vim.api.nvim_create_user_command('OutputMappings', OutputMappingsToFile, {})
 
 -- vim: ts=2 sts=2 sw=2 et
