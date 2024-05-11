@@ -46,9 +46,4 @@ return {
       },
     },
   },
-  {
-    -- a simple buffer manager to avoid bn, bp
-    'j-morano/buffer_manager.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-  },
 }
