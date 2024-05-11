@@ -67,12 +67,17 @@ function CopyBufferNameToClipboard()
   vim.fn.setreg('+', buffer_name)
   vim.cmd('echo "Buffer Name copied to clipboard: ' .. buffer_name .. '"')
 end
-vim.api.nvim_set_keymap('n', '<Leader>yp', ':lua CopyBufferNameToClipboard()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+  'n',
+  '<Leader>yp',
+  ':lua CopyBufferNameToClipboard()<CR>',
+  { noremap = true, silent = true, desc = 'Yank the path of this buffer into clipboard' }
+)
 
 -- Function to output all mappings to a file
 -- see: https://stackoverflow.com/questions/7642746/is-there-any-way-to-view-the-currently-mapped-keys-in-vim
 function OutputMappingsToFile()
-  local file_path = 'vim_keys.txt'
+  local file_path = '~/vim_keys.txt'
 
   vim.cmd('redir! > ' .. file_path)
   vim.cmd 'silent verbose map'

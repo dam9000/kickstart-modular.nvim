@@ -1,4 +1,4 @@
--- Throw all of my plugins whose configuration doesn't get too extensive here
+-- Default landing page for custom plugins
 -- See the kickstart.nvim README for more information
 
 return {
