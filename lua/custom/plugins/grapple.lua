@@ -8,6 +8,9 @@
 -- }
 
 -- let's try out grapple
+-- note the following are equivalent
+-- :Grapple cycle_tags next scope=cwd
+-- require("grapple").cycle_tags("next", { scope = "cwd" })
 return {
   'cbochs/grapple.nvim',
   dependencies = {
