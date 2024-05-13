@@ -4,6 +4,13 @@ return {
     -- * managing open files without mental overhead
     -- * bn, bp
     -- * storing open buffer list to a file (haven't found this useful yet)
+    --
+    -- This has now become my full harpoon interface
+    -- - teleport to harpooned location
+    -- manage buffer list (add, delete, reorder)
+    -- In the future, use this to help compose argument list
+    --
+    -- Also note - the number by each line indicates nesting
     'j-morano/buffer_manager.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
@@ -40,7 +47,20 @@ return {
         end, opts)
       end
       -- Just the menu
-      map({ 't', 'n' }, '<M-b>', bmui.toggle_quick_menu, opts)
+      map({ 't', 'n' }, '<M-m>', bmui.toggle_quick_menu, opts)
+      -- Give homerow harpoon access
+      map('n', '<M-j>', function()
+        bmui.nav_file(1)
+      end, opts)
+      map('n', '<M-k>', function()
+        bmui.nav_file(2)
+      end, opts)
+      map('n', '<M-l>', function()
+        bmui.nav_file(3)
+      end, opts)
+      map('n', '<M-;>', function()
+        bmui.nav_file(4)
+      end, opts)
       -- Open menu and search
       -- map({ 't', 'n' }, '<M-c>', function()
       --   bmui.toggle_quick_menu()
@@ -50,8 +70,8 @@ return {
       --   end, 50)
       -- end, opts)
       -- Next/Prev
-      -- map('n', '<M-j>', bmui.nav_next, opts)
-      -- map('n', '<M-k>', bmui.nav_prev, opts)
+      map('n', '<M-n>', bmui.nav_next, opts)
+      map('n', '<M-p>', bmui.nav_prev, opts)
     end,
   },
 }
