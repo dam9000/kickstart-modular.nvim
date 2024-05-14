@@ -1,6 +1,11 @@
--- [[ Configure your editor color theme ]]
--- NOTE: Uncomment section for whichever theme you prefer or add a new one.
--- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`
+--[[
+
+Configure your editor color theme
+
+NOTE: Uncomment section for whichever theme you prefer or add a new one.
+If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+
+--]]
 
 -- TokyoNight Theme
 return {

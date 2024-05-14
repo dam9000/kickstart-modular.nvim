@@ -69,6 +69,7 @@ return {
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = 'Search Open Files' })
       vim.keymap.set('n', '<leader>dl', builtin.diagnostics, { desc = 'Open [D]iagnostics [L]ist' })
+      vim.keymap.set('n', '<leader>jl', builtin.jumplist, { desc = 'Open [J]ump[l]ist' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()

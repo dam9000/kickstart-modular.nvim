@@ -70,4 +70,7 @@ vim.opt.softtabstop = 4
 -- Set vertical line for code line limit
 vim.opt.colorcolumn = '120'
 
+-- conceallevel: Hide * markup for bold, italic, etc.
+vim.opt.conceallevel = 2
+
 -- vim: ts=2 sts=2 sw=2 et
