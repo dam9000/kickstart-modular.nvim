@@ -7,9 +7,6 @@ return {
         exec = 'g++',
         args = {
           '-std=c++17',
-          '-Wall',
-          '-Wextra',
-          '-Wshadow',
           '-g',
           '$(FNAME)',
           '-o',
@@ -40,6 +37,4 @@ return {
       },
     }
   end,
-  -- Abbriviate CompetiTest to cp
-  vim.cmd.cabbrev { 'cp', 'CompetiTest' },
 }
