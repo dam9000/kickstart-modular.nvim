@@ -1,7 +1,6 @@
 # TODO items
 
 - Major issues:
-  - Disable autoformat on save
   - Share terminal and system clipbaord
 
 - Minor issues:
