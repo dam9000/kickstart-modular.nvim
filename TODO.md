@@ -1,12 +1,13 @@
 # TODO items
 
 - Major issues:
-  - Disable autoformat on save
   - Share terminal and system clipbaord
 
 - Minor issues:
   - Fix pyright pyspark issue
   - Allow usage/inheritance tracking
+  - Add and config python formater
+  - Add and config SQL formater
 
 - Miscellaneous issues:
   - Set character limit to 120 (same as pycharm)
