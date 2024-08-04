@@ -210,7 +210,7 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'pyright',
-        -- 'ruff', todo: need to fix auto format on write
+        'ruff',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
