@@ -1,7 +1,6 @@
 # TODO items
 
 - Major issues:
-  - Share terminal and system clipbaord
 
 - Minor issues:
   - Fix pyright pyspark issue
