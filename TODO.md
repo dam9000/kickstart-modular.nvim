@@ -13,6 +13,8 @@
   - Add spelling check
   - Allow indenting/unindenting multiple lines
   - Allow commenting multiple lines
+  - Allow find all within project scope
+  - Add auto close brackets
 
 - Miscellaneous issues:
   - Formater character limit
@@ -26,3 +28,4 @@
 
 - Nice to have
   - SQL LSP through local dll files
+  - Go through LazyVim language setup for python/SQL/md

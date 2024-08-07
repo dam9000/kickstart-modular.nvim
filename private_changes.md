@@ -7,6 +7,7 @@
   - Add 'FormatEnable' and 'FormatDisable' toggling format on write
   - Default disable format on write
   - Add ruff_fix/ruff_format/ruff_organize_imports as python formater
+  - Add sqlfluff as SQL formater
 
 - Miscellaneous changes
   - JetbrainsMonoNL Nerd Font Mono
