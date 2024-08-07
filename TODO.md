@@ -7,7 +7,6 @@
 - Minor issues:
   - Fix pyright pyspark issue
   - Allow usage/inheritance tracking
-  - Add and config markdown formater
   - Make LSP errors/warnings appear on next line
   - Allow multiple tabs
   - Add spelling check
