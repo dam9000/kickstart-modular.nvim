@@ -76,7 +76,7 @@ return {
         lua = { 'stylua' },
         python = { 'ruff_fix', 'ruff_organize_imports', 'ruff_format' },
         sql = { 'sqlfluff' },
-        markdown = { 'markdown-toc', 'markdownlint-cli2' },
+        markdown = { 'prettier', 'markdown-toc', 'markdownlint-cli2' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --

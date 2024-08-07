@@ -212,6 +212,7 @@ return {
         'pyright',
         'ruff',
         'sqlfluff',
+        'prettier',
         'markdownlint-cli2',
         'markdown-toc',
       })
