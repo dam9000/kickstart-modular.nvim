@@ -180,6 +180,17 @@ return {
         -- tsserver = {},
         --
 
+        -- Override ruff formatter settings here
+        ruff = {
+          init_options = {
+            settings = {
+              lineLength = 120,
+              organizeImports = true,
+              fixAll = true, -- not sure if this replaces ruff_fix
+            },
+          },
+        },
+
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
