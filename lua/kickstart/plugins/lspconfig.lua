@@ -175,7 +175,7 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua',
         'flake8',
-        'mypy',
+        -- 'mypy',
         'pylint',
         'debugpy',
         'black',

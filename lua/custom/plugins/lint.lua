@@ -7,7 +7,10 @@ return {
     config = function()
       local lint = require 'lint'
       lint.linters_by_ft = {
-        python = { 'flake8', 'mypy' },
+        python = {
+          'flake8',
+          -- 'mypy',
+        },
         go = { 'golangcilint' },
 
         -- TODO: Find a way to override default linter configuration or add one.

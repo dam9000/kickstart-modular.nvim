@@ -3,22 +3,21 @@
 return {
   {
     'folke/which-key.nvim',
-    event = 'VimEnter',
-    config = function()
+    event = 'VimEnter', -- Load after vim has started
+    config = function() -- Setup configuration running after plugin is loaded
       require('which-key').setup()
 
       -- Document existing key chains
-      require('which-key').register {
-        ['<leader>d'] = { name = '[D]iagnostic/[D]ebugger', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[W]indow', _ = 'which_key_ignore' },
-        ['<leader>b'] = { name = '[B]uffer', _ = 'which_key_ignore' },
-        ['<leader>e'] = { name = 'File [E]xplorer', _ = 'which_key_ignore' },
-        ['<leader>g'] = { name = '[G]oto', _ = 'which_key_ignore' },
-        ['<leader>l'] = { name = '[L]SP', _ = 'which_key_ignore' },
-        ['<leader>j'] = { name = '[J]ump anywhere', _ = 'which_key_ignore' },
-        ['<leader>h'] = { name = 'Git [H]unks', _ = 'which_key_ignore' },
-        ['<leader>o'] = { name = '[O]bsidian Notes', _ = 'which_key_ignore' },
+      require('which-key').add {
+        { '<leader>d', group = '[D]iagnostic/[D]ebugger' },
+        { '<leader>s', group = '[S]earch' },
+        { '<leader>w', group = '[W]indow' },
+        { '<leader>b', group = '[B]uffer' },
+        { '<leader>e', group = 'File [E]xplorer' },
+        { '<leader>g', group = '[G]oto' },
+        { '<leader>l', group = '[L]SP' },
+        { '<leader>j', group = '[J]ump anywhere' },
+        { '<leader>h', group = 'Git [H]unks', mode = { 'n', 'v' } },
       }
     end,
   },
