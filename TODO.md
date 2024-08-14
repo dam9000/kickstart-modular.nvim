@@ -3,7 +3,6 @@
 - Major issues:
 
   - Add file tree view
-  - Configure telescope/harpoon for use
   - Refactoring support
   - Jump to usage/source support
 
@@ -22,6 +21,7 @@
   - Set up LSP and formatter for bash script
     - shfmt, shellcheck, bash LSP
   - Add preview capability for markdown files
+  - Configure telescope/harpoon for use
 
 - Miscellaneous issues:
 

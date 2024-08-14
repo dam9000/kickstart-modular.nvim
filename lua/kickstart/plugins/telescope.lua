@@ -61,6 +61,15 @@ return {
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
+
+        -- set vertical file preview
+        defaults = {
+          layout_strategy = 'vertical',
+          layout_config = {
+            vertical = { width = 0.8 },
+          },
+        },
+
         -- pickers = {}
         extensions = {
           ['ui-select'] = {
