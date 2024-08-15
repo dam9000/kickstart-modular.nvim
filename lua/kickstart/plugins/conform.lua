@@ -8,6 +8,8 @@ vim.api.nvim_create_user_command('Format', function(args)
       ['end'] = { args.line2, end_line:len() },
     }
   end
+  -- Use CLI args instead of LSP server settings
+  require('conform').formatters.ruff_format = { append_args = { '--line-length', '120' } }
   require('conform').format { async = true, lsp_format = 'fallback', range = range }
 end, { range = true })
 
@@ -78,7 +80,7 @@ return {
         -- https://github.com/astral-sh/ruff/issues/12778
         -- currently ruff_organize_imports uses linter rather than formater, a unified interface is planned
         -- https://github.com/astral-sh/ruff/issues/8232
-        python = { 'ruff_fix', 'ruff_organize_imports', lsp_format = 'prefer' }, -- force confom to use ruff lsp server
+        python = { 'ruff_fix', 'ruff_organize_imports', 'ruff_format' },
         sql = { 'sqlfluff' },
         markdown = { 'prettier', 'markdown-toc', 'markdownlint-cli2' },
         -- Conform can also run multiple formatters sequentially
