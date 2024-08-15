@@ -76,7 +76,9 @@ return {
         lua = { 'stylua' },
         -- use ruff as formatter, conform with 'ruff_format' uses ruff binary and ignores server settings/configs
         -- https://github.com/astral-sh/ruff/issues/12778
-        python = { lsp_format = 'first' }, -- force confom to use ruff lsp server
+        -- currently ruff_organize_imports uses linter rather than formater, a unified interface is planned
+        -- https://github.com/astral-sh/ruff/issues/8232
+        python = { 'ruff_fix', 'ruff_organize_imports', lsp_format = 'prefer' }, -- force confom to use ruff lsp server
         sql = { 'sqlfluff' },
         markdown = { 'prettier', 'markdown-toc', 'markdownlint-cli2' },
         -- Conform can also run multiple formatters sequentially
