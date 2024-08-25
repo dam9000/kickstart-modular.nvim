@@ -14,7 +14,7 @@ vim.opt.showmode = false
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
+--  See `:help clipboard`
 vim.opt.clipboard = 'unnamedplus'
 
 -- Keeps indentation when wrapping lines for not fitting on the window
@@ -43,8 +43,8 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- Sets how neovim will display certain whitespace in the editor.
---  See `:help 'list'`
---  and `:help 'listchars'`
+--  See `:help list`
+--  and `:help listchars`
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣', lead = '·' }
 
