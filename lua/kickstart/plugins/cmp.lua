@@ -17,7 +17,7 @@ return {
             -- Tu importamo snippets
             config = function()
               require('luasnip.loaders.from_vscode').lazy_load()
-              require('luasnip.loaders.from_lua').load { paths = { 'C:/Users/joene/AppData/Local/nvim/snippets/' } }
+              require('luasnip.loaders.from_lua').load { paths = { 'C:/Users/joene/AppData/Local/nvim/snippets' } }
             end,
           },
         },

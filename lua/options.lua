@@ -4,7 +4,7 @@ vim.opt.cursorline = true
 vim.opt.number = true
 vim.o.numberwidth = 4
 vim.opt.relativenumber = true
-vim.opt.scrolloff = 25
+vim.opt.scrolloff = 999
 
 vim.opt.mouse = 'a'
 

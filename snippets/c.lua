@@ -6,11 +6,12 @@ local fmta = require('luasnip.extras.fmt').fmta
 local rep = require('luasnip.extras').rep
 
 -- include in main funckija, zato je base
-s(
-  { trig = 'base', dscr = 'include stdio.h in main funkcija z return 0', regTrig = false, wordTrig = true },
-  fmta(
-    [[
-#include <stdio.h>
+return {
+  s(
+    { trig = 'base', dscr = 'include stdio.h in main funkcija z return 0', regTrig = false, wordTrig = true },
+    fmta(
+      [[
+#include <<stdio.h>>
 
 int main() {
     <>
@@ -18,6 +19,7 @@ int main() {
     return 0;
 }
 ]],
-    { i(1) }
-  )
-)
+      { i(1) }
+    )
+  ),
+}
