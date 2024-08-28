@@ -180,6 +180,32 @@ return {
         -- tsserver = {},
         --
 
+        pylsp = {
+          settings = {
+            pylsp = {
+              plugins = {
+                pycodestyle = {
+                  enabled = true,
+                  maxLineLength = 120,
+                },
+                pyflakes = {
+                  enabled = false,
+                },
+                flake8 = {
+                  enabled = false,
+                  maxLineLength = 120, -- seems flake8 takes over pycodestyle
+                },
+                pylint = {
+                  enabled = false,
+                  maxLineLength = 120,
+                },
+              },
+            },
+          },
+        },
+
+        mypy = {},
+
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -209,7 +235,8 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'pyright',
+        'pylsp',
+        'mypy',
         'ruff',
         'sqlfluff',
         'prettier',

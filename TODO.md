@@ -2,26 +2,22 @@
 
 - Major issues:
 
-  - Add file tree view
-  - Refactoring support
-  - Jump to usage/source support
+  - Checking for unused function args
+  - No check for classmethod vs abstractmethod sequence
 
 - Minor issues:
 
-  - Fix pyright pyspark issue
   - Allow usage/inheritance tracking
   - Make LSP errors/warnings appear on next line
     - Implement vim.diagnostic.open_float()
-  - Allow multiple tabs
   - Add spelling check
   - Allow indenting/unindenting multiple lines
   - Allow commenting multiple lines
-  - Allow find all within project scope
   - Add auto close brackets
   - Set up LSP and formatter for bash script
     - shfmt, shellcheck, bash LSP
   - Add preview capability for markdown files
-  - Configure telescope/harpoon for use
+  - Add json formatter
 
 - Miscellaneous issues:
 
@@ -29,7 +25,8 @@
     - Set LSP warning for lines exceeding character limit
     - Add visual guide to 120 character limit
   - Add highlight support for line diff for git commit and merge requests
-  - Allow highlighting and moving the line (like hightlight with 'shift'+'ctrl'+up/down arrow key)
+  - Allow highlighting and moving the line
+    (like hightlight with 'shift'+'ctrl'+up/down arrow key)
   - Figure out a better way for autocomplete navigation and selection
   - Fix TODO highlight in docstring
 
