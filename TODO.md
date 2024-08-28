@@ -4,6 +4,8 @@
 
   - Checking for unused function args
   - No check for classmethod vs abstractmethod sequence
+  - Warn if a class method is static
+  - Use LSP to rename/delete files
 
 - Minor issues:
 
@@ -29,6 +31,7 @@
     (like hightlight with 'shift'+'ctrl'+up/down arrow key)
   - Figure out a better way for autocomplete navigation and selection
   - Fix TODO highlight in docstring
+  - Add Mason ensure uninstalled (for pyright)
 
 - Nice to have
   - SQL LSP through local dll files
