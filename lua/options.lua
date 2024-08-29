@@ -2,9 +2,10 @@
 vim.opt.cursorline = true
 
 vim.opt.number = true
-vim.o.numberwidth = 4
+vim.o.numberwidth = 6
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 999
+vim.o.textwidth = 80
 
 vim.opt.mouse = 'a'
 
@@ -24,7 +25,7 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = 'no'
 
 vim.opt.updatetime = 50
 
