@@ -1,6 +1,15 @@
 return {
-  { 'akinsho/toggleterm.nvim', event = 'VeryLazy', version = '*', opts = {
-    size = 15,
-    open_mapping = '<c-s>',
-  } },
+  {
+    'akinsho/toggleterm.nvim',
+    event = 'VeryLazy',
+    version = '*',
+    opts = {
+      size = 15,
+      open_mapping = '<c-s>',
+      direction = 'float',
+      float_opts = {
+        winblend = 1,
+      },
+    },
+  },
 }

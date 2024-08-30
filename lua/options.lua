@@ -1,11 +1,13 @@
 vim.o.conceallevel = 2
 vim.opt.cursorline = true
 
+vim.o.wrap = true
+
 vim.opt.number = true
-vim.o.numberwidth = 4
+vim.o.numberwidth = 5
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 999
-vim.o.textwidth = 80
+vim.o.textwidth = 0
 
 vim.opt.mouse = 'a'
 
