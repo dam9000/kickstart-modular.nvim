@@ -20,6 +20,8 @@
     - shfmt, shellcheck, bash LSP
   - Add preview capability for markdown files
   - Add json formatter
+  - leader f formating does not use current line length setting
+  - mypy does not check for function return type hint
 
 - Miscellaneous issues:
 
