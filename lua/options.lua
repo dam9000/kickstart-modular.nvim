@@ -1,8 +1,8 @@
---vim.o.conceallevel = 2
+vim.o.conceallevel = 2
 vim.opt.cursorline = true
 
 vim.opt.number = true
-vim.o.numberwidth = 6
+vim.o.numberwidth = 4
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 999
 vim.o.textwidth = 80
