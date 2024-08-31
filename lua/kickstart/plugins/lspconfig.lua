@@ -180,31 +180,41 @@ return {
         -- tsserver = {},
         --
 
+        -- make sure to manually install jpylsp plugins
+        -- https://github.com/williamboman/mason-lspconfig.nvim/tree/main/lua/mason-lspconfig/server_configurations/pylsp
         pylsp = {
           settings = {
             pylsp = {
               plugins = {
-                pycodestyle = {
-                  enabled = true,
-                  maxLineLength = 120,
-                },
-                pyflakes = {
-                  enabled = false,
-                },
                 flake8 = {
-                  enabled = false,
+                  enabled = true,
                   maxLineLength = 120, -- seems flake8 takes over pycodestyle
                 },
-                pylint = {
-                  enabled = false,
+                pycodestyle = {
                   maxLineLength = 120,
+                },
+                pydocstyle = {
+                  enabled = true,
+                  convention = 'google',
+                },
+                pylint = {
+                  enabled = true,
+                  args = {
+                    '--max-line-length',
+                    '120',
+                  },
+                },
+                rope_autoimport = {
+                  enabled = true,
+                },
+                rope_completion = {
+                  enabled = true,
+                  eager = true,
                 },
               },
             },
           },
         },
-
-        mypy = {},
 
         lua_ls = {
           -- cmd = {...},
@@ -236,7 +246,6 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'pylsp',
-        'mypy',
         'ruff',
         'sqlfluff',
         'prettier',

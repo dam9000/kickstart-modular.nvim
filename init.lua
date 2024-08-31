@@ -105,5 +105,15 @@ require 'lazy-bootstrap'
 -- [[ Configure and install plugins ]]
 require 'lazy-plugins'
 
+-- Run some neovim commands after setup
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = function()
+    vim.cmd.PylspInstall { 'pyls-flake8' }
+    vim.cmd.PylspInstall { 'pyls-mypy' }
+    vim.cmd.PylspInstall { 'pylsp-rope' }
+    vim.cmd 'MasonToolsClean'
+  end,
+})
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
