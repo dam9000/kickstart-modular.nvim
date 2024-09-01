@@ -42,6 +42,7 @@ return {
       {
         '<leader>f',
         function()
+          require('conform').formatters.ruff_format = { append_args = { '--line-length', '120' } }
           require('conform').format { async = true, lsp_format = 'fallback' }
         end,
         mode = '',
