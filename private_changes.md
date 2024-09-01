@@ -25,6 +25,7 @@
   - Add ruff_fix/ruff_format/ruff_organize_imports as python formater
   - Add sqlfluff as SQL formater
   - Add markdown-toc, markdownlint-cli2 and prettier as markdown formater
+  - Add prettier and jq as json formater
 
 - Telescope
 

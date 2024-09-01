@@ -251,6 +251,7 @@ return {
         'prettier',
         'markdownlint-cli2',
         'markdown-toc',
+        'jq',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
