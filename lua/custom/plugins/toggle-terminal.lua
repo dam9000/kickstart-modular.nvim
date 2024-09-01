@@ -4,12 +4,10 @@ return {
     event = 'VeryLazy',
     version = '*',
     opts = {
-      size = 15,
+      size = 80,
       open_mapping = '<c-s>',
-      direction = 'float',
-      float_opts = {
-        winblend = 1,
-      },
+      autochdir = true,
+      direction = 'vertical', -- vertical, horizontal, tab, float
     },
   },
 }

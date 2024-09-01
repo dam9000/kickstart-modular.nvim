@@ -3,6 +3,8 @@ local map = vim.keymap.set
 map('n', '<leader>pl', '<cmd>Explore<CR>')
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+map('n', '<leader>mp', '<cmd>MarkdownPreviewToggle<CR>')
+
 map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
