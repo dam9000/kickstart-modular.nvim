@@ -7,7 +7,7 @@ return {
       size = 80,
       open_mapping = '<c-s>',
       autochdir = true,
-      direction = 'vertical', -- vertical, horizontal, tab, float
+      direction = 'horizontal', -- vertical, horizontal, tab, float
     },
   },
 }
