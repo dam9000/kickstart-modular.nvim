@@ -11,6 +11,12 @@
   - Auto install pylsp plugins at VimEnter
   - Auto clean up lsp servers at VimEnter
 
+- Treesitter
+  - Ensure languages are installed (e.g. python)
+  - Enable incremental selection
+  - Enable treesitter-context
+  - Enable treesitter-textobjects (pending keymaps)
+
 - Conform
 
   - Add 'Format' command for manual formater trigger

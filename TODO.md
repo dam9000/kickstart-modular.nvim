@@ -27,10 +27,9 @@
   - Add highlight support for line diff for git commit and merge requests
   - Allow highlighting and moving the line
     (like hightlight with 'shift'+'ctrl'+up/down arrow key)
-  - Figure out a better way for autocomplete navigation and selection
   - Fix TODO highlight in docstring
-  - Add Mason ensure uninstalled (for pyright)
 
 - Nice to have
   - SQL LSP through local dll files
   - Go through LazyVim language setup for python/SQL/md
+  - Set up treesitter-textobjects keymaps (currently no example on lazy.vim)
