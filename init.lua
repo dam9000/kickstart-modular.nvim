@@ -108,8 +108,9 @@ require 'lazy-plugins'
 -- Run some neovim commands after setup
 vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()
+    -- in case pylsp is not working as expected, try reinstalling through Mason
     vim.cmd.PylspInstall { 'pyls-flake8' }
-    vim.cmd.PylspInstall { 'pyls-mypy' }
+    vim.cmd.PylspInstall { 'pylsp-mypy' }
     vim.cmd.PylspInstall { 'pylsp-rope' }
     vim.cmd 'MasonToolsClean'
   end,
