@@ -5,6 +5,7 @@
   - No check for classmethod vs abstractmethod sequence
   - Warn if a class method is static
   - Use LSP to rename/delete files
+  - Auto setup for pylsp (e.g. PyslpInstall)
 
 - Minor issues:
 
@@ -18,6 +19,7 @@
   - Add preview capability for markdown files
   - leader f formating does not use current line length setting
   - Auto detect vertical/horizontal monitor for telescope layout
+  - Auto clean up unlisted lsp servers
 
 - Miscellaneous issues:
 
