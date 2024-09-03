@@ -188,10 +188,17 @@ return {
               plugins = {
                 flake8 = {
                   enabled = true,
-                  maxLineLength = 120, -- seems flake8 takes over pycodestyle
+                  maxLineLength = 120,
                 },
                 pycodestyle = {
+                  enabled = false, -- Included in flake8
                   maxLineLength = 120,
+                },
+                mccabe = {
+                  enabled = false, -- Included in flake8
+                },
+                pyflakes = {
+                  enabled = false, -- Included in flake8
                 },
                 pydocstyle = {
                   enabled = true,
@@ -205,7 +212,7 @@ return {
                   },
                 },
                 rope_autoimport = {
-                  enabled = true,
+                  enabled = false,
                 },
                 rope_completion = {
                   enabled = true,
