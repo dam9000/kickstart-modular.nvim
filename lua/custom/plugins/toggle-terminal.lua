@@ -6,7 +6,8 @@ return {
     opts = {
       open_mapping = '<c-s>',
       autochdir = true,
-      direction = 'horizontal', -- vertical, horizontal, tab, float
+      direction = 'tab', -- vertical, horizontal, tab, float
+      winblend = 3,
     },
   },
 }
