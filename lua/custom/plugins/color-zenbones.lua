@@ -21,6 +21,11 @@ return {
       -- vim.cmd 'colorscheme zenburned'
       -- vim.cmd 'colorscheme kanagawabones'
       -- vim.cmd 'colorscheme randombones'
+
+      -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+      -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+      -- vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
+      -- vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })
     end,
   },
 }
