@@ -85,6 +85,7 @@ return {
         sql = { 'sqlfluff' },
         markdown = { 'prettier', 'markdown-toc', 'markdownlint-cli2' },
         json = { 'prettier', 'jq' },
+        sh = { 'bashls', 'shfmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
