@@ -4,6 +4,8 @@
 -- you do for a plugin at the top level, you can do for a dependency.
 --
 -- Use the `dependencies` key to specify the dependencies of a particular plugin
+--
+data = assert(vim.fn.stdpath 'data') --[[@as string]]
 
 return {
   { -- Fuzzy Finder (files, lsp, etc)
@@ -28,6 +30,9 @@ return {
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
       { 'ANGkeith/telescope-terraform-doc.nvim' },
+
+      -- { 'nvim-telescope/telescope-smart-history.nvim' },
+      -- { 'kkharji/sqlite.lua' },
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
@@ -74,12 +79,20 @@ return {
             wincmd = 'botright vnew',
             wrap = 'nowrap',
           },
+          ['wrap_results'] = true,
+          -- ['history'] = {
+          --   path = vim.fs.joinpath(data, 'telescope_history.sqlite3'),
+          --   limit = 100,
+          -- },
         },
       }
 
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
+
+      -- Enable Telescope extension history
+      -- pcall(require('telescope').load_extension, 'smart_history')
 
       -- Enable Telescope extension terraform_doc
       pcall(require('telescope').load_extension, 'terraform_doc')
