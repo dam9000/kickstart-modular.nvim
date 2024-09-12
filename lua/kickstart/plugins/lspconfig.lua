@@ -1,6 +1,7 @@
 -- LSP Plugins
 
 -- UI customization
+-- Show line diagnostics automatically in hover window
 -- You will likely want to reduce updatetime which affects CursorHold
 -- note: this setting is global and should be set only once
 vim.o.updatetime = 250
@@ -10,6 +11,15 @@ vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
     vim.diagnostic.open_float(nil, { focus = false })
   end,
 })
+-- Show source in diagnostics
+vim.diagnostic.config {
+  virtual_text = {
+    source = 'always', -- Or "if_many"
+  },
+  float = {
+    source = 'always', -- Or "if_many"
+  },
+}
 
 return {
   {
