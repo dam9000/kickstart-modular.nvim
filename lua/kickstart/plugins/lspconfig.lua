@@ -14,10 +14,10 @@ vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
 -- Show source in diagnostics
 vim.diagnostic.config {
   virtual_text = {
-    source = 'always', -- Or "if_many"
+    source = true, -- Or "if_many"
   },
   float = {
-    source = 'always', -- Or "if_many"
+    source = true, -- Or "if_many"
   },
 }
 
