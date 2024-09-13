@@ -21,6 +21,9 @@ vim.diagnostic.config {
   },
 }
 
+-- Floating window color
+vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=black]]
+
 return {
   {
     -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
