@@ -2,14 +2,14 @@ return {
   -- SNIPPETS
   {
     'L3MON4D3/LuaSnip',
-    -- dependencies = {
-    --   'rafamadriz/friendly-snippets',
-    --   -- Tu importamo snippets
-    --   config = function()
-    --     require('luasnip.loaders.from_vscode').lazy_load()
-    --     require('luasnip.loaders.from_lua').load { paths = { 'C:/Users/joene/AppData/Local/nvim/snippets' } }
-    --   end,
-    -- },
+    dependencies = {
+      'rafamadriz/friendly-snippets',
+      -- Tu importamo snippets
+      config = function()
+        require('luasnip.loaders.from_vscode').lazy_load()
+        require('luasnip.loaders.from_lua').load { paths = { 'C:/Users/joene/AppData/Local/nvim/snippets' } }
+      end,
+    },
     config = function()
       require('luasnip').config.setup {
         store_selection_keys = '<Tab>',

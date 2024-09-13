@@ -1,15 +1,13 @@
 local map = vim.keymap.set
 
 map('i', '<C-c>', '<Esc>')
-
 map('n', '<leader>pl', '<cmd>Explore<CR>')
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
-
 map('n', '<leader>mp', '<cmd>MarkdownPreviewToggle<CR>')
-
 map('n', '<leader>ibl', '<cmd>IBLToggle<CR>')
 
 map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+map('n', '<leader>gd', '<cmd>:Telescope lsp_definitions<CR>')
 
 map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
