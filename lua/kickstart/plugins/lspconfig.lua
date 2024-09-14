@@ -1,4 +1,25 @@
 -- LSP Plugins
+
+-- on_attach() for all LSP customization
+-- this allows checking server capabilities to avoid calling invalid commands
+local on_attach = function(bufnr)
+  -- UI customization
+  vim.api.nvim_create_autocmd('CursorHold', {
+    buffer = bufnr,
+    callback = function()
+      local opts = {
+        focusable = false,
+        close_events = { 'BufLeave', 'CursorMoved', 'InsertEnter', 'FocusLost' },
+        border = 'double',
+        source = 'always',
+        prefix = ' ■ ',
+        scope = 'cursor',
+      }
+      vim.diagnostic.open_float(nil, opts)
+    end,
+  })
+end
+
 return {
   {
     -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
@@ -273,6 +294,8 @@ return {
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+            -- Add on_attach
+            server.on_attach = on_attach(vim.api.nvim_get_current_buf())
             require('lspconfig')[server_name].setup(server)
           end,
         },

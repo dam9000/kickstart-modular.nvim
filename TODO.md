@@ -9,15 +9,8 @@
 
 - Minor issues:
 
-  - Make LSP errors/warnings appear on next line
-    - Implement vim.diagnostic.open_float()
-  - Add spelling check
-  - Allow indenting/unindenting multiple lines
   - Add auto close brackets
-  - Set up LSP and formatter for bash script
-    - shfmt, shellcheck, bash LSP
   - Add preview capability for markdown files
-  - leader f formating does not use current line length setting
   - Auto detect vertical/horizontal monitor for telescope layout
   - Auto clean up unlisted lsp servers
 
