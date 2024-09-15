@@ -1,5 +1,14 @@
 return {
   {
+    'ferdinandrau/lavish.nvim',
+    priority = 1000,
+    config = function()
+      require('lavish').apply 'light'
+      require('lavish').apply 'dark'
+    end,
+  },
+
+  {
     { 'rose-pine/neovim', name = 'rose-pine' },
   },
 
@@ -9,21 +18,13 @@ return {
       require('onedark').setup {
         style = 'darker', -- dark, darker, cool, deep, warm, warmer
       }
-
-      -- vim.cmd.colorscheme 'onedark'
     end,
   },
 
   {
     'mstcl/ivory',
     lazy = false,
-    config = function()
-      -- vim.cmd.colorscheme 'ivory'
-      -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-      -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-      -- vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
-      -- vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })
-    end,
+    config = function() end,
   },
 
   {
@@ -34,20 +35,12 @@ return {
         style = 'vulgaris', -- Choose between 'vulgaris' (regular), 'multiplex' (greener), and 'light'
         transparent = false, -- Show/hide background
       }
-
-      -- vim.cmd 'colorscheme bamboo'
     end,
   },
 
   {
     'ptdewey/darkearth-nvim',
-    config = function()
-      -- vim.cmd.colorscheme 'darkearth'
-      -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-      -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-      -- vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
-      -- vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })
-    end,
+    config = function() end,
   },
 
   {
@@ -60,51 +53,23 @@ return {
       -- Optionally configure and load the colorscheme
       -- directly inside the plugin declaration.
       vim.g.gruvbox_material_enable_italic = true
-      -- vim.cmd.colorscheme 'gruvbox-material'
-      -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-      -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-      -- vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
-      -- vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })
     end,
   },
 
   {
     'rebelot/kanagawa.nvim',
-    config = function()
-      -- setup must be called before loading
-      -- vim.cmd 'colorscheme kanagawa-dragon'
-      --    vim.cmd 'colorscheme kanagawa-lotus'
-      -- vim.cmd 'colorscheme kanagawa-wave'
-      --
-      -- vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
-      -- vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })
-    end,
+    config = function() end,
   },
 
   {
     'slugbyte/lackluster.nvim',
     lazy = false,
-    config = function()
-      -- vim.cmd.colorscheme 'lackluster'
-      -- vim.cmd.colorscheme 'lackluster-hack' -- my favorite
-      -- vim.cmd.colorscheme 'lackluster-mint'
-      -- vim.cmd.colorscheme 'lackluster-night'
-      -- vim.cmd.colorscheme 'lackluster-dark'
-
-      -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-      -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-      -- vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
-      -- vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })
-    end,
+    config = function() end,
   },
 
   {
     'e-q/okcolors.nvim',
-    config = function()
-      -- vim.cmd 'colorscheme okcolors'
-      -- vim.cmd 'colorscheme okcolors-smooth'
-      -- vim.cmd("colorscheme okcolors-sharp")
-    end,
+    config = function() end,
   },
 
   {
@@ -115,25 +80,6 @@ return {
     dependencies = 'rktjmp/lush.nvim',
     lazy = false,
     opts = {},
-    config = function()
-      -- vim.cmd 'colorscheme zenbones'
-      -- vim.cmd 'colorscheme zenwritten'
-      -- vim.cmd 'colorscheme neobones'
-      -- vim.cmd 'colorscheme vimbones'
-      -- vim.cmd 'colorscheme rosebones'
-      -- vim.cmd 'colorscheme forestbones'
-      -- vim.cmd 'colorscheme nordbones'
-      -- vim.cmd 'colorscheme tokyobones'
-      -- vim.cmd 'colorscheme seoulbones'
-      -- vim.cmd 'colorscheme duckbones'
-      -- vim.cmd 'colorscheme zenburned'
-      -- vim.cmd 'colorscheme kanagawabones'
-      -- vim.cmd 'colorscheme randombones'
-
-      -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-      -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-      -- vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
-      -- vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })
-    end,
+    config = function() end,
   },
 }

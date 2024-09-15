@@ -4,7 +4,7 @@ vim.o.conceallevel = 2
 vim.o.wrap = true
 
 vim.opt.number = true
-vim.o.numberwidth = 3
+vim.o.numberwidth = 2
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 999
 vim.o.textwidth = 0
