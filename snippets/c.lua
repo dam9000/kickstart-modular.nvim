@@ -23,4 +23,9 @@ int main() {
       { i(1) }
     )
   ),
+
+  s(
+    { trig = 'line', dscr = 'ustvari file pointer za file, ki ga hočeš prebrat', regTrig = false, wordTrig = true },
+    fmta('FILE *file = fopen(<>, <>)', { i(1), i(2) })
+  ),
 }

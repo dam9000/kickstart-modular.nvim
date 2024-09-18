@@ -7,7 +7,6 @@ return {
       open_mapping = '<c-s>',
       autochdir = true,
       shading_factor = 1,
-      size = 80,
       close_on_exit = false,
       direction = 'vertical', -- vertical, horizontal, tab, float
     },

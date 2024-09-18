@@ -3,8 +3,8 @@ return {
     'ferdinandrau/lavish.nvim',
     priority = 1000,
     config = function()
-      require('lavish').apply 'light'
-      require('lavish').apply 'dark'
+      -- require('lavish').apply 'light'
+      -- require('lavish').apply 'dark'
     end,
   },
 

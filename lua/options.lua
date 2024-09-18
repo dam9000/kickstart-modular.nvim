@@ -1,3 +1,5 @@
+-- vim.opts.rocks.hererocks = true
+
 vim.o.conceallevel = 2
 -- vim.opt.cursorline = true
 
