@@ -1,5 +1,15 @@
 return {
   {
+    'eldritch-theme/eldritch.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      -- vim.cmd 'colorscheme eldritch'
+    end,
+  },
+
+  {
     'ferdinandrau/lavish.nvim',
     priority = 1000,
     config = function()
@@ -65,6 +75,9 @@ return {
     'slugbyte/lackluster.nvim',
     lazy = false,
     config = function() end,
+    config = function()
+      vim.cmd 'colorscheme lackluster-dark'
+    end,
   },
 
   {

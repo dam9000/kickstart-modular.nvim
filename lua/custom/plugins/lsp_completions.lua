@@ -186,7 +186,7 @@ return {
             },
             on_attach = function(client, bufnr)
               vim.diagnostic.config {
-                virtual_text = false, -- Disable virtual text (the inline hints)
+                virtual_text = false, -- Virtual text (the inline hints)
                 signs = true, -- Show signs in the gutter
                 underline = false, -- Underline problematic code
               }

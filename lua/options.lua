@@ -1,7 +1,7 @@
 -- vim.opts.rocks.hererocks = true
 
 vim.o.conceallevel = 2
--- vim.opt.cursorline = true
+vim.opt.cursorline = true
 
 vim.o.wrap = true
 
@@ -42,5 +42,3 @@ vim.opt.list = false
 vim.opt.listchars = { trail = '·', nbsp = '␣' }
 
 vim.opt.inccommand = 'split'
-
-vim.opt.cursorline = false
