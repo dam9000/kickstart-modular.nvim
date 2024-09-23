@@ -1,5 +1,12 @@
 return {
   {
+    'yorumicolors/yorumi.nvim',
+    config = function()
+      vim.cmd 'colorscheme yorumi'
+    end,
+  },
+
+  {
     'eldritch-theme/eldritch.nvim',
     lazy = false,
     priority = 1000,
@@ -63,6 +70,7 @@ return {
       -- Optionally configure and load the colorscheme
       -- directly inside the plugin declaration.
       vim.g.gruvbox_material_enable_italic = true
+      -- vim.cmd 'colorscheme gruvbox-material'
     end,
   },
 
@@ -76,7 +84,7 @@ return {
     lazy = false,
     config = function() end,
     config = function()
-      vim.cmd 'colorscheme lackluster-dark'
+      -- vim.cmd 'colorscheme lackluster-dark'
     end,
   },
 

@@ -55,6 +55,7 @@
   "twilight.nvim": { "branch": "main", "commit": "1584c0b0a979b71fd86b18d302ba84e9aba85b1b" },
   "vim-sleuth": { "branch": "master", "commit": "cd9d382e33bb817abe7f10cdc3a606bf1d491d75" },
   "which-key.nvim": { "branch": "main", "commit": "bfec3d6bc0a9b0b2cb11644642f78c2c3915eef0" },
+  "yorumi.nvim": { "branch": "main", "commit": "7bd484b82d1d7748d2ed73a12dbafad016c558fe" },
   "zen-mode.nvim": { "branch": "main", "commit": "29b292bdc58b76a6c8f294c961a8bf92c5a6ebd6" },
   "zenbones.nvim": { "branch": "main", "commit": "006f15ad3437d85884ad50347bcbc60c9a377640" }
 }
