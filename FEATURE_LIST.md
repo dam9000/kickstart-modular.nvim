@@ -14,7 +14,8 @@
   - Auto clean up lsp servers at VimEnter (disabled)
   - Add bashls as Bash LSP
   - Add sqlfluff as LSP
-  - Customize LSP floating window
+  - Show line diagnostics in hover window with custom UI
+  - Show lsp error source
 
 - Treesitter
 
