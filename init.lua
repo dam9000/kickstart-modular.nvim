@@ -108,6 +108,7 @@ require 'lazy-plugins'
 -- Run some neovim commands after setup
 vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()
+    vim.api.nvim_set_option_value('colorcolumn', '120', {})
     -- in case pylsp is not working as expected, try reinstalling through Mason
     -- vim.cmd.PylspInstall { 'pyls-flake8' }
     -- vim.cmd.PylspInstall { 'pylsp-mypy' }

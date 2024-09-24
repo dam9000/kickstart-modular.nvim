@@ -44,6 +44,7 @@
 
   - JetbrainsMonoNL Nerd Font Mono
   - Relative line number
+  - Add visual guide at 120 character limit
 
 - Vim functionality
   - Enable spelling check
