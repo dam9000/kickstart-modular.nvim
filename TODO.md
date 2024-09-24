@@ -13,6 +13,7 @@
   - Add preview capability for markdown files
   - Auto detect vertical/horizontal monitor for telescope layout
   - Auto clean up unlisted lsp servers
+  - Remove buffer from telescope view
 
 - Miscellaneous issues:
 
