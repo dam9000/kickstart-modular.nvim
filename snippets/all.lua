@@ -19,4 +19,20 @@ return {
       { i(1) }
     )
   ),
+
+  -- advent of code
+  s(
+    { trig = 'aoc', dscr = 'start template s tidyverse in util.R za advent of code' },
+    fmta(
+      [[
+        library(tidyverse)
+        source("C:/Users/joene/Documents/progAAAAAAA/adventOfCode2023/util.R", chdir = TRUE, echo = TRUE)
+        <>
+      ]],
+      { i(1) }
+    )
+  ),
+
+  -- pipe operator
+  s({ trig = 'pap', dscr = 'pipe operator v R-ju', regTrig = false, wordTrig = true, snippetType = 'autosnippet' }, fmta('%>>% <>', { i(1) })),
 }

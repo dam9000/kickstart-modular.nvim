@@ -76,7 +76,9 @@ return {
 
   {
     'rebelot/kanagawa.nvim',
-    config = function() end,
+    config = function()
+      -- vim.cmd 'colorscheme kanagawa'
+    end,
   },
 
   {
@@ -101,6 +103,8 @@ return {
     dependencies = 'rktjmp/lush.nvim',
     lazy = false,
     opts = {},
-    config = function() end,
+    config = function()
+      --   vim.cmd 'colorscheme zenwritten'
+    end,
   },
 }
