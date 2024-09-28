@@ -5,5 +5,6 @@ return {
     ---@module "ibl"
     ---@type ibl.config
     opts = {},
+    enabled = false,
   },
 }
