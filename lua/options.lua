@@ -1,7 +1,7 @@
 -- vim.opts.rocks.hererocks = true
 
-vim.o.conceallevel = 2
-vim.opt.cursorline = true
+vim.o.conceallevel = 1
+vim.opt.cursorline = false
 
 vim.o.wrap = true
 vim.o.linebreak = true

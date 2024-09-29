@@ -2,7 +2,7 @@ return {
   {
     'yorumicolors/yorumi.nvim',
     config = function()
-      vim.cmd 'colorscheme yorumi'
+      -- vim.cmd 'colorscheme yorumi'
     end,
   },
 
@@ -77,7 +77,7 @@ return {
   {
     'rebelot/kanagawa.nvim',
     config = function()
-      -- vim.cmd 'colorscheme kanagawa'
+      vim.cmd 'colorscheme kanagawa'
     end,
   },
 
