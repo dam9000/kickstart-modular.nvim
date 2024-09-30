@@ -1,8 +1,15 @@
 return {
   {
+    'kdheepak/monochrome.nvim',
+    config = function()
+      -- vim.cmd 'colorscheme monochrome'
+    end,
+  },
+
+  {
     'yorumicolors/yorumi.nvim',
     config = function()
-      -- vim.cmd 'colorscheme yorumi'
+      vim.cmd 'colorscheme yorumi'
     end,
   },
 
@@ -75,9 +82,19 @@ return {
   },
 
   {
+    'sho-87/kanagawa-paper.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      -- vim.cmd 'colorscheme kanagawa-paper'
+    end,
+  },
+
+  {
     'rebelot/kanagawa.nvim',
     config = function()
-      vim.cmd 'colorscheme kanagawa'
+      -- vim.cmd 'colorscheme kanagawa'
     end,
   },
 

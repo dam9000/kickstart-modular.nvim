@@ -3,6 +3,7 @@ return {
     'iamcco/markdown-preview.nvim',
     cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
     ft = { 'markdown' },
+    enabled = false,
     build = function()
       vim.fn['mkdp#util#install']()
     end,
@@ -10,11 +11,11 @@ return {
 
   {
     'MeanderingProgrammer/render-markdown.nvim',
-    enabled = true,
     opts = {},
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    enabled = true,
   },
 
   {
@@ -33,7 +34,6 @@ return {
     ft = 'markdown', -- or 'event = "VeryLazy"'
     enabled = true,
     opts = {},
-
     config = function()
       require('markdown').setup {
         -- Disable all keymaps by setting mappings field to 'false'.

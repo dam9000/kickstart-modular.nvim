@@ -1,6 +1,6 @@
 -- vim.opts.rocks.hererocks = true
 
-vim.o.conceallevel = 1
+vim.o.conceallevel = 2
 vim.opt.cursorline = false
 
 vim.o.wrap = true
