@@ -7,8 +7,8 @@ local rep = require('luasnip.extras').rep
 
 -- NOTE: HELP FUNCTIONS FOR MATH MODE
 -- https://github.com/frankroeder/dotfiles/blob/657a5dc559e9ff526facc2e74f9cc07a1875cac6/nvim/lua/tsutils.lua#L59
-local has_treesitter, ts = pcall(require, 'vim.treesitter')
-local _, query = pcall(require, 'vim.treesitter.query')
+-- local has_treesitter, ts = pcall(require, 'vim.treesitter')
+-- local _, query = pcall(require, 'vim.treesitter.query')
 
 local MATH_ENVIRONMENTS = {
   displaymath = true,

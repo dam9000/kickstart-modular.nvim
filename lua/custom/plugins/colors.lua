@@ -9,7 +9,7 @@ return {
   {
     'yorumicolors/yorumi.nvim',
     config = function()
-      vim.cmd 'colorscheme yorumi'
+      -- vim.cmd 'colorscheme yorumi'
     end,
   },
 
@@ -48,7 +48,9 @@ return {
   {
     'mstcl/ivory',
     lazy = false,
-    config = function() end,
+    config = function()
+      -- vim.cmd 'colorscheme ivory'
+    end,
   },
 
   {
@@ -121,7 +123,7 @@ return {
     lazy = false,
     opts = {},
     config = function()
-      --   vim.cmd 'colorscheme zenwritten'
+      -- vim.cmd 'colorscheme zenwritten'
     end,
   },
 }

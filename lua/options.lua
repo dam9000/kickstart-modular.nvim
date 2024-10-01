@@ -10,7 +10,7 @@ vim.opt.number = true
 vim.o.numberwidth = 2
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 999
-vim.o.textwidth = 0
+vim.o.textwidth = 80
 
 vim.opt.mouse = 'a'
 
