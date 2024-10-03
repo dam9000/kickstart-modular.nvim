@@ -15,6 +15,9 @@ return {
       preserve_window_proportions = true,
       width = 40,
     },
+    filters = {
+      git_ignored = false,
+    },
   },
   config = function(_, opts)
     -- Recommended settings to disable default netrw file explorer

@@ -7,12 +7,15 @@ return {
     config = function()
       local lint = require 'lint'
       lint.linters_by_ft = {
-        markdown = { 'markdownlint' },
-        python = { 'pylint', 'flake8', 'mypy' },
+        python = {
+          'flake8',
+          -- 'mypy',
+        },
         go = { 'golangcilint' },
 
-        -- TODO: Add .luacheckrc file to project root
+        -- TODO: Find a way to override default linter configuration or add one.
         --
+        -- markdown = { 'markdownlint' },
         -- lua = { 'luacheck' },
       }
 
