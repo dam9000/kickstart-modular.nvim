@@ -4,6 +4,7 @@ return {
     cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
     ft = { 'markdown' },
     enabled = true,
+    lazy = true,
     build = function()
       vim.fn['mkdp#util#install']()
     end,

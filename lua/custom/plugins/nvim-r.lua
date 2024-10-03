@@ -2,6 +2,7 @@ return {
   {
     'jalvesaq/Nvim-R',
     ft = { 'r', 'rmd' }, -- Load the plugin for R and R Markdown files
+    lazy = true,
     config = function()
       vim.g.R_auto_start = 1
       vim.g.R_hl_term = 1

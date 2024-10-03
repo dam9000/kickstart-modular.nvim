@@ -1,5 +1,13 @@
 return {
   {
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    config = function()
+      -- vim.cmd 'colorscheme catppuccin'
+    end,
+  },
+
+  {
     'kdheepak/monochrome.nvim',
     config = function()
       -- vim.cmd 'colorscheme monochrome'
@@ -28,7 +36,7 @@ return {
     priority = 1000,
     config = function()
       -- require('lavish').apply 'light'
-      require('lavish').apply 'dark'
+      -- require('lavish').apply 'dark'
     end,
   },
 
@@ -61,6 +69,7 @@ return {
         style = 'vulgaris', -- Choose between 'vulgaris' (regular), 'multiplex' (greener), and 'light'
         transparent = false, -- Show/hide background
       }
+      vim.cmd 'colorscheme bamboo-multiplex'
     end,
   },
 
@@ -89,7 +98,7 @@ return {
     priority = 1000,
     opts = {},
     config = function()
-      -- vim.cmd 'colorscheme kanagawa-paper'
+      vim.cmd 'colorscheme kanagawa-paper'
     end,
   },
 
@@ -103,7 +112,6 @@ return {
   {
     'slugbyte/lackluster.nvim',
     lazy = false,
-    config = function() end,
     config = function()
       -- vim.cmd 'colorscheme lackluster-dark'
     end,
@@ -124,6 +132,9 @@ return {
     opts = {},
     config = function()
       -- vim.cmd 'colorscheme zenwritten'
+      -- vim.cmd 'colorscheme zenbones'
+      -- vim.cmd 'colorscheme duckbones'
+      -- vim.cmd 'colorscheme tokyobones'
     end,
   },
 }

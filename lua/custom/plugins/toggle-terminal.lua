@@ -5,11 +5,10 @@ return {
     version = '*',
     opts = {
       open_mapping = '<c-s>',
-      size = 80,
       autochdir = true,
       shading_factor = 1,
       close_on_exit = false,
-      direction = 'vertical', -- vertical, horizontal, tab, float
+      direction = 'horizontal', -- vertical, horizontal, tab, float
     },
   },
 }

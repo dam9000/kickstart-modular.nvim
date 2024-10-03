@@ -34,7 +34,7 @@ return {
   ),
 
   -- pipe operator
-  s({ trig = 'pap', dscr = 'pipe operator v R-ju', regTrig = false, wordTrig = true }, fmta('%>>% <>', { i(1) })),
+  s({ trig = 'pap', dscr = 'pipe operator v R-ju', regTrig = false, wordTrig = true, snippetType = 'autosnippet' }, fmta('%>>% <>', { i(1) })),
 
   -- R documentation
   s({ trig = 'doc', dscr = 'documentation znak za R funkcije', regTrig = false, wordTrig = true }, fmta("#' <>", { i(1) })),

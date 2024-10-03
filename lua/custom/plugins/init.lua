@@ -3,23 +3,13 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  { 'metakirby5/codi.vim' },
+  -- { 'metakirby5/codi.vim' },
 
   {
     'echasnovski/mini.nvim',
     config = function()
       require('mini.surround').setup()
       require('mini.pairs').setup()
-    end,
-  },
-
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function()
-      require('lualine').setup {
-        options = { theme = 'auto' },
-      }
     end,
   },
 
