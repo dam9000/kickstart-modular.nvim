@@ -3,7 +3,7 @@ return {
     'catppuccin/nvim',
     name = 'catppuccin',
     config = function()
-      -- vim.cmd 'colorscheme catppuccin'
+      vim.cmd 'colorscheme catppuccin-mocha'
     end,
   },
 
@@ -69,7 +69,7 @@ return {
         style = 'vulgaris', -- Choose between 'vulgaris' (regular), 'multiplex' (greener), and 'light'
         transparent = false, -- Show/hide background
       }
-      vim.cmd 'colorscheme bamboo-multiplex'
+      -- vim.cmd 'colorscheme bamboo-multiplex'
     end,
   },
 

@@ -2,6 +2,7 @@
 -- https://github.com/nvim-neo-tree/neo-tree.nvim
 
 return {
+  enabled = true,
   'nvim-neo-tree/neo-tree.nvim',
   version = '*',
   dependencies = {
@@ -17,10 +18,10 @@ return {
     filesystem = {
       window = {
         width = 30,
-        position = 'float',
+        position = 'left', -- float, left, right, current
         mappings = {
           ['\\'] = 'close_window',
-          ['P'] = { 'toggle_preview', config = { use_float = true, use_image_nvim = true } },
+          ['P'] = 'toggle_preview',
           ['l'] = 'focus_preview',
           ['S'] = 'open_split',
           ['s'] = 'open_vsplit',

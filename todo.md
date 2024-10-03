@@ -2,9 +2,6 @@
 
 ## UI
 
-- signcolumn
-- neo-tree
-
 ## Util
 
 - lsp configuration
