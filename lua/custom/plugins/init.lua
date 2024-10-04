@@ -6,6 +6,10 @@ return {
   -- { 'metakirby5/codi.vim' },
 
   {
+    'jbyuki/nabla.nvim',
+  },
+
+  {
     'echasnovski/mini.nvim',
     config = function()
       require('mini.surround').setup()
