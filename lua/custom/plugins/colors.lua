@@ -1,5 +1,17 @@
 return {
   {
+    'ilof2/posterpole.nvim',
+    priority = 1000,
+    config = function()
+      require('posterpole').setup {
+        colorless_bg = true,
+        brightnes = -200,
+      }
+      -- vim.cmd 'colorscheme posterpole'
+    end,
+  },
+
+  {
     'catppuccin/nvim',
     name = 'catppuccin',
     config = function()
@@ -98,7 +110,7 @@ return {
     priority = 1000,
     opts = {},
     config = function()
-      vim.cmd 'colorscheme kanagawa-paper'
+      -- vim.cmd 'colorscheme kanagawa-paper'
     end,
   },
 

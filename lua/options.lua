@@ -1,4 +1,4 @@
-vim.o.conceallevel = 2
+vim.o.conceallevel = 3
 vim.opt.cursorline = true
 
 vim.o.wrap = true

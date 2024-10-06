@@ -16,14 +16,14 @@ return {
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-    enabled = true,
+    enabled = false,
   },
 
   {
     'OXY2DEV/markview.nvim',
     lazy = false, -- Recommended
     -- ft = "markdown" -- If you decide to lazy-load anyway
-    enabled = false,
+    enabled = true,
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
       'nvim-tree/nvim-web-devicons',
@@ -33,7 +33,7 @@ return {
   {
     'tadmccorkle/markdown.nvim',
     ft = 'markdown', -- or 'event = "VeryLazy"'
-    enabled = true,
+    enabled = false,
     opts = {},
     config = function()
       require('markdown').setup {
