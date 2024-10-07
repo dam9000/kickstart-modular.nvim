@@ -2,6 +2,13 @@
 
 My NeoVim configuration started as a fork from [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim)
 
+## Installation
+
+To install you need to be in the `~/.config/` folder and then run
+```bash
+git clone https://github.com/KikeSenpai/neovim.git nvim
+```
+
 ## Modifications
 
 - Changed colorscheme to tokyonight-moon and add other themes to choose from.

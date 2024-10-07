@@ -8,15 +8,16 @@ return {
       local lint = require 'lint'
       lint.linters_by_ft = {
         python = {
-          'flake8',
+          -- 'flake8',
           -- 'mypy',
         },
-        go = { 'golangcilint' },
+        -- go = { 'golangcilint' },
 
         -- TODO: Find a way to override default linter configuration or add one.
         --
         -- markdown = { 'markdownlint' },
         -- lua = { 'luacheck' },
+        terraform = { "tflint" },
       }
 
       -- NOTE: To allow other plugins to add linters to `require('lint').linters_by_ft`,
@@ -35,11 +36,11 @@ return {
       --   markdown = { "vale" },
       --   rst = { "vale" },
       --   ruby = { "ruby" },
-      --   terraform = { "tflint" },
       --   text = { "vale" }
       -- }
       --
       -- NOTE: You can disable the default linters by setting their filetypes to nil:
+      --
       -- lint.linters_by_ft['clojure'] = nil
       -- lint.linters_by_ft['dockerfile'] = nil
       -- lint.linters_by_ft['inko'] = nil

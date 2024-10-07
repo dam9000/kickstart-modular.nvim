@@ -30,7 +30,11 @@ return {
 
       formatters_by_ft = {
         -- NOTE: Conform can also run multiple formatters sequentially
-        python = { 'isort', 'black' },
+        --
+        -- python = {
+        --   'isort',
+        --   'black'
+        -- },
 
         -- NOTE: You can use a sub-list to tell conform to run until a formatter is found.
         --
@@ -41,11 +45,14 @@ return {
         -- sql = { 'sqlfluff' },
 
         lua = { 'stylua' },
-        rust = { 'rustfmt' },
-        go = { 'goimports', 'golines', 'gofmt' },
+        -- rust = { 'rustfmt' },
+        -- go = { 'goimports', 'golines', 'gofmt' },
         protobuf = { 'buf' },
+
+        -- TODO: Add formatters for json and terraform
+        --
         terraform = { 'terraform_fmt' },
-        json = { 'jq' },
+        -- json = { 'jq' },
       },
     },
   },

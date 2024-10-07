@@ -131,8 +131,8 @@ return {
       -- Enable the following language servers.
       -- See `:help lspconfig-all` for a list of all the pre-configured LSPs.
       local servers = {
-        rust_analyzer = {},
-        gopls = {},
+        -- rust_analyzer = {},
+        -- gopls = {},
         pyright = {},
         yamlls = {},
         jsonls = {},
@@ -174,18 +174,18 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua',
-        'flake8',
+        -- 'flake8',
         -- 'mypy',
-        'pylint',
+        -- 'pylint',
         'debugpy',
-        'black',
-        'isort',
-        'golines',
+        -- 'black',
+        -- 'isort',
+        -- 'golines',
         'buf',
         'yamlfmt',
         'markdownlint',
         'luacheck',
-        'golangci-lint',
+        -- 'golangci-lint',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
       require('mason-lspconfig').setup {

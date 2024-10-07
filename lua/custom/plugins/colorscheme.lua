@@ -14,7 +14,7 @@ return {
   priority = 1000, -- make sure to load this before all the other start plugins
   opts = {
     -- transparent = true,
-    style = 'moon', -- available variations: "storm, night, moon, day"
+    style = 'storm', -- available variations: "storm, night, moon, day"
   },
   config = function(_, opts)
     require('tokyonight').setup(opts)
