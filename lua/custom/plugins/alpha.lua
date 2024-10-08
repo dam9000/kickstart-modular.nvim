@@ -75,28 +75,30 @@ return {
     -- stylua: ignore
     local highlight_groups = {
       parloa_deep_pink = { fg = '#CA5DD9', },
+      parloa_berlin_black = { fg = '#24132B', },
+      parloa_miami_pink = { fg = '#E194F5', },
     }
 
     -- stylua: ignore
     local dashboard_opts_hl = {
-      { { 'parloa_deep_pink', 1, 246 }, },
-      { { 'parloa_deep_pink', 1, 246 }, },
-      { { 'parloa_deep_pink', 1, 246 }, },
-      { { 'parloa_deep_pink', 1, 346 }, },
-      { { 'parloa_deep_pink', 1, 346 }, },
-      { { 'parloa_deep_pink', 1, 346 }, },
-      { { 'parloa_deep_pink', 1, 346 }, },
-      { { 'parloa_deep_pink', 1, 346 }, },
-      { { 'parloa_deep_pink', 1, 346 }, },
-      { { 'parloa_deep_pink', 1, 346 }, },
-      { { 'parloa_deep_pink', 1, 346 }, },
-      { { 'parloa_deep_pink', 1, 346 }, },
-      { { 'parloa_deep_pink', 1, 246 }, },
-      { { 'parloa_deep_pink', 1, 246 }, },
-      { { 'parloa_deep_pink', 1, 246 }, },
-      { { 'parloa_deep_pink', 1, 246 }, },
-      { { 'parloa_deep_pink', 1, 246 }, },
-      { { 'parloa_deep_pink', 1, 246 }, },
+      { { 'parloa_miami_pink', 1, 246 }, },
+      { { 'parloa_miami_pink', 1, 246 }, },
+      { { 'parloa_miami_pink', 1, 246 }, },
+      { { 'parloa_miami_pink', 1, 346 }, },
+      { { 'parloa_miami_pink', 1, 346 }, },
+      { { 'parloa_miami_pink', 1, 346 }, },
+      { { 'parloa_miami_pink', 1, 346 }, },
+      { { 'parloa_miami_pink', 1, 346 }, },
+      { { 'parloa_miami_pink', 1, 346 }, },
+      { { 'parloa_miami_pink', 1, 346 }, },
+      { { 'parloa_miami_pink', 1, 346 }, },
+      { { 'parloa_miami_pink', 1, 346 }, },
+      { { 'parloa_miami_pink', 1, 246 }, },
+      { { 'parloa_miami_pink', 1, 246 }, },
+      { { 'parloa_miami_pink', 1, 246 }, },
+      { { 'parloa_miami_pink', 1, 246 }, },
+      { { 'parloa_miami_pink', 1, 246 }, },
+      { { 'parloa_miami_pink', 1, 246 }, },
     }
 
     for key, val in pairs(highlight_groups) do
