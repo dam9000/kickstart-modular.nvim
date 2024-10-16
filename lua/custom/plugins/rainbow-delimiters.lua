@@ -4,10 +4,19 @@ return {
   'HiPhish/rainbow-delimiters.nvim',
   config = function()
     local rainbow = require 'rainbow-delimiters'
+
+    vim.api.nvim_set_hl(0, 'RainbowDelimiterRed', { fg = '#f7768e' })
+    vim.api.nvim_set_hl(0, 'RainbowDelimiterYellow', { fg = '#e0af68' })
+    vim.api.nvim_set_hl(0, 'RainbowDelimiterBlue', { fg = '#7aa2f7' })
+    vim.api.nvim_set_hl(0, 'RainbowDelimiterPurple', { fg = '#bb9af7' })
+    vim.api.nvim_set_hl(0, 'RainbowDelimiterGreen', { fg = '#9ece6a' })
+    vim.api.nvim_set_hl(0, 'RainbowDelimiterViolet', { fg = '#9d7cd8' })
+    vim.api.nvim_set_hl(0, 'RainbowDelimiterCyan', { fg = '#7dcfff' })
+
     require('rainbow-delimiters.setup').setup {
       strategy = {
         [''] = rainbow.strategy['global'],
-        commonlisp = rainbow.strategy['local'],
+        vim = rainbow.strategy['local'],
       },
       query = {
           [''] = 'rainbow-delimiters',
@@ -21,7 +30,7 @@ return {
           'RainbowDelimiterRed',
           'RainbowDelimiterYellow',
           'RainbowDelimiterBlue',
-          'RainbowDelimiterOrange',
+          'RainbowDelimiterPurple',
           'RainbowDelimiterGreen',
           'RainbowDelimiterViolet',
           'RainbowDelimiterCyan',
@@ -30,3 +39,5 @@ return {
     }
   end,
 }
+
+-- vim: ts=2 sts=2 sw=2 et

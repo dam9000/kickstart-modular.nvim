@@ -7,11 +7,13 @@ return {
     main = 'ibl',
     config = function()
       local highlight = {
-        'RainbowPurple',
-        'RainbowYellow',
-        'RainbowBlue',
-        'RainbowGreen',
-        'RainbowCyan',
+        'RainbowIndentRed',
+        'RainbowIndentYellow',
+        'RainbowIndentBlue',
+        'RainbowIndentPurple',
+        'RainbowIndentGreen',
+        'RainbowIndentViolet',
+        'RainbowIndentCyan',
       }
       local hooks = require 'ibl.hooks'
 
@@ -25,11 +27,13 @@ return {
         -- vim.api.nvim_set_hl(0, 'RainbowCyan', { fg = '#86e1fc' })
 
         -- Colors based on the `tokyonight-storm` colorscheme.
-        vim.api.nvim_set_hl(0, 'RainbowPurple', { fg = '#9d7cd8' })
-        vim.api.nvim_set_hl(0, 'RainbowYellow', { fg = '#e0af68' })
-        vim.api.nvim_set_hl(0, 'RainbowBlue', { fg = '#7aa2f7' })
-        vim.api.nvim_set_hl(0, 'RainbowGreen', { fg = '#9ece6a' })
-        vim.api.nvim_set_hl(0, 'RainbowCyan', { fg = '#7dcfff' })
+        vim.api.nvim_set_hl(0, 'RainbowIndentRed', { fg = '#f7768e' })
+        vim.api.nvim_set_hl(0, 'RainbowIndentYellow', { fg = '#e0af68' })
+        vim.api.nvim_set_hl(0, 'RainbowIndentBlue', { fg = '#7aa2f7' })
+        vim.api.nvim_set_hl(0, 'RainbowIndentPurple', { fg = '#bb9af7' })
+        vim.api.nvim_set_hl(0, 'RainbowIndentGreen', { fg = '#9ece6a' })
+        vim.api.nvim_set_hl(0, 'RainbowIndentViolet', { fg = '#9d7cd8' })
+        vim.api.nvim_set_hl(0, 'RainbowIndentCyan', { fg = '#7dcfff' })
       end)
 
       -- Initialize the plugin with the custom configuration.
