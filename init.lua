@@ -42,15 +42,15 @@ vim.g.maplocalleader = ' '
 vim.g.python3_host_prog = '/Users/enrique.perez/.pyenv/versions/py3.12-nvim/bin/python'
 
 -- Enable Copilot for specific filetypes_list
--- vim.g.copilot_filetypes = {
---   markdown = true,
---   python = true,
---   yaml = true,
---   json = true,
---   toml = true,
---   lua = true,
---   sql = true,
--- }
+vim.g.copilot_filetypes = {
+  markdown = true,
+  python = true,
+  yaml = true,
+  json = true,
+  toml = true,
+  lua = true,
+  sql = true,
+}
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
