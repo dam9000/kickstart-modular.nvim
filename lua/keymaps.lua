@@ -50,5 +50,4 @@ vim.keymap.set('n', '<leader>e', '<cmd>Explore<CR>', { desc = '[E]xplore' })
 vim.keymap.set('n', '<leader>ng', '<cmd>Neogit<CR>', { desc = '[N]eo[g]it' })
 
 vim.keymap.set('n', '<leader>lr', '<cmd>LspRestart<CR>', { desc = '[L]SP [R]estart' })
-
 -- vim: ts=2 sts=2 sw=2 et
