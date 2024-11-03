@@ -39,7 +39,7 @@ return {
         },
         completion = { completeopt = 'menu,menuone,noinsert' },
 
-        -- NOTE: See `:help ins-completion` for more information.
+        -- See `:help ins-completion` for more information.
         mapping = cmp.mapping.preset.insert {
           ['<C-j>'] = cmp.mapping.select_next_item(), -- Select the [n]ext item
           ['<C-k>'] = cmp.mapping.select_prev_item(), -- Select the [p]revious item

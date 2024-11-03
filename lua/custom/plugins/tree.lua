@@ -29,6 +29,8 @@ return {
     vim.keymap.set('n', '<leader>ec', ':NvimTreeClose<CR>', { desc = '[C]lose Files [E]xplorer' })
     vim.keymap.set('n', '<leader>ee', ':NvimTreeToggle<CR>', { desc = 'Toggl[e] Files [E]xplorer' })
     vim.keymap.set('n', '<leader>ef', ':NvimTreeFocus<CR>', { desc = '[F]ocus Files [E]xplorer' })
+
+    -- NOTE: Use `g?` to see all available keymaps
     require('nvim-tree').setup(opts)
   end,
 }

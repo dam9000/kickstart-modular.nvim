@@ -18,7 +18,8 @@ return {
       notify_on_error = false,
 
       format_on_save = false,
-      -- NOTE: Replace the above line with this to enable `format_on_save lsp_fallback` for languages that don't have a well standardized coding style.
+      -- NOTE: Replace the above line with this to enable `format_on_save lsp_fallback`
+      -- for languages that don't have a well standardized coding style.
       --
       -- format_on_save = function(bufnr)
       --   local disabled_fts = { c = true, cpp = true, objc = true, objcpp = true }
@@ -40,19 +41,11 @@ return {
         --
         -- javascript = { { "prettierd", "prettier" } },
 
-        -- TODO: Find a way to override default formatter configuration or add one.
-        --
-        -- sql = { 'sqlfluff' },
-
         lua = { 'stylua' },
-        -- rust = { 'rustfmt' },
-        -- go = { 'goimports', 'golines', 'gofmt' },
-        protobuf = { 'buf' },
-
-        -- TODO: Add formatters for json and terraform
-        --
+        proto = { 'buf' },
         terraform = { 'terraform_fmt' },
-        -- json = { 'jq' },
+        markdown = { 'markdownlint' },
+        -- rust = { 'rustfmt' },
       },
     },
   },

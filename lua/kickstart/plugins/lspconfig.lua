@@ -46,13 +46,15 @@ return {
       -- Used for completion, annotations and signatures of Neovim APIs.
       { 'folke/neodev.nvim', opts = {} },
     },
+
     --  This function gets run when opening a file an LSP attaches to the current buffer.
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
+
+        -- This function allows to define mappings more easily.
+        -- It sets the mode, buffer and description for each keymap.
         callback = function(event)
-          -- This function allows to define mappings more easily.
-          -- It sets the mode, buffer and description for each keymap.
           local map = function(keys, func, desc)
             vim.keymap.set('n', keys, func, { buffer = event.buf, desc = desc })
           end
@@ -69,8 +71,9 @@ return {
           --  Useful when your language has ways of declaring types without an actual implementation.
           map('<leader>si', require('telescope.builtin').lsp_implementations, '[S]earch [I]mplementations')
 
+          -- NOTE: Symbols are things like variables, functions, types, etc.
+          --
           -- Jump to the declaration of the symbol under your cursor.
-          -- WARN: This is not Goto Definition, this is Goto Declaration.
           map('<leader>gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
           -- Jump to the definition of the symbol under your cursor.
@@ -80,15 +83,15 @@ return {
           map('<leader>st', require('telescope.builtin').lsp_type_definitions, '[S]earch [T]ype definition')
 
           -- Fuzzy find all the symbols in your current document.
-          -- NOTE: Symbols are things like variables, functions, types, etc.
           map('<leader>sy', require('telescope.builtin').lsp_document_symbols, '[S]earch Document S[y]mbols')
 
           -- Fuzzy find all the symbols in your current workspace.
           -- Similar to document symbols, except searches over your whole project.
           map('<leader>sp', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[S]earch Works[p]ace Symbols')
 
-          -- Rename the variable under your cursor.
           --  WARN: Not all Language Servers support renaming across files.
+          --
+          -- Rename the variable under your cursor.
           map('<leader>lr', vim.lsp.buf.rename, '[R]ename all references')
 
           -- Execute a code action, usually your cursor needs to be on top of an error
@@ -99,8 +102,9 @@ return {
           -- Using the keymap twice jumps the cursor into the information window.
           map('<leader>lh', vim.lsp.buf.hover, 'Display [H]over information')
 
-          -- Displays signature information about the symbol under the cursor.
           -- TODO: Never displays anything for me, considerer removing it.
+          --
+          -- Displays signature information about the symbol under the cursor.
           map('<leader>ls', vim.lsp.buf.signature_help, 'Display [S]ignature information')
 
           -- Highlight references of the word under the cursor when a key isn't pressed for the specified `updatetime`.
@@ -131,8 +135,6 @@ return {
       -- Enable the following language servers.
       -- See `:help lspconfig-all` for a list of all the pre-configured LSPs.
       local servers = {
-        -- rust_analyzer = {},
-        -- gopls = {},
         pyright = {},
         yamlls = {},
         jsonls = {},
@@ -142,12 +144,15 @@ return {
         bufls = {},
         sqlls = {},
         dockerls = {},
+        cssls = {},
+        -- rust_analyzer = {},
 
-        -- NOTE: Add any additional override configuration inside a server's table. For example:
+        -- NOTE: You can add any additional override configuration inside a server's table. For example:
         -- * cmd: Override the default command used to start the server
         -- * filetypes: Override the default list of associated filetypes for the server
         -- * capabilities: Override fields in capabilities. Can be used to disable certain LSP features.
         -- * settings: Override the default settings passed when initializing the server.
+        --
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -174,18 +179,9 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua',
-        -- 'flake8',
-        -- 'mypy',
-        -- 'pylint',
-        'debugpy',
-        -- 'black',
-        -- 'isort',
-        -- 'golines',
         'buf',
-        'yamlfmt',
         'markdownlint',
         'luacheck',
-        -- 'golangci-lint',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
       require('mason-lspconfig').setup {

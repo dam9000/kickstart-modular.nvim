@@ -7,25 +7,21 @@ return {
     config = function()
       local lint = require 'lint'
       lint.linters_by_ft = {
-        python = {
-          -- 'flake8',
-          -- 'mypy',
-        },
-        -- go = { 'golangcilint' },
+        markdown = { 'markdownlint' },
+        terraform = { "tflint" },
+        proto = { "buf" },
 
         -- TODO: Find a way to override default linter configuration or add one.
         --
-        -- markdown = { 'markdownlint' },
         -- lua = { 'luacheck' },
-        terraform = { "tflint" },
       }
 
-      -- NOTE: To allow other plugins to add linters to `require('lint').linters_by_ft`,
+      -- To allow other plugins to add linters to `require('lint').linters_by_ft`,
       -- instead set linters_by_ft like this:
       -- `lint.linters_by_ft = lint.linters_by_ft or {}`
       -- `lint.linters_by_ft['markdown'] = { 'markdownlint' }`
       --
-      -- NOTE: However, note that this will enable a set of default linters,
+      -- However, note that this will enable a set of default linters,
       -- which will cause errors unless these tools are available:
       -- {
       --   clojure = { "clj-kondo" },
@@ -39,8 +35,7 @@ return {
       --   text = { "vale" }
       -- }
       --
-      -- NOTE: You can disable the default linters by setting their filetypes to nil:
-      --
+      -- You can disable the default linters by setting their filetypes to nil:
       -- lint.linters_by_ft['clojure'] = nil
       -- lint.linters_by_ft['dockerfile'] = nil
       -- lint.linters_by_ft['inko'] = nil
