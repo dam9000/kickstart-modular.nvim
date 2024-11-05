@@ -22,7 +22,6 @@ return {
     'jay-babu/mason-nvim-dap.nvim',
 
     -- Add your own debuggers here
-    'leoluz/nvim-dap-go',
   },
   keys = function(_, keys)
     local dap = require 'dap'
@@ -52,18 +51,26 @@ return {
 
     require('mason-nvim-dap').setup {
       -- Makes a best effort to setup the various debuggers with
-      -- reasonable debug configurations
+      -- reasonable debug configurations.
+      --
+      -- Whether adapters that are set up (via dap) should be automatically installed if they're not already installed.
+      -- This setting has no relation with the `ensure_installed` setting.
+      -- Can either be:
+      --   - false: Daps are not automatically installed.
+      --   - true: All adapters set up via dap are automatically installed.
+      --   - { exclude: string[] }: All adapters set up via mason-nvim-dap, except the ones provided in the list, are automatically installed.
+      --       Example: automatic_installation = { exclude = { "python", "delve" } }
       automatic_installation = true,
 
       -- You can provide additional configuration to the handlers,
       -- see mason-nvim-dap README for more information
       handlers = {},
 
-      -- You'll need to check that you have the required things installed
-      -- online, please don't ask me how to install them :)
+      -- A list of adapters to install if they're not already installed.
+      -- This setting has no relation with the `automatic_installation` setting.
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
-        'delve',
+        'codelldb', -- Added by Jack
       },
     }
 
@@ -104,14 +111,5 @@ return {
     dap.listeners.after.event_initialized['dapui_config'] = dapui.open
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
-
-    -- Install golang specific config
-    require('dap-go').setup {
-      delve = {
-        -- On Windows delve must be run attached or it crashes.
-        -- See https://github.com/leoluz/nvim-dap-go/blob/main/README.md#configuring
-        detached = vim.fn.has 'win32' == 0,
-      },
-    }
   end,
 }
