@@ -18,6 +18,8 @@ return {
         { '<leader>l', group = '[L]SP' },
         { '<leader>j', group = '[J]ump anywhere' },
         { '<leader>h', group = 'Git [H]unks', mode = { 'n', 'v' } },
+        { '<leader>t', group = '[T]erminal' },
+        { '<leader>c', group = '[C]opilot' },
       }
     end,
   },

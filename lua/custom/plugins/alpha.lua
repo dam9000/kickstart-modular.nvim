@@ -7,8 +7,8 @@ return {
     'nvim-lua/plenary.nvim',
   },
   config = function()
-    local alpha = require 'alpha'
-    local dashboard = require 'alpha.themes.startify'
+    local alpha = require('alpha')
+    local dashboard = require('alpha.themes.startify')
 
     dashboard.section.header.val = {
       -- [[                                                                       ]],
@@ -55,6 +55,9 @@ return {
 
     -- Disable MRU
     dashboard.section.mru.val = { { type = 'padding', val = 0 } }
+
+    -- Set icons provider
+    dashboard.file_icons.provider = 'devicons'
 
     -- Set footer
     local footer = [[

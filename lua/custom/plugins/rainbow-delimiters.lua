@@ -6,11 +6,10 @@ return {
     local rainbow = require 'rainbow-delimiters'
 
     vim.api.nvim_set_hl(0, 'RainbowDelimiterRed', { fg = '#f7768e' })
-    vim.api.nvim_set_hl(0, 'RainbowDelimiterYellow', { fg = '#e0af68' })
-    vim.api.nvim_set_hl(0, 'RainbowDelimiterBlue', { fg = '#7aa2f7' })
     vim.api.nvim_set_hl(0, 'RainbowDelimiterPurple', { fg = '#bb9af7' })
-    vim.api.nvim_set_hl(0, 'RainbowDelimiterGreen', { fg = '#9ece6a' })
-    vim.api.nvim_set_hl(0, 'RainbowDelimiterViolet', { fg = '#9d7cd8' })
+    vim.api.nvim_set_hl(0, 'RainbowDelimiterOrange', { fg = '#ff9e64' })
+    vim.api.nvim_set_hl(0, 'RainbowDelimiterBlue', { fg = '#7aa2f7' })
+    vim.api.nvim_set_hl(0, 'RainbowDelimiterYellow', { fg = '#e0af68' })
     vim.api.nvim_set_hl(0, 'RainbowDelimiterCyan', { fg = '#7dcfff' })
 
     require('rainbow-delimiters.setup').setup {
@@ -27,13 +26,12 @@ return {
           lua = 210,
       },
       highlight = {
-          'RainbowDelimiterRed',
-          'RainbowDelimiterYellow',
-          'RainbowDelimiterBlue',
-          'RainbowDelimiterPurple',
-          'RainbowDelimiterGreen',
-          'RainbowDelimiterViolet',
-          'RainbowDelimiterCyan',
+        'RainbowDelimiterRed',
+        'RainbowDelimiterYellow',
+        'RainbowDelimiterBlue',
+        'RainbowDelimiterPurple',
+        'RainbowDelimiterOrange',
+        'RainbowDelimiterCyan',
       },
       blacklist = {'c', 'cpp'},
     }
