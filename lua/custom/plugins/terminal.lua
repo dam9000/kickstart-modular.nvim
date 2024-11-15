@@ -6,7 +6,7 @@ return {
   opts = {
     direction = 'vertical',
     start_in_insert = true,
-    size = vim.o.columns * 0.4,
+    size = 80,
   },
   config = function(_, opts)
     function _G.set_terminal_keymaps()
