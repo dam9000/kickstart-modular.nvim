@@ -217,7 +217,11 @@ return {
         rust_analyzer = {},
         ts_ls = {},
         lua_ls = {},
-        kotlin_language_server = {},
+        kotlin_language_server = {
+          init_options = {
+            storagePath = vim.fn.resolve(vim.fn.stdpath 'cache' .. '/kotlin_language_server'),
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
