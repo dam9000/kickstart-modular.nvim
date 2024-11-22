@@ -7,12 +7,12 @@ return {
     config = function()
       local lint = require 'lint'
       lint.linters_by_ft = {
-        markdown = { 'markdownlint' },
         terraform = { "tflint" },
         proto = { "buf" },
 
         -- TODO: Find a way to override default linter configuration or add one.
         --
+        -- markdown = { 'markdownlint' },
         -- lua = { 'luacheck' },
       }
 

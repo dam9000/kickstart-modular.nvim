@@ -19,7 +19,7 @@ return {
         { '<leader>j', group = '[J]ump anywhere' },
         { '<leader>h', group = 'Git [H]unks', mode = { 'n', 'v' } },
         { '<leader>t', group = '[T]erminal' },
-        { '<leader>c', group = '[C]opilot' },
+        { '<leader>c', group = '[C]opilot', mode = { 'n', 'v' } },
       }
     end,
   },

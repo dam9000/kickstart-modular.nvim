@@ -9,28 +9,73 @@ return {
   },
   build = 'make tiktoken', -- Only on MacOS or Linux
   opts = {
-    context = 'buffer', -- 'buffers', 'buffer' or none (can be specified manually in prompt via @)
     question_header = '## Enrique ',
+    -- Context to use (can be specified manually in prompt via #).
+    -- It can be one of: `buffer`, `buffers`, `file`, `files`, `git`.
+    context = nil,
+    selection = function(source)
+      local select = require 'CopilotChat.select'
+      local visual_selection = select.visual(source)
+      if visual_selection then
+        return visual_selection
+      else
+        return nil
+      end
+    end,
     prompts = {
       Explain = {
-        prompt = '/COPILOT_EXPLAIN Write an explanation for the active selection as paragraphs of text.',
+        prompt = '> /COPILOT_EXPLAIN\n\nWrite an explanation for the selected code.',
+      },
+      Review = {
+        prompt = '> /COPILOT_REVIEW\n\nReview the selected code.',
       },
       Fix = {
-        prompt = '/COPILOT_GENERATE There is a problem in this code. Rewrite the code to show it with the bug fixed.',
+        prompt = '> /COPILOT_GENERATE\n\nThere is a problem in the selected code. Rewrite the code with the bug fixed.',
       },
       Optimize = {
-        prompt = '/COPILOT_GENERATE Optimize the selected code to improve performance and readability.',
+        prompt = '> /COPILOT_GENERATE\n\nOptimize the selected code to improve performance and readability.',
       },
       Docs = {
-        prompt = '/COPILOT_GENERATE Please add documentation comment for the selection.',
+        prompt = '> /COPILOT_GENERATE\n\nPlease add documentation comments to the selected code.',
       },
       Tests = {
-        prompt = '/COPILOT_GENERATE Please generate tests for my code.',
+        prompt = '> /COPILOT_GENERATE\n\nPlease generate tests for the selected code.',
+      },
+      Commit = {
+        prompt = '> #git:staged\n\nWrite commit message for the changes using the conventional commits specification.',
+      },
+      PrDescription = {
+        prompt = '> #pr\n\nPlease generate a description for a pull request using the context provided from the git diff between the current branch and the main branch. It should have two sections: #1 titled What does this PR do? with the main goal and summary of the pull request, and #2 Detailed Changes, with a detail description of all files changes. Do not forget to use emojis.',
+        mapping = '<leader>cp',
+        description = 'Generate a pull request description',
+      },
+    },
+    contexts = {
+      pr = {
+        input = function(callback)
+          callback()
+        end,
+        resolve = function()
+          local handle = io.popen 'git diff main...HEAD'
+          if handle == nil then
+            return ''
+          end
+          local result = handle:read '*a'
+          handle:close()
+
+          return {
+            {
+              content = result,
+              filename = 'pr_diff',
+              filetype = 'diff',
+            },
+          }
+        end,
       },
     },
     window = {
       layout = 'vertical', -- 'vertical', 'horizontal', 'float', 'replace'
-      width = 0.4, -- fractional width of parent, or absolute width in columns when > 1 (vertical)
+      width = 80, -- fractional width of parent, or absolute width in columns when > 1 (vertical)
       height = 0.5, -- fractional height of parent, or absolute height in rows when > 1 (horizontal)
       -- Options below only apply to floating windows
       relative = 'editor', -- 'editor', 'win', 'cursor', 'mouse'
@@ -72,18 +117,8 @@ return {
     },
   },
   config = function(_, opts)
-    vim.keymap.set('n', '<leader>cc', ':CopilotChat<CR>', { desc = 'Open [C]opilot [C]hat' })
-    vim.keymap.set('n', '<leader>ce', ':CopilotChatExplain<CR>', { desc = '[C]opilot Chat [E]xplain' })
-    vim.keymap.set('n', '<leader>cq', function()
-      local input = vim.fn.input 'Quick Chat: '
-      local selection = require('CopilotChat.select').visual
-      if not selection then
-        selection = require('CopilotChat.select').buffer
-      end
-      if input ~= '' then
-        require('CopilotChat').ask(input, { selection = selection })
-      end
-    end, { desc = 'Open [C]opilot [Q]uick Chat' })
+    vim.keymap.set({ 'v', 'x' }, '<leader>cc', ':CopilotChat<CR>', { desc = 'Open [C]opilot [C]hat' })
+    vim.keymap.set({ 'v', 'x' }, '<leader>ce', ':CopilotChatExplain<CR>', { desc = '[C]opilot Chat [E]xplain' })
     require('CopilotChat').setup(opts)
   end,
 }
