@@ -77,10 +77,7 @@ return {
     -- Set colors
     -- stylua: ignore
     local highlight_groups = {
-      parloa_deep_pink = { fg = '#CA5DD9', },
-      parloa_berlin_black = { fg = '#24132B', },
       parloa_miami_pink = { fg = '#E194F5', },
-      parloa_rio_sand = { fg = '#F8F5F3', },
     }
 
     -- stylua: ignore

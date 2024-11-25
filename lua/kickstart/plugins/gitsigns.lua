@@ -1,8 +1,7 @@
 --[[
 
 Configure Git integration for Neovim
-
-Adds git related signs to the gutter_fg_grey and utilities for managing changes.
+Providing signs in the signcolumn to show changed/added/removed lines.
 See `:help gitsigns`
 
 --]]
@@ -54,12 +53,6 @@ return {
         end, { desc = 'Git [H]unk [R]eset' })
 
         -- Normal mode keymaps
-        map('n', '<leader>hs', gitsigns.stage_hunk, { desc = 'Git [H]unk [S]tage' })
-        map('n', '<leader>hr', gitsigns.reset_hunk, { desc = 'Git [H]unk [R]eset' })
-        map('n', '<leader>hS', gitsigns.stage_buffer, { desc = 'Git [H]unk [S]tage buffer' })
-        map('n', '<leader>hu', gitsigns.undo_stage_hunk, { desc = 'Git [H]unk [U]ndo stage' })
-        map('n', '<leader>hR', gitsigns.reset_buffer, { desc = 'Git [H]unk [R]eset buffer' })
-        map('n', '<leader>hp', gitsigns.preview_hunk, { desc = 'Git [H]unk [P]review' })
         map('n', '<leader>hb', gitsigns.blame_line, { desc = 'Git [H]unk [B]lame line' })
         map('n', '<leader>hd', gitsigns.diffthis, { desc = 'Git [H]unk [D]iff against index' })
         map('n', '<leader>hD', function()
