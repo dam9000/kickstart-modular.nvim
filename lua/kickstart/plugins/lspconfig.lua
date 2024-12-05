@@ -159,6 +159,7 @@ return {
             map('<leader>th', function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, '[T]oggle Inlay [H]ints')
+            vim.lsp.inlay_hint.enable()
           end
         end,
       })
@@ -213,8 +214,6 @@ return {
       -- See `:help lspconfig-all` for a list of all the pre-configured LSPs
       local servers = {
         clangd = {},
-        gopls = {},
-        rust_analyzer = {},
         ts_ls = {},
         lua_ls = {},
         kotlin_language_server = {
