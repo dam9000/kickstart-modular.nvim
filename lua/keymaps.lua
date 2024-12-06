@@ -52,6 +52,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 vim.keymap.set('n', '<leader>t', ':vsplit term://%:p:h//bash<CR>', { noremap = true, silent = true })
+--vim.keymap.set('n', '<leader>t', ':lcd %:p:h | term bash<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_create_autocmd('TermOpen', {
   pattern = '*',
@@ -67,4 +68,7 @@ end, { desc = 'Next todo comment' })
 vim.keymap.set('n', '[t', function()
   require('todo-comments').jump_prev()
 end, { desc = 'Previous todo comment' })
+
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { noremap = true, silent = true })
 -- vim: ts=2 sts=2 sw=2 et
