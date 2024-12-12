@@ -15,6 +15,7 @@ return {
     -- It can be one of: `buffer`, `buffers`, `file`, `files`, `git`.
     context = nil,
 
+    -- Selection defaults to null if there is no visual selection.
     selection = function(source)
       local select = require 'CopilotChat.select'
       local visual_selection = select.visual(source)
@@ -45,9 +46,10 @@ return {
       },
       Commit = {
         prompt = '#git:staged\n\nWrite commit message for the changes using the conventional commits specification.',
+        mapping = '<leader>cc',
       },
       PrDescription = {
-        prompt = '#pr\n\nPlease generate a description for a pull request using the context provided from the git diff between the current branch and the main branch. It should have two sections: #1 titled What does this PR do? with the main goal and summary of the pull request, and #2 Detailed Changes, with a detail description of all files changes. Do not forget to use emojis.',
+        prompt = '#pr\n\nPlease generate a description for a pull request using the context provided from the git diff between the current branch and the main branch. It should have two sections: #1 titled What does this PR do? with the main goal and summary of the pull request, and #2 Detailed Changes, with a description of all changes.Do not put the file names just describe the changes. Do not forget to use emojis.',
         mapping = '<leader>cp',
         description = 'Generate a pull request description',
       },
@@ -119,7 +121,7 @@ return {
     },
   },
   config = function(_, opts)
-    vim.keymap.set({ 'n', 'v', 'x' }, '<leader>cc', ':CopilotChat<CR>', { desc = 'Open [C]opilot [C]hat' })
+    vim.keymap.set({ 'n', 'v', 'x' }, '<leader>co', ':CopilotChat<CR>', { desc = '[O]pen [C]opilot Chat' })
     vim.keymap.set({ 'v', 'x' }, '<leader>ce', ':CopilotChatExplain<CR>', { desc = '[C]opilot Chat [E]xplain' })
     require('CopilotChat').setup(opts)
   end,
