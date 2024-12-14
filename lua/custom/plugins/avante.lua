@@ -14,6 +14,7 @@ return {
     'nvim-lua/plenary.nvim',
     'MunifTanjim/nui.nvim',
     --- The below dependencies are optional,
+    'hrsh7th/nvim-cmp', -- autocompletion for avante commands and mentions
     'echasnovski/mini.icons', -- or 'nvim-tree/nvim-web-devicons'
     'zbirenbaum/copilot.lua', -- for providers='copilot'
     {
@@ -42,19 +43,19 @@ return {
       ft = { 'markdown', 'Avante' },
     },
   },
-  -- config = function()
-  --   require('avante').setup {
-  --     -- add any setup here
-  --     provider = 'openai',
-  --     auto_suggestions_provider = 'copilot',
-  --     behaviour = {
-  --       auto_suggestions = false, -- Experimental stage
-  --       auto_set_highlight_group = true,
-  --       auto_set_keymaps = true,
-  --       auto_apply_diff_after_generation = false,
-  --       support_paste_from_clipboard = false,
-  --     },
-  --     hints = { enabled = false },
-  --   }
-  -- end,
+  config = function()
+    require('avante').setup {
+      -- add any setup here
+      provider = 'openai',
+      auto_suggestions_provider = 'copilot',
+      behaviour = {
+        auto_suggestions = false, -- Experimental stage
+        auto_set_highlight_group = true,
+        auto_set_keymaps = true,
+        auto_apply_diff_after_generation = false,
+        support_paste_from_clipboard = false,
+      },
+      hints = { enabled = false },
+    }
+  end,
 }
