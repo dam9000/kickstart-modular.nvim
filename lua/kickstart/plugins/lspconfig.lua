@@ -159,15 +159,72 @@ return {
         -- clangd = {},
         -- gopls = {},
         pyright = {
+          before_init = function(_, config)
+            config.settings.python.pythonPath = vim.fn.expand './.devenv/state/venv/bin/python'
+          end,
           settings = {
             pyright = {
-              disableOrganizeImports = true, -- Using Ruff
+              disableOrganizeImports = true,
             },
             python = {
               analysis = {
-                ignore = { '*' }, -- Using Ruff
-                typeCheckingMode = 'off', -- Using mypy
+                typeCheckingMode = 'basic',
+                -- autoImportCompletions = true,
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                diagnosticMode = 'workspace',
+                indexing = true,
+                diagnosticSeverityOverrides = {
+                  reportUnusedImport = 'none', -- Disables unused import warnings
+                  reportUnusedVariable = 'none', -- Disables unused variable warnings
+                },
+                completeFunctionParens = true,
               },
+            },
+          },
+        },
+        ruff = {
+          settings = {
+            organizeImports = true,
+            lint = {
+              select = {
+                'E', -- pycodestyle errors
+                'F', -- pyflakes
+                'B', -- flake8-bugbear
+                'C90', -- mccabe
+                'N', -- pep8-naming
+                'UP', -- pyupgrade
+                'S', -- flake8-bandit
+                'PIE', -- flake8-pie
+                'PL', -- pylint
+                'RUF', -- ruff-specific rules
+                'SIM', -- flake8-simplify
+                'COM', -- flake8-commas
+                'DTZ', -- flake8-datetimez
+                'EM', -- flake8-errmsg
+                'ISC', -- flake8-implicit-str-concat
+                'ICN', -- flake8-import-conventions
+                'G', -- flake8-logging-format
+                'INP', -- flake8-no-pep420
+                'PIE', -- flake8-pie
+                'T20', -- flake8-print
+                'PYI', -- flake8-pyi
+                'PT', -- flake8-pytest-style
+                'Q', -- flake8-quotes
+                'RSE', -- flake8-raise
+                'RET', -- flake8-return
+                'SLF', -- flake8-self
+                'SLOT', -- flake8-slots
+                'TID', -- flake8-tidy-imports
+                'TCH', -- flake8-type-checking
+                'ARG', -- flake8-unused-arguments
+                'PTH', -- flake8-use-pathlib
+                'ERA', -- eradicate
+                'PD', -- pandas-vet
+                'PERF', -- perflint
+                'ASYNC', -- flake8-async
+              },
+              ignore = {},
             },
           },
         },
