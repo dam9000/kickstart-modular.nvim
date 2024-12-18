@@ -5,7 +5,8 @@ return {
     config = function()
       local lint = require 'lint'
       lint.linters_by_ft = {
-        -- Theses are auto-installed by custom/plugins/mason-tool-installer.lua
+        -- Theses are auto-installed by mason-tool-installer, which is
+        -- configured in lua/kickstart/plugins/lspconfig.lua
         markdown = { 'vale' },
         python = { 'mypy' },
       }
