@@ -270,6 +270,8 @@ return {
         'cpptools', -- Added by Jack
         'ruff', -- Added by Jack
         'pylsp', -- Added by Jack
+        'vale',
+        'mypy',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
