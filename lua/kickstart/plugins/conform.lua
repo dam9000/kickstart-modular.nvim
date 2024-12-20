@@ -5,12 +5,13 @@ return {
     cmd = { 'ConformInfo' },
     keys = {
       {
-        '<leader>f',
+        -- Propably not used as much, since autoformat on save. Still nice to have as a backup.
+        '<leader>af',
         function()
           require('conform').format { async = true, lsp_format = 'fallback' }
         end,
         mode = '',
-        desc = '[F]ormat buffer',
+        desc = '[A]uto[F]ormat buffer',
       },
     },
     opts = {
