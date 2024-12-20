@@ -177,6 +177,53 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
+        gopls = {
+          settings = {
+            gopls = {
+              gofumpt = true,
+              codelenses = {
+                gc_details = false,
+                generate = true,
+                regenerate_cgo = true,
+                run_govulncheck = true,
+                test = true,
+                tidy = true,
+                upgrade_dependency = true,
+                vendor = true,
+              },
+              hints = {
+                assignVariableTypes = true,
+                compositeLiteralFields = true,
+                compositeLiteralTypes = true,
+                constantValues = true,
+                functionTypeParameters = true,
+                parameterNames = true,
+                rangeVariableTypes = true,
+              },
+              analyses = {
+                fieldalignment = true,
+                nilness = true,
+                unusedparams = true,
+                unusedwrite = true,
+                useany = true,
+              },
+              usePlaceholders = true,
+              completeUnimported = true,
+              staticcheck = true,
+              directoryFilters = { '-.git', '-.vscode', '-.idea', '-.vscode-test', '-node_modules' },
+              semanticTokens = true,
+            },
+          },
+        },
+        pyright = {},
+        rust_analyzer = {},
+
+        jinja_lsp = {},
+
+        html = {
+          filetypes = { 'html', 'gotmpl' },
+        },
+
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
@@ -219,6 +266,22 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+
+        'prettierd',
+
+        'rustfmt',
+
+        'black',
+        'isort',
+        'mypy',
+        'flake8',
+
+        'goimports',
+        'gofumpt',
+        'gomodifytags',
+        'impl',
+
+        'sql-formatter',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
