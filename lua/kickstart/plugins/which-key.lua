@@ -53,18 +53,29 @@ return {
           F12 = '<F12>',
         },
       },
-
-      -- Document existing key chains
-      spec = {
+    },
+    config = function()
+      require('which-key').add {
+        -- Document existing key chains
         { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
-        { '<leader>d', group = '[D]ocument' },
         { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-      },
-    },
+        -- Buffer
+        { '<leader>b', group = '[B]uffer' },
+        { '<leader>bc', '<cmd>bd!<cr>', desc = '[C]lose current buffer' },
+        { '<leader>bh', '<cmd>bprev<cr>', desc = 'Switch to previous buffer' },
+        { '<leader>bl', '<cmd>bnext<cr>', desc = 'Switch to nex buffer' },
+        -- File
+        { '<leader>f', group = '[File]' },
+        { '<leader>fb', ':Telescope file_browser<cr>', desc = '[B]rowse files' },
+        { '<leader>fs', '<cmd>w<cr>', desc = '[S]ave file' },
+        { '<leader>fc', '<cmd>q<cr>', desc = '[C]lose file' },
+        { '<leader>fx', '<cmd>x<cr>', desc = 'Save and close file' },
+      }
+    end,
   },
 }
 -- vim: ts=2 sts=2 sw=2 et
