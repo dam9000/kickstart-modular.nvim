@@ -93,7 +93,7 @@ return {
           --  Symbols are things like variables, functions, types, etc.
           map('<leader>ssb', require('telescope.builtin').lsp_document_symbols, '[S]earch [S]ymbols in current [B]uffer')
 
-         -- Fuzzy find all the symbols in your current workspace.
+          -- Fuzzy find all the symbols in your current workspace.
           --  Similar to document symbols, except searches over your entire project.
           map('<leader>ssw', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[S]earch [S]ymbols in [W]orkspace')
 
@@ -146,6 +146,9 @@ return {
             map('<leader>th', function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, '[T]oggle Inlay [H]ints')
+
+            -- Enable inlay hints by default (at startup)
+            vim.lsp.inlay_hint.enable()
           end
         end,
       })
