@@ -6,7 +6,16 @@
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
+-- Populate the quickfix list with the diagnostics. Probably a little bit of overlap with the Trouble plugin, but that is fine.
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+-- Goto the next diagnostic, and open its popup.
+vim.keymap.set('n', 'gz', function()
+  vim.diagnostic.goto_next { float = true }
+end, { desc = 'Go to next diagnostic' })
+-- Potato, but back.
+vim.keymap.set('n', 'gZ', function()
+  vim.diagnostic.goto_prev { float = true }
+end, { desc = 'Go to previous diagnostic' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which

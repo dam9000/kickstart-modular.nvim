@@ -62,6 +62,11 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 8
 
+-- Wrapping on a word basis, so you don't dutt of words so much.
+vim.o.linebreak = true
+-- Add character to start of wrapped line.
+vim.o.showbreak = ' ↪'
+
 -- Neovide options
 if vim.g.neovide then
   vim.o.guifont = 'JetBrainsMono Nerd Font:h9.5'

@@ -1,4 +1,9 @@
 -- This file contains settings that are only applied to rust files.
+
+-- vim.g.rustaceanvim = {
+--   tools = {
+--   },
+-- }
 -- Keybinds must be set with `buffer = true`, if you don't want the bindings to be permanent for all buffers once it's been loaded.
 vim.keymap.set('n', '<leader>us', function()
   vim.cmd.RustLsp { 'testables' }
@@ -6,11 +11,11 @@ end, { desc = '[S]how testables ', buffer = true })
 
 vim.keymap.set('n', '<leader>ua', function()
   vim.cmd.RustLsp { 'testables', bang = true }
-end, { desc = 'test previous [A]gain ', buffer = true })
+end, { desc = '[U]nittest previous [A]gain ', buffer = true })
 
 vim.keymap.set('n', '<leader>da', function()
   vim.cmd.RustLsp { 'debuggables', bang = true }
-end, { desc = 'test previous [A]gain ', buffer = true })
+end, { desc = '[D]ebug previous [A]gain ', buffer = true })
 
 vim.keymap.set('n', '<leader>pe', function()
   vim.cmd.RustLsp { 'explainError', 'current' }

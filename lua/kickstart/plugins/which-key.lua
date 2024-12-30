@@ -68,6 +68,7 @@ return {
         { '<leader>f', group = '[F]ind' },
         { '<leader>o', group = '[O]pen' },
         { '<leader>u', group = '[U]nit test' },
+        { '<leader>p', group = '[P]opup show' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },
