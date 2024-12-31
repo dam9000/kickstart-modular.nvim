@@ -67,17 +67,4 @@ vim.o.linebreak = true
 -- Add character to start of wrapped line.
 vim.o.showbreak = ' ↪'
 
--- Neovide options
-if vim.g.neovide then
-  vim.o.guifont = 'JetBrainsMono Nerd Font:h9.5'
-  vim.g.neovide_cursor_animation_length = 0.04
-  vim.g.neovide_cursor_vfx_mode = 'wireframe'
-  -- By default, neovide does not do anything with ctrl-shift-c / v, because that is typically handled by the terminal emulator. Hence, add this back in when running in neovide.
-  vim.keymap.set('v', '<C-S-c>', '"+y') -- Copy to system clipboard in visual mode
-  vim.keymap.set('n', '<C-S-v>', '"+P') -- Paste from system clipboard (normal mode)
-  vim.keymap.set('v', '<C-S-v>', '"+P') -- Paste from system clipboard (visual mode)
-  vim.keymap.set('i', '<C-S-v>', '<ESC>"+P') -- Paste from system clipboard (insert mode)
-  vim.keymap.set('c', '<C-S-v>', '<C-R>+') -- Paste from system clipboard (command mode)
-end
-
 -- vim: ts=2 sts=2 sw=2 et
