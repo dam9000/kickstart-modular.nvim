@@ -71,4 +71,9 @@ end, { desc = 'Previous todo comment' })
 
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { noremap = true, silent = true })
+
+-- Move line down (Alt + j)
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { noremap = true, silent = true })
+-- Move line up (Alt + k)
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { noremap = true, silent = true })
 -- vim: ts=2 sts=2 sw=2 et
