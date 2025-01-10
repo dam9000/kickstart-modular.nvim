@@ -49,7 +49,7 @@ return {
         mapping = '<leader>cc',
       },
       PrDescription = {
-        prompt = '#pr\n\nPlease generate a description for a pull request using the context provided from the git diff between the current branch and the main branch. It should have two sections: #1 titled What does this PR do? with the main goal and summary of the pull request, and #2 Detailed Changes, with a description of all changes.Do not put the file names just describe the changes. Do not forget to use emojis.',
+        prompt = '#pr\n\nPlease generate a description for a pull request using the context provided from the git diff between the current branch and the main branch. It should have two sections: #1 titled What does this PR do? (with an emoji of a thinking face) describing the main goal and summary of the pull request, and #2 Detailed Changes (with the memo emoji) describing all changes, do not put the file names just describe the changes.',
         mapping = '<leader>cp',
         description = 'Generate a pull request description',
       },
