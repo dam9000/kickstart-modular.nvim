@@ -2,17 +2,44 @@
 
 require('lazy').setup {
   -- NOTE: Plugins can be added with a link (or for a github repo: `owner/repo` link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  'github/copilot.vim', -- Github copilot plugin
+  --
+  -- Github copilot plugin
+  'github/copilot.vim',
+
+  -- Seamless resizing between neovim and tmux window splits
+  'RyanMillerC/better-vim-tmux-resizer',
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following the plugin configuration.
-  -- Use `opts = {}` to force a plugin to be loaded,
-  -- which is equivalent to: `require('Comment').setup {}`.
-  { 'numToStr/Comment.nvim', opts = {} }, -- "gc" to comment visual regions/lines
+  -- Use `opts = {}` to force a plugin to be loaded, which is equivalent to: `require('Comment').setup {}`.
+  --
+  -- `gcc` to comment lines in normal mode and `gc` for visual mode
+  { 'numToStr/Comment.nvim', opts = {} },
 
-  -- NOTE: Modular approach is using `require 'path.name'` 
-  -- to include a plugin definition from file `lua/path/name.lua`.
+  -- Indentation style detection
+  { 'nmac427/guess-indent.nvim', opt = {} },
+
+  -- Seamless navigation between neovim and tmux window splits
+  {
+    'christoomey/vim-tmux-navigator',
+    cmd = {
+      'TmuxNavigateLeft',
+      'TmuxNavigateDown',
+      'TmuxNavigateUp',
+      'TmuxNavigateRight',
+      'TmuxNavigatePrevious',
+      'TmuxNavigatorProcessList',
+    },
+    keys = {
+      { '<c-h>', '<cmd><C-U>TmuxNavigateLeft<cr>' },
+      { '<c-j>', '<cmd><C-U>TmuxNavigateDown<cr>' },
+      { '<c-k>', '<cmd><C-U>TmuxNavigateUp<cr>' },
+      { '<c-l>', '<cmd><C-U>TmuxNavigateRight<cr>' },
+      { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
+    },
+  },
+
+  -- NOTE: Modular approach is using `require 'path.name'` to include a plugin from file `lua/path/name.lua`.
   require 'kickstart.plugins.gitsigns',
   require 'kickstart.plugins.which-key',
   require 'kickstart.plugins.telescope',
@@ -23,7 +50,6 @@ require('lazy').setup {
   require 'kickstart.plugins.mini',
   require 'kickstart.plugins.treesitter',
   require 'kickstart.plugins.indent-blankline',
-  require 'kickstart.plugins.debug-adapter',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.tree',
   require 'kickstart.plugins.lint',

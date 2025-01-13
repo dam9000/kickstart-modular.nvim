@@ -79,4 +79,8 @@ vim.o.hlsearch = true
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
+-- Set increments for resizing window splits
+vim.g.tmux_resizer_resize_count = 2
+vim.g.tmux_resizer_vertical_resize_count = 2
+
 -- vim: ts=2 sts=2 sw=2 et
