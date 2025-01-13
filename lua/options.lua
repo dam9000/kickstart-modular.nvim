@@ -82,7 +82,8 @@ vim.opt.smarttab = true -- Smarter tab behavior
 vim.api.nvim_create_autocmd('BufEnter', {
   callback = function()
     local file_dir = vim.fn.expand '%:p:h'
-    if vim.fn.isdirectory(file_dir) == 1 then
+    -- Only change directory if the path contains 'pg1_tut'
+    if vim.fn.isdirectory(file_dir) == 1 and string.find(file_dir, 'pg1_tut') then
       vim.cmd('lcd ' .. file_dir)
     end
   end,
