@@ -79,4 +79,12 @@ vim.opt.expandtab = false -- Use tabs instead of spaces
 vim.opt.autoindent = true -- Enable auto-indentation
 vim.opt.smarttab = true -- Smarter tab behavior
 
+vim.api.nvim_create_autocmd('BufEnter', {
+  callback = function()
+    local file_dir = vim.fn.expand '%:p:h'
+    if vim.fn.isdirectory(file_dir) == 1 then
+      vim.cmd('lcd ' .. file_dir)
+    end
+  end,
+})
 -- vim: ts=2 sts=2 sw=2 et
