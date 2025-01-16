@@ -31,6 +31,11 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+vim.keymap.set('i', '<A-h>', '<Left>', { desc = 'left' })
+vim.keymap.set('i', '<A-l>', '<Right>', { desc = 'right' })
+vim.keymap.set('i', '<A-j>', '<Down>', { desc = 'down' })
+vim.keymap.set('i', '<A-k>', '<Up>', { desc = 'up' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
