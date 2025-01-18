@@ -27,6 +27,12 @@ return {
         go_out_plus = '',
       },
     }
+
+    -- Auto-pairs for quotes, brackets, etc.
+    require('mini.pairs').setup()
+
+    -- Go to the next/previous element with square brackets.
+    require('mini.bracketed').setup()
   end,
 }
 
