@@ -18,7 +18,7 @@ return {
     require('mini.surround').setup()
 
     -- Better navigation and manipulation of the file system
-    vim.keymap.set('n', '<leader>em', ':lua MiniFiles.open()<CR>', { desc = 'Open [M]ini Files [E]xplorer' })
+    vim.keymap.set('n', '<leader>em', ':lua MiniFiles.open()<CR>', { desc = 'Open [M]ini File Explorer' })
     require('mini.files').setup {
       mappings = {
         go_in = 'L',

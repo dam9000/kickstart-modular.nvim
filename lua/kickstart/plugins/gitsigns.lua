@@ -34,17 +34,17 @@ return {
         else
           gitsigns.nav_hunk 'next'
         end
-      end, { desc = 'Goto next Git [H]unk' })
+      end, { desc = 'Next Git [H]unk' })
       map('n', '[h', function()
         if vim.wo.diff then
           vim.cmd.normal { '[h', bang = true }
         else
           gitsigns.nav_hunk 'prev'
         end
-      end, { desc = 'Goto previous Git [H]unk' })
+      end, { desc = 'Previous Git [H]unk' })
 
       -- Keymaps
-      map('n', '<leader>hb', gitsigns.blame_line, { desc = 'Git [H]unk [B]lame line' })
+      map('n', '<leader>hb', gitsigns.blame_line, { desc = 'Git [B]lame Line' })
     end,
   },
 }

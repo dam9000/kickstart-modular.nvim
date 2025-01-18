@@ -61,32 +61,32 @@ return {
         -- Jump to the definition of the word under your cursor.
         -- This is where a variable was first declared, or where a function is defined, etc.
         -- To jump back, press <C-T>.
-        map('<leader>se', require('telescope.builtin').lsp_definitions, '[S]earch D[e]finitions')
+        map('<leader>se', require('telescope.builtin').lsp_definitions, 'Search D[e]finitions')
 
         -- Find references for the word under your cursor.
-        map('<leader>sr', require('telescope.builtin').lsp_references, '[S]earch [R]eferences')
+        map('<leader>sr', require('telescope.builtin').lsp_references, 'Search [R]eferences')
 
         -- Jump to the implementation of the word under your cursor.
         --  Useful when your language has ways of declaring types without an actual implementation.
-        map('<leader>si', require('telescope.builtin').lsp_implementations, '[S]earch [I]mplementations')
+        map('<leader>si', require('telescope.builtin').lsp_implementations, 'Search [I]mplementations')
 
         -- NOTE: Symbols are things like variables, functions, types, etc.
         --
         -- Jump to the declaration of the symbol under your cursor.
-        map('<leader>gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+        map('<leader>gD', vim.lsp.buf.declaration, 'Goto [D]eclaration')
 
         -- Jump to the definition of the symbol under your cursor.
-        map('<leader>gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+        map('<leader>gd', vim.lsp.buf.definition, 'Goto [D]efinition')
 
         -- Jump to the type definition of the word under your cursor.
-        map('<leader>st', require('telescope.builtin').lsp_type_definitions, '[S]earch [T]ype definition')
+        map('<leader>st', require('telescope.builtin').lsp_type_definitions, 'Search [T]ype definition')
 
         -- Fuzzy find all the symbols in your current document.
-        map('<leader>sy', require('telescope.builtin').lsp_document_symbols, '[S]earch Document S[y]mbols')
+        map('<leader>sy', require('telescope.builtin').lsp_document_symbols, 'Search Document S[y]mbols')
 
         -- Fuzzy find all the symbols in your current workspace.
         -- Similar to document symbols, except searches over your whole project.
-        map('<leader>sp', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[S]earch Works[p]ace Symbols')
+        map('<leader>sp', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Search Works[p]ace Symbols')
 
         --  WARN: Not all Language Servers support renaming across files.
         --
@@ -101,7 +101,7 @@ return {
         -- Using the keymap twice jumps the cursor into the information window.
         map('<leader>lh', vim.lsp.buf.hover, 'Display [H]over information')
 
-        -- TODO: Never displays anything for me, considerer removing it.
+        -- TODO: Never displays anything for me, consider removing it.
         --
         -- Displays signature information about the symbol under the cursor.
         map('<leader>ls', vim.lsp.buf.signature_help, 'Display [S]ignature information')

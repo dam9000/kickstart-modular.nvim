@@ -16,9 +16,6 @@ require('lazy').setup {
   -- `gcc` to comment lines in normal mode and `gc` for visual mode
   { 'numToStr/Comment.nvim', opts = {} },
 
-  -- Indentation style detection
-  { 'nmac427/guess-indent.nvim', opt = {} },
-
   -- Seamless navigation between neovim and tmux window splits
   {
     'christoomey/vim-tmux-navigator',

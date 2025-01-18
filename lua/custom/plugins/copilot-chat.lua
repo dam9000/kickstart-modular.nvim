@@ -47,11 +47,12 @@ return {
       Commit = {
         prompt = '#git:staged\n\nWrite commit message for the changes using the conventional commits specification.',
         mapping = '<leader>cc',
+        description = 'Write a [C]ommit Message',
       },
       PrDescription = {
         prompt = '#pr\n\nPlease generate a description for a pull request using the context provided from the git diff between the current branch and the main branch. It should have two sections: #1 titled What does this PR do? (with an emoji of a thinking face) describing the main goal and summary of the pull request, and #2 Detailed Changes (with the memo emoji) describing all changes, do not put the file names just describe the changes.',
         mapping = '<leader>cp',
-        description = 'Generate a pull request description',
+        description = 'Write a [P]ull Request description',
       },
     },
     contexts = {
@@ -121,8 +122,8 @@ return {
     },
   },
   config = function(_, opts)
-    vim.keymap.set({ 'n', 'v', 'x' }, '<leader>co', ':CopilotChat<CR>', { desc = '[O]pen [C]opilot Chat' })
-    vim.keymap.set({ 'v', 'x' }, '<leader>ce', ':CopilotChatExplain<CR>', { desc = '[C]opilot Chat [E]xplain' })
+    vim.keymap.set({ 'n', 'v', 'x' }, '<leader>co', ':CopilotChat<CR>', { desc = '[O]pen Chat' })
+    vim.keymap.set({ 'v', 'x' }, '<leader>ce', ':CopilotChatExplain<CR>', { desc = 'Write Code [E]xplanation' })
     require('CopilotChat').setup(opts)
   end,
 }
