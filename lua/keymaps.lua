@@ -52,16 +52,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-vim.keymap.set('n', '<leader>t', ':vsplit term://%:p:h//bash<CR>', { noremap = true, silent = true })
---vim.keymap.set('n', '<leader>t', ':lcd %:p:h | term bash<CR>', { noremap = true, silent = true })
-
-vim.api.nvim_create_autocmd('TermOpen', {
-  pattern = '*',
-  callback = function()
-    vim.cmd 'startinsert' -- Enter Insert mode
-  end,
-})
-
 vim.keymap.set('n', ']t', function()
   require('todo-comments').jump_next()
 end, { desc = 'Next todo comment' })
