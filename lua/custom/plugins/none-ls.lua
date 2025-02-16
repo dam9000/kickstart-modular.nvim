@@ -4,10 +4,12 @@ return {
   dependencies = {
     'nvimtools/none-ls-extras.nvim',
     'jayp0521/mason-null-ls.nvim', -- ensure dependencies are installed
+    'nvim-lua/plenary.nvim',
+    'gbprod/none-ls-shellcheck.nvim',
   },
   config = function()
     local null_ls = require 'null-ls'
-    local formatting = null_ls.builtins.formatting   -- to setup formatters
+    local formatting = null_ls.builtins.formatting -- to setup formatters
     local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 
     -- list of formatters & linters for mason to install
@@ -15,10 +17,11 @@ return {
       ensure_installed = {
         'checkmake',
         'prettier', -- ts/js formatter
-        'stylua',   -- lua formatter
+        -- 'stylua', -- lua formatter
         'eslint_d', -- ts/js linter
         'shfmt',
         'ruff',
+        'shellcheck',
       },
       -- auto-install configured formatters & linters (with null-ls)
       automatic_installation = true,
@@ -27,11 +30,13 @@ return {
     local sources = {
       diagnostics.checkmake,
       formatting.prettier.with { filetypes = { 'html', 'json', 'yaml', 'markdown' } },
-      formatting.stylua,
+      -- formatting.stylua,
       formatting.shfmt.with { args = { '-i', '4' } },
       formatting.terraform_fmt,
       require('none-ls.formatting.ruff').with { extra_args = { '--extend-select', 'I' } },
-      require 'none-ls.formatting.ruff_format',
+      require('none-ls.formatting.ruff_format'),
+      require('none-ls-shellcheck.diagnostics'),
+      require('none-ls-shellcheck.code_actions'),
     }
 
     local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
