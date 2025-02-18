@@ -32,6 +32,10 @@ return {
       harpoon:list():select(4)
     end, { desc = 'Harpoon file 4' })
 
+    vim.keymap.set('n', '<Tab>5', function()
+      harpoon:list():select(5)
+    end, { desc = 'Harpoon file 5' })
+
     vim.keymap.set('n', '<leader>hj', function()
       harpoon:list():next()
     end, { desc = 'Harpoon next' })
