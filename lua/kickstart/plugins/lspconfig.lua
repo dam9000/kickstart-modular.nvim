@@ -216,11 +216,19 @@ return {
         clangd = {},
         ts_ls = {},
         lua_ls = {},
-        kotlin_language_server = {
-          init_options = {
-            storagePath = vim.fn.resolve(vim.fn.stdpath 'cache' .. '/kotlin_language_server'),
-          },
-        },
+        gopls = {},
+        html = {},
+        prettierd = {},
+        java_language_server = {},
+        markdownlint = {},
+        mdformat = {},
+        rust_analyzer = {},
+        tailwindcss = {},
+        -- kotlin_language_server = {
+        --   init_options = {
+        --     storagePath = vim.fn.resolve(vim.fn.stdpath 'cache' .. '/kotlin_language_server'),
+        --   },
+        -- },
       }
 
       -- Ensure the servers and tools above are installed
