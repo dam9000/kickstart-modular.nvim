@@ -96,6 +96,17 @@ vim.g.have_nerd_font = false
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
 
+-- NOTE: (varun): Adding this to prevent duplicate errors from showing up.
+-- This won't be needed if the linters are configured properly. Currently happening with python setup only,
+-- haven't tested with others.
+vim.diagnostic.config {
+  -- This will deduplicate diagnostics with the same message
+  duplicates = {
+    severity = vim.diagnostic.severity.ERROR,
+    max_displayed = 1, -- Only show one instance of duplicate diagnostics
+  },
+}
+
 -- [[ Setting options ]]
 require 'options'
 
