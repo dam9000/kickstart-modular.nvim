@@ -7,7 +7,11 @@ require('lazy').setup({
 
   require 'kickstart/plugins/conform',
 
+  require 'kickstart/plugins/dap',
+
   require 'kickstart.plugins.debug',
+
+  require 'kickstart/plugins/go',
 
   require 'kickstart/plugins/gitsigns',
 
@@ -22,6 +26,8 @@ require('lazy').setup({
   require 'kickstart/plugins/sleuth',
 
   require 'kickstart/plugins/telescope',
+
+  require 'kickstart/plugins/trouble',
 
   require 'kickstart/plugins/which-key',
 

@@ -1,0 +1,5 @@
+return {
+  {
+    'mfussenegger/nvim-dap',
+  },
+}
