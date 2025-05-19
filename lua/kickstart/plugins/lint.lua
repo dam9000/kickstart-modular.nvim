@@ -8,7 +8,7 @@ return {
         -- Theses are auto-installed by mason-tool-installer, which is
         -- configured in lua/kickstart/plugins/lspconfig.lua
         markdown = { 'vale' },
-        python = { 'mypy' },
+        python = { 'ruff' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
@@ -52,7 +52,9 @@ return {
           -- Only run the linter in buffers that you can modify in order to
           -- avoid superfluous noise, notably within the handy LSP pop-ups that
           -- describe the hovered symbol using Markdown.
-          if vim.opt_local.modifiable:get() then
+          if vim.bo.modifiable then
+            -- try_lint without arguments runs the linters defined in `linters_by_ft`
+            -- for the current filetype
             lint.try_lint()
           end
         end,
