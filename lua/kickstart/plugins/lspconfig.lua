@@ -221,7 +221,7 @@ return {
         -- }
         -- ```
         --
-        -- Note: This is a community fork of `pyls`.
+        -- Note: This is a community fork of `pylsp`.
         pylsp = {
           settings = {
             pylsp = {
