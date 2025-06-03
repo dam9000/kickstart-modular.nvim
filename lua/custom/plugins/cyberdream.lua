@@ -10,8 +10,14 @@ return {
         -- Enable transparent background
         transparent = true,
 
-        -- Reduce the overall saturation of colours for a more muted look
-        saturation = 1, -- accepts a value between 0 and 1. 0 will be fully desaturated (greyscale) and 1 will be the full color (default)
+        -- Enable italics comments
+        italic_comments = false,
+
+        -- Set terminal colors used in `:terminal`
+        terminal_colors = true,
+
+        -- Improve start up time by caching highlights. Generate cache with :CyberdreamBuildCache and clear with :CyberdreamClearCache
+        cache = true,
 
         -- Override a highlight group entirely using the built-in colour palette
         overrides = function(colors) -- NOTE: This function nullifies the `highlights` option
@@ -19,25 +25,30 @@ return {
           return {
             -- Comment = { fg = colors.green },
             -- ['@property'] = { fg = colors.magenta, bold = true },
-            Keyword = { fg = colors.magenta },
+            Keyword = { fg = colors.pink },
+            Number = { fg = colors.purple },
             Operator = { fg = colors.fg },
-            Special = { fg = colors.yellow },
+            Special = { fg = colors.fg },
+            Function = { fg = colors.yellow },
+            Boolean = { fg = colors.pink },
+            Identifier = { fg = colors.blue },
           }
         end,
 
-        -- Enable italics comments
-        italic_comments = false,
         colors = {
           dark = {
+            bg_highlight = '#373737',
             fg = '#E5E5E5',
-            grey = '#767676',
-            blue = '#3DAEE9',
-            cyan = '#30EADF',
+            grey = '#828282',
+            blue = '#48CBFF',
+            cyan = '#67F0E7',
+            green = '#80EE6A',
             red = '#FF2727',
-            yellow = '#FFC73A',
-            -- magenta = '#FF00FF',
-            magenta = '#C97BD5',
+            yellow = '#FFD059',
+            magenta = '#D575D6',
             orange = '#F67400',
+            pink = '#FF6BA8',
+            purple = '#A368E4',
           },
         },
       }
