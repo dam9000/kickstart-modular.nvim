@@ -65,9 +65,9 @@ require('lazy').setup({
   -- { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
-  -- Or use telescope!
+  -- Or use telescope or the "help" snacks-picker, depending on which one you use!
   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
-  -- you can continue same window with `<space>sr` which resumes last telescope search
+  -- you can continue same window with `<space>sr` which resumes last telescope or snacks-picker search
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
