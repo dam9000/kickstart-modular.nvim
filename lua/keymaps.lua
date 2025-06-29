@@ -57,3 +57,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- vim: ts=2 sts=2 sw=2 et
 vim.keymap.set('n', 'H', '^')
 vim.keymap.set('n', 'L', '$')
+-- Buffer navigation with g[ and g]
+vim.keymap.set('n', 'b[', ':bprevious<CR>', { desc = 'Previous buffer' })
+vim.keymap.set('n', 'b]', ':bnext<CR>', { desc = 'Next buffer' })
+vim.keymap.set('n', 'U', '<C-r>')
