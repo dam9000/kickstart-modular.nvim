@@ -16,11 +16,4 @@ require 'lazy-bootstrap'
 -- [[ Configure and install plugins ]]
 require 'lazy-plugins'
 
--- [[ Scott's Additions ]]
-require 'scott.cloak'
-require 'scott.markview'
-require 'scott.multicursor'
-require 'scott.obsidian'
-require 'scott.stay-centered'
-require 'scott.surround'
-require 'scott.wrapping'
+-- [[ ftplugin ]]
