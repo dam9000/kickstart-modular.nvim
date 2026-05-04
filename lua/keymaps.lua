@@ -14,9 +14,12 @@ end, { desc = 'Toggle git diff highlight' })
 
 -- Toggle git diff highlight
 vim.keymap.set('n', '<leader>bd', function()
-  vim.cmd 'b# | bd#'
-  vim.cmd 'Oil'
-end, { desc = 'Close buffer and open directory' })
+  local alt = vim.fn.bufnr '#'
+  vim.cmd 'bd'
+  if alt > 0 and vim.fn.bufexists(alt) == 1 then
+    vim.cmd('b ' .. alt)
+  end
+end, { desc = 'Close buffer and return to previous' })
 
 -- Typescript console log snipper
 vim.keymap.set('n', '<leader>cl', function()
@@ -42,32 +45,70 @@ end, { desc = 'Open LazyGit in tmux split' })
 
 vim.keymap.set('n', '<leader>dc', function()
   require('docker').compose_up_service()
+end, { desc = 'Compose up service' })
 
-  -- wait a bit for containers to start
-  vim.defer_fn(function()
-    vim.cmd 'silent !$HOME/tmux-docker-logs.sh'
-  end, 6000)
-end, { desc = 'docker compose up (select service)' })
 
--- Neocodeium
-vim.keymap.set('i', '<A-f>', function()
-  require('neocodeium').accept()
-end, { desc = 'Accept Neocodeium' })
-vim.keymap.set('i', '<A-w>', function()
-  require('neocodeium').accept_word()
-end, { desc = 'Accept Neocodeium word' })
-vim.keymap.set('i', '<A-a>', function()
-  require('neocodeium').accept_line()
-end, { desc = 'Accept Neocodeium line' })
-vim.keymap.set('i', '<A-e>', function()
-  require('neocodeium').cycle_or_complete()
-end, { desc = 'Cycle Neocodeium' })
-vim.keymap.set('i', '<A-r>', function()
-  require('neocodeium').cycle_or_complete(-1)
-end, { desc = 'Cycle Neocodeium backwards' })
-vim.keymap.set('i', '<A-c>', function()
-  require('neocodeium').clear()
-end, { desc = 'Clear Neocodeium' }) --
+-- Navigation cheatsheet
+vim.keymap.set('n', '<leader>?', function()
+  local lines = {
+    '  Navigation Cheatsheet              ',
+    '',
+    ' Jumplist (works after any jump)     ',
+    '  <C-o>          go back             ',
+    '  <C-i>          go forward          ',
+    '  <C-t>          back after gd       ',
+    '',
+    ' LSP                                 ',
+    '  gd             goto definition     ',
+    '  grr            references          ',
+    '  gri            implementation      ',
+    '  grt            type definition     ',
+    '  gO             document symbols    ',
+    '  gW             workspace symbols   ',
+    '  grn            rename symbol       ',
+    '',
+    ' Harpoon                             ',
+    '  <leader>ha     pin file            ',
+    '  <leader>hh     menu                ',
+    '  <leader>1-4    jump to pin         ',
+    '',
+    ' Telescope                           ',
+    '  <leader>p      find files          ',
+    '  <leader>sg     live grep           ',
+    '  <leader>sw     grep word           ',
+    '  <leader>sr     resume last search  ',
+    '  <leader><leader> open buffers      ',
+    '  <leader>s.     recent files        ',
+    '',
+    ' Buffer                              ',
+    '  <leader>bd     close, return prev  ',
+    '  <C-h/j/k/l>    switch split        ',
+    '',
+    '  q / <Esc> to close                 ',
+  }
+
+  local width = 42
+  local height = #lines
+  local buf = vim.api.nvim_create_buf(false, true)
+  vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+  vim.bo[buf].modifiable = false
+
+  local win = vim.api.nvim_open_win(buf, true, {
+    relative = 'editor',
+    width = width,
+    height = height,
+    row = math.floor((vim.o.lines - height) / 2),
+    col = math.floor((vim.o.columns - width) / 2),
+    style = 'minimal',
+    border = 'rounded',
+  })
+
+  local close = function()
+    vim.api.nvim_win_close(win, true)
+  end
+  vim.keymap.set('n', 'q', close, { buffer = buf, nowait = true })
+  vim.keymap.set('n', '<Esc>', close, { buffer = buf, nowait = true })
+end, { desc = 'Navigation cheatsheet' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
