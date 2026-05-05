@@ -35,8 +35,8 @@ return {
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        typscript = { 'prettier', stop_after_first = true },
-        typscriptreact = { 'prettier', stop_after_first = true },
+        typescript = { 'prettier', stop_after_first = true },
+        typescriptreact = { 'prettier', stop_after_first = true },
         html = { 'prettier', stop_after_first = true },
         javascriptreact = { 'prettier', stop_after_first = true },
         javascript = { 'prettier', stop_after_first = true },

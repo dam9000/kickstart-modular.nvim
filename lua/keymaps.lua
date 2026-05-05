@@ -39,14 +39,21 @@ vim.keymap.set('n', '<leader>cl', function()
   vim.cmd 'normal! F,'
 end, { desc = 'console.log with fire emoji' })
 
+-- Replace text inside quotes/brackets with clipboard
+vim.keymap.set('n', '<leader>r"', '"_di"\"+P', { desc = 'Replace inside " with clipboard' })
+vim.keymap.set('n', "<leader>r'", '"_di\'"+P', { desc = "Replace inside ' with clipboard" })
+vim.keymap.set('n', '<leader>r`', '"_di`"+P', { desc = 'Replace inside ` with clipboard' })
+vim.keymap.set('n', '<leader>r(', '"_di("+P', { desc = 'Replace inside () with clipboard' })
+vim.keymap.set('n', '<leader>r[', '"_di["+P', { desc = 'Replace inside [] with clipboard' })
+vim.keymap.set('n', '<leader>r{', '"_di{"+P', { desc = 'Replace inside {} with clipboard' })
+
 vim.keymap.set('n', '<leader>lg', function()
-  vim.cmd 'silent !tmux split-window -h lazygit'
+  vim.fn.jobstart({ 'tmux', 'split-window', '-h', 'lazygit' }, { detach = true })
 end, { desc = 'Open LazyGit in tmux split' })
 
 vim.keymap.set('n', '<leader>dc', function()
   require('docker').compose_up_service()
 end, { desc = 'Compose up service' })
-
 
 -- Navigation cheatsheet
 vim.keymap.set('n', '<leader>?', function()
