@@ -71,4 +71,8 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- Auto-load project-local .nvim.lua / .exrc (used by ~/pay/curly).
+-- First time you open a directory containing one, run `:trust`.
+vim.o.exrc = true
+
 -- vim: ts=2 sts=2 sw=2 et

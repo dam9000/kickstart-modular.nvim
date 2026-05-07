@@ -51,6 +51,26 @@ vim.keymap.set('n', '<leader>lg', function()
   vim.fn.jobstart({ 'tmux', 'split-window', '-h', 'lazygit' }, { detach = true })
 end, { desc = 'Open LazyGit in tmux split' })
 
+-- Enter the curly HTTP workspace in a new tab.
+vim.keymap.set('n', '<leader>cu', function()
+  local root = vim.fn.expand('~/pay/curly')
+  if vim.fn.isdirectory(root) == 0 then
+    vim.notify('curly: ' .. root .. ' not found', vim.log.levels.ERROR)
+    return
+  end
+  vim.cmd('tabnew')
+  vim.cmd('tcd ' .. vim.fn.fnameescape(root))
+  if not package.loaded.curly then
+    pcall(dofile, root .. '/.nvim.lua')
+  end
+  local ok_tel, telescope = pcall(require, 'telescope.builtin')
+  if ok_tel then
+    telescope.find_files({ cwd = root .. '/collections', prompt_title = 'Curly: collections' })
+  else
+    vim.cmd('edit ' .. vim.fn.fnameescape(root .. '/collections'))
+  end
+end, { desc = 'Open curly HTTP workspace' })
+
 vim.keymap.set('n', '<leader>dc', function()
   require('docker').compose_up_service()
 end, { desc = 'Compose up service' })
