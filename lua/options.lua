@@ -1,5 +1,22 @@
+-- ============================================================
+-- SECTION 1: OPTIONS
+-- Core Neovim settings, leaders, options, basic keymaps, basic autocmds
+-- ============================================================
+
+-- Enable faster startup by caching compiled Lua modules
+vim.loader.enable()
+
+-- Set <space> as the leader key
+-- See `:help mapleader`
+--  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+-- Set to true if you have a Nerd Font installed and selected in the terminal
+vim.g.have_nerd_font = false
+
 -- [[ Setting options ]]
--- See `:help vim.o`
+--  See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
@@ -68,5 +85,3 @@ vim.o.scrolloff = 10
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
 vim.o.confirm = true
-
--- vim: ts=2 sts=2 sw=2 et
