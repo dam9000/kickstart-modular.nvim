@@ -1,0 +1,102 @@
+# lefthook.yml — git hooks orchestration (§6.4). Single org standard, Copier-synced.
+#
+# Hook activation note: lefthook installs into .git/hooks/ by default. If a
+# developer's global `core.hooksPath` points at a dispatcher (the org's
+# chezmoi-managed ~/.config/git/hooks pattern), the dispatcher delegates to the
+# per-repo lefthook binary via its own logic. No repo-side `core.hooksPath`
+# override is required or wanted — repo-local `.githooks/` directories are
+# banned by `check.sh` to keep the dispatcher path canonical across the fleet.
+#
+# `stage_fixed` default — fork-aware (see MIGRATION.md §"--all-files + stage_fixed"):
+# non-fork repos auto-stage formatter rewrites (`stage_fixed: true`), which is the
+# desired behavior since every file in the working tree is fair game for org-floor
+# formatting. Fork consumers (`is_fork: true`) get `stage_fixed: false` so a stray
+# `lefthook --all-files` (or a partial stage in a mostly-upstream file) cannot
+# silently absorb upstream-pristine rewrites into the next commit. Forks that want
+# auto-staging back can override via `lefthook-local.yml` per hook.
+
+commit-msg:
+  commands:
+    commitlint:
+      # `{1}` is lefthook's positional placeholder for the commit-message file
+      # path under git's native commit-msg invocation. lint-hooks CI exercises
+      # the same hook via `lefthook run commit-msg --file <path>`, where
+      # lefthook substitutes `{staged_files}` instead and leaves `{1}` literal.
+      # The shell wrapper below resolves whichever placeholder lefthook filled.
+      #
+      # commitlint + @commitlint/config-conventional are pinned via mise's
+      # `npm:` backend (see .mise.toml.jinja). The two packages land in
+      # SIBLING install dirs, so cosmiconfig's `resolveExtends` cannot find
+      # `@commitlint/config-conventional` from the cli's resolution roots.
+      # Setting NODE_PATH to the config-conventional install dir makes Node's
+      # resolver find it. The previous TS-only `npx --no -- commitlint` path
+      # required commitlint as a package.json devDep, but Pattern E preserves
+      # the consumer's package.json (`_skip_if_exists`) so the assumption
+      # broke. Using mise + NODE_PATH gives a universal, archetype-agnostic
+      # invocation.
+      run: |
+        mise exec -- sh -c '
+          f="$1"
+          case "$f" in (""|"{"*) f="$2";; esac
+          case "$f" in (""|"{"*) echo "no commit-msg file resolved" >&2; exit 1;; esac
+          conf_dir=$(mise where npm:@commitlint/config-conventional 2>/dev/null)/lib/node_modules
+          NODE_PATH="${NODE_PATH:+$NODE_PATH:}$conf_dir" exec commitlint --edit "$f"
+        ' _ "{1}" "{staged_files}"
+
+pre-commit:
+  parallel: true
+  commands:
+    gitleaks:
+      # `gitleaks git` takes an optional positional [repo] arg, NOT --source (which
+      # is a `gitleaks detect` flag — that subcommand is what CI uses via
+      # secret-scan.yml). The pre-commit hook here uses the `git` subcommand with
+      # the implicit cwd as `[repo]`. The earlier template invocation included a
+      # bogus `--source .` which made gitleaks >= 8.x error out with
+      # `unknown flag: --source` on every commit. CI was unaffected (different
+      # subcommand). Reproduced under gitleaks 8.30.1.
+      run: mise exec -- gitleaks git --staged --redact --no-banner
+    markdownlint:
+      glob: "*.md"
+      run: mise exec -- markdownlint-cli2 {staged_files}
+    yamllint:
+      glob: "*.{yml,yaml}"
+      run: mise exec -- yamllint {staged_files}
+    yaml-prettier:
+      # §4 / §6.1: yamllint catches semantic bugs Prettier can't; Prettier handles formatting.
+      # `exclude:` scopes out machine-generated lockfiles and vendored upstream
+      # third-party action.yml files — prettier reformatting them produces
+      # enormous reviewer-noise diffs (`pnpm-lock.yaml` alone is 10K+ lines of
+      # single→double-quote churn on first onboarding) and the upstream
+      # maintainers own those files' style. Pre-commit on a staged lock-file
+      # change still no-ops cleanly; CI's `lint-hooks --all-files` run no
+      # longer touches them.
+      glob: "*.{yml,yaml}"
+      exclude:
+        - "pnpm-lock.yaml"
+        - "package-lock.json"
+        - "yarn.lock"
+        - ".github/actions/**/action.yml"
+      run: mise exec -- prettier --write {staged_files}
+      stage_fixed: false
+    shellcheck:
+      glob: "*.{sh,bash}"
+      run: mise exec -- shellcheck {staged_files}
+    shfmt:
+      glob: "*.{sh,bash}"
+      run: mise exec -- shfmt -w {staged_files}
+      stage_fixed: false
+
+pre-push:
+  commands:
+    audit:
+      # Run the deterministic audit before push so drift is caught locally.
+      # `.standards/` is only ever materialized in CI by audit.yml's pinned
+      # checkout — locally the dir doesn't exist, so skipping silently turns
+      # this hook into a noisy "command not found" on every push. Guard the
+      # invocation so the local pre-push stays quiet (CI is the gate).
+      run: |
+        if [ -d .standards ]; then
+          bash .standards/scripts/check.sh || true
+        else
+          echo "pre-push audit skipped — .standards/ only exists in CI (audit.yml's checkout); CI is the gate"
+        fi

@@ -12,3 +12,18 @@ spell/
 nvim-pack-lock.json
 
 .DS_Store
+
+# >>> rubio-standards >>>
+# Managed by rubio-standards Copier template. Do not edit between sentinels —
+# `scripts/merge-gitignore.sh` rewrites this block on every `copier copy/update`.
+.DS_Store
+.envrc.local
+*.log
+node_modules/
+dist/
+build/
+coverage/
+reports/
+
+# Per-archetype
+# <<< rubio-standards <<<

@@ -1,0 +1,13 @@
+# .gitleaks.toml — Copier-synced
+[extend]
+useDefault = true
+
+# `[allowlist]` (singular, top-level) is what gitleaks 8.18+ expects in extended
+# configs that allowlist by path. The `[[allowlists]]` array form was added later
+# (8.22+) and isn't applied by the audit-side secret-scan.yml workflow's 8.21
+# binary (pinned in .mise.toml). Stay on the singular form fleet-wide.
+[allowlist]
+description = "Copier-managed public-key/SHA manifests"
+paths = [
+  '''\.copier-answers\.yml$''',
+]

@@ -1,0 +1,11 @@
+{
+  // Consumer-owned markdownlint overrides, deep-merged into the standards floor
+  // (.markdownlint-cli2.jsonc) at each copier render — see merge-markdownlint.sh.
+  //
+  // These paths are upstream kickstart content preserved verbatim on this fork
+  // (is_fork=true): the README, the MIT LICENSE.md, and the .github issue/PR
+  // templates. They don't meet the org markdownlint floor, so they're exempted
+  // to keep upstream syncs clean rather than carrying reformatting edits. Only
+  // the standards-authored AGENTS.md / CLAUDE.md remain linted.
+  "ignores": ["README.md", "LICENSE.md", ".github/**"]
+}

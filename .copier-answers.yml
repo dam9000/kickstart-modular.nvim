@@ -1,0 +1,10 @@
+# Changes here will be overwritten by Copier; NEVER edit this file manually.
+_commit: template/v1.37.0
+_rubio_template_version: template/v1.37.0
+_src_path: gh:Rubio-Enterprises/standards
+archetype: bare
+default_branch: main
+is_fork: true
+project_name: kickstart-modular.nvim
+tier: experimental
+uses_release_please: false
