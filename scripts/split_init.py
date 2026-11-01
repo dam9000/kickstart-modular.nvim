@@ -44,8 +44,8 @@ SECTION_DESCRIPTION_RE = re.compile(r"^-- (?P<description>.+)$")
 SEPARATOR_LINE = "-- ============================================================"
 MODELINE = "-- vim: ts=2 sts=2 sw=2 et"
 # Full gh() comments from init.lua:
-#    "---Because most plugins are hosted on GitHub, you can use the helper",
-#    "---function to have less repetition in the following sections.",
+#    "--- Because most plugins are hosted on GitHub, you can use the helper",
+#    "--- function to have less repetition in the following sections.",
 #    "---@param repo string",
 #    "---@return string",
 GH_HELPER = [
